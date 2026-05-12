@@ -110,8 +110,7 @@
                         class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar
                         Anggota</a>
                     <button onclick="openDonationModal()"
-                        class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md">Donasi
-                        Sekarang</button>
+                        class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 shadow-md transition-all ml-2">Donasi</button>
                 </div>
             </div>
         </div>
@@ -252,7 +251,178 @@
         </div>
     </footer>
 
+    <div id="donationModal" class="fixed inset-0 z-[100] hidden overflow-y-auto">
+        <!-- Overlay Gelap -->
+        <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onclick="closeDonationModal()"></div>
+
+        <!-- Konten Modal -->
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div
+                class="relative bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform transition-all">
+                <!-- Header Modal -->
+                <div class="bg-emerald-600 p-6 text-white text-center">
+                    <h3 class="text-xl font-bold">Salurkan Kebaikan Anda</h3>
+                    <p class="text-emerald-100 text-sm">Pilih metode donasi yang paling nyaman bagi Anda</p>
+                </div>
+
+                <!-- List Metode Pembayaran -->
+                <div id="methodList" class="p-6 space-y-4">
+                    <!-- Opsi 1: Transfer Bank -->
+                    <div onclick="showBankDetail()"
+                        class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
+                                class="fas fa-university text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Transfer Bank BRI</p>
+                            <p class="text-xs text-gray-500 mt-1">Otomatis Salin & Buka BRIMO</p>
+                        </div>
+                    </div>
+
+                    <!-- Opsi 2: QRIS (E-Wallet) -->
+                    <div onclick="showQRISDetail()"
+                        class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
+                                class="fas fa-qrcode text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">QRIS / E-Wallet</p>
+                            <p class="text-xs text-gray-500 mt-1">GoPay, OVO, Dana, LinkAja</p>
+                        </div>
+                    </div>
+
+                    <!-- Opsi 3: Konfirmasi Via WA -->
+                    <a href="https://wa.me/6288802333543?text=Assalamualaikum%20Admin%20Assalam%20Peduli,%20saya%20ingin%20konfirmasi%20donasi"
+                        target="_blank"
+                        class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Konfirmasi Via WA</p>
+                            <p class="text-xs text-gray-500 mt-1">Hubungi admin untuk bantuan</p>
+                        </div>
+                        <i
+                            class="fas fa-external-link-alt ml-auto text-gray-300 text-xs group-hover:text-emerald-500"></i>
+                    </a>
+                </div>
+
+                <!-- Area Detail (Awalnya Tersembunyi) -->
+                <div id="detailDonasi" class="hidden p-6">
+                    <button onclick="backToMethods()" class="text-emerald-600 font-bold text-sm mb-4 flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Kembali pilih metode
+                    </button>
+                    <div id="detailContent"></div>
+                </div>
+
+                <!-- Footer Modal -->
+                <div class="p-4 bg-gray-50 text-center">
+                    <button onclick="closeDonationModal()"
+                        class="text-gray-500 font-medium text-sm hover:text-emerald-600 transition">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+
+        // Fungsi untuk membuka modal donasi
+        function openDonationModal() {
+            const modal = document.getElementById('donationModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Mengunci scroll layar
+            }
+        }
+
+        // Fungsi untuk menutup modal
+        function closeDonationModal() {
+            const modal = document.getElementById('donationModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Mengaktifkan kembali scroll
+            }
+        }
+        function backToMethods() { document.getElementById('detailDonasi').classList.add('hidden'); document.getElementById('methodList').classList.remove('hidden'); }
+        function showBankDetail() {
+            document.getElementById('methodList').classList.add('hidden');
+            const detail = document.getElementById('detailDonasi');
+            const content = document.getElementById('detailContent');
+
+            detail.classList.remove('hidden');
+            content.innerHTML = `
+        <div class="space-y-4">
+            <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center relative overflow-hidden">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" 
+                     alt="BRI" class="h-10 mx-auto mb-4">
+                
+                <p id="nomorRekening" class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
+                <p class="text-sm text-gray-600 font-medium italic uppercase mt-1">a.n Alen Purnama</p>
+            </div>
+            
+            <button onclick="copyOnly()" 
+               class="flex items-center justify-center gap-2 w-full bg-[#00529C] text-white rounded-xl p-3 hover:bg-blue-800 transition shadow-md group">
+                <i class="fas fa-copy text-lg group-active:scale-90 transition"></i>
+                <span class="font-bold text-base">Salin Nomor Rekening</span>
+            </button>
+
+            <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden animate-bounce">
+                <i class="fas fa-check-circle mr-1"></i> Berhasil Disalin!
+            </p>
+            
+            <p class="text-[10px] text-gray-400 text-center uppercase tracking-widest font-bold">
+                Assalam Peduli - Transparansi & Amanah
+            </p>
+        </div>
+    `;
+        }
+
+        // Fungsi baru khusus untuk salin saja tanpa membuka aplikasi
+        function copyOnly() {
+            const rek = "501128905504";
+            navigator.clipboard.writeText(rek).then(() => {
+                const status = document.getElementById('copyStatus');
+                if (status) {
+                    status.classList.remove('hidden');
+                    setTimeout(() => status.classList.add('hidden'), 2000);
+                }
+            });
+        }
+        function showQRISDetail() {
+            document.getElementById('methodList').classList.add('hidden');
+            const detail = document.getElementById('detailDonasi');
+            const content = document.getElementById('detailContent');
+            detail.classList.remove('hidden');
+            content.innerHTML = `
+        <div class="text-center">
+            <p class="text-sm text-gray-600 mb-4 font-medium italic">Klik gambar untuk memperbesar</p>
+            <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block shadow-lg cursor-zoom-in hover:scale-105 transition-transform" 
+                 onclick="openImagePreview('qris-assalam.jpeg')">
+                <img src="qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
+            </div>
+        </div>
+    `;
+        }
+
+        function openImagePreview(src) {
+            const modal = document.getElementById('imagePreviewModal');
+            const fullImg = document.getElementById('fullImage');
+            if (modal && fullImg) {
+                fullImg.src = src;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeImagePreview() {
+            const modal = document.getElementById('imagePreviewModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                // Hanya aktifkan scroll jika modal donasi utama juga tertutup
+                if (document.getElementById('donationModal').classList.contains('hidden')) {
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
+
         function kirimKeWA() {
             const nama = document.getElementById('nama').value;
             const wa = document.getElementById('whatsapp').value;
