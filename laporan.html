@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Keuangan | Komunitas Assalam Peduli</title>
+    <link rel="icon" type="image/png" href="image/logo-kita.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+    <!-- Navigation (Sinkron dengan Index, Profil, Program) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <img src="image/logo-kita.png" alt="Logo Assalam Peduli" class="h-12 w-auto">
+                        <span
+                            class="text-xl md:text-2xl font-bold text-emerald-600 tracking-tight flex flex-col leading-none">
+                            KOMUNITAS <span class="text-gray-800 text-lg md:text-xl">ASSALAM PEDULI</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="index.html"
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Beranda</a>
+                        <!-- Dropdown Profil -->
+                        <div class="relative group">
+                            <button
+                                class="flex items-center text-gray-600 group-hover:text-emerald-600 px-3 py-2 font-medium focus:outline-none transition">
+                                Profil <i
+                                    class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                            </button>
+                            <div
+                                class="absolute left-0 w-64 mt-0 origin-top-left bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div class="py-2 px-1">
+                                    <a href="profil.html#tentang-kami"
+                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
+                                                class="fas fa-info-circle text-emerald-600 w-4 text-center"></i></div>
+                                        Tentang Kami
+                                    </a>
+                                    <a href="struktur-organisasi.html"
+                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
+                                                class="fas fa-sitemap text-emerald-600 w-4 text-center"></i></div>
+                                        Struktur Organisasi
+                                    </a>
+                                    <a href="berita.html"
+                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3">
+                                            <i class="fas fa-newspaper text-emerald-600 w-4 text-center"></i>
+                                        </div>
+                                        Berita & Kegiatan
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="program.html"
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
+                        <a href="laporan.html"
+                            class="text-emerald-600 px-3 py-2 font-medium border-b-2 border-emerald-500">Laporan</a>
+                        <a href="daftar-anggota.html" target="_blank"
+                            class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">
+                            Daftar Anggota
+                        </a>
+
+                        <button onclick="openDonationModal()"
+                            class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 shadow-md transition-all">Donasi
+                            Sekarang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Laporan -->
+    <header
+        class="relative bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-900 py-24 text-white overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-400/10 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tighter drop-shadow-lg">
+                Transparansi Keuangan
+            </h1>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mb-6 rounded-full"></div>
+            <p class="text-emerald-50 text-lg md:text-base opacity-90 italic max-w-2xl mx-auto leading-relaxed">
+                "Amanah dalam mengelola, nyata dalam berbagi."
+            </p>
+        </div>
+    </header>
+
+    <!-- Bagian Konten Utama Laporan -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+
+        <!-- BAGIAN 1: DONASI TUNAI -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-money-bill-wave text-emerald-600 mr-4"></i>
+                1. Donasi Tunai
+            </h2>
+
+            <!-- Ringkasan Saldo Kas Tunai -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border-l-8 border-emerald-500">
+                    <p class="text-gray-500 text-xs uppercase font-bold tracking-widest">Saldo Kas Umum</p>
+                    <h2 id="total-umum" class="text-3xl font-bold text-gray-800 mt-2">Rp 0</h2>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border-l-8 border-blue-500">
+                    <p class="text-gray-500 text-xs uppercase font-bold tracking-widest">Saldo Kas Beasiswa</p>
+                    <h2 id="total-beasiswa" class="text-3xl font-bold text-gray-800 mt-2">Rp 0</h2>
+                </div>
+            </div>
+
+            <!-- Tabel Kas Umum -->
+            <div class="max-w-7xl mx-auto px-4 py-10">
+                <div class="bg-white rounded-3xl shadow-sm border overflow-hidden">
+                    <div class="bg-gray-50 px-6 py-4 border-b flex justify-between items-center">
+                        <h3 class="font-bold text-gray-700">Detail Kas Umum</h3>
+                        <span id="status-koneksi"
+                            class="text-xs font-medium px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
+                            <i class="fas fa-spinner fa-spin mr-2"></i>Menghubungkan...
+                        </span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 text-xs uppercase">
+                                    <th class="p-4 border-b text-center">Tanggal</th>
+                                    <th class="p-4 border-b text-center">Keterangan</th>
+                                    <th class="p-4 border-b text-center">Jenis Kas</th>
+                                    <th class="p-4 border-b text-center text-emerald-600">Masuk</th>
+                                    <th class="p-4 border-b text-center text-red-600">Keluar</th>
+                                    <th class="p-4 border-b text-center">Saldo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="laporan-body" class="divide-y">
+                                <tr>
+                                    <td colspan="6" class="px-6 py-10 text-center text-gray-400 italic">
+                                        Memulai koneksi ke database...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BAGIAN 2: DONASI NON-TUNAI (Barang/Makanan) -->
+            <div class="mb-20">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-box-open text-orange-500 mr-4"></i>
+                    2. Donasi Non-Tunai
+                </h2>
+
+                <div class="bg-white rounded-3xl shadow-sm border overflow-hidden">
+                    <div class="bg-orange-50 px-6 py-4 border-b border-orange-100">
+                        <h3 class="font-bold text-orange-800">Catatan Donasi Barang & Logistik</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-gray-50 border-b">
+                                <tr>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Tanggal
+                                    </th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Nama
+                                        Donatur</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Jenis
+                                        Bantuan</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">
+                                        Jumlah/Satuan</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Status
+                                        Penyaluran
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabel-non-tunai" class="divide-y">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <div id="donationModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeDonationModal()"></div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white rounded-[32px] overflow-hidden shadow-2xl animate-modal-pop">
+            <div class="bg-emerald-600 p-6 text-white text-center relative">
+                <button onclick="closeDonationModal()"
+                    class="absolute right-4 top-4 w-8 h-8 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/40 transition">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h3 class="text-xl font-bold">Donasi Sekarang</h3>
+                <p class="text-emerald-100 text-xs mt-1 uppercase tracking-widest font-medium">Bantu Sesama, Raih
+                    Keberkahan</p>
+            </div>
+
+            <div id="methodList" class="p-6 space-y-3">
+                <p class="text-xs font-bold text-gray-400 uppercase mb-4 tracking-wider">Pilih Metode Transfer:</p>
+
+                <div onclick="showBankDetail()"
+                    class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                    <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600">
+                        <i class="fas fa-university text-xl"></i>
+                    </div>
+                    <div class="ml-4 text-left">
+                        <p class="font-bold text-gray-800 leading-none">Transfer Bank BRI</p>
+                        <p class="text-xs text-gray-500 mt-1">Otomatis Salin & Buka BRIMO</p>
+                    </div>
+                    <i class="fas fa-chevron-right ml-auto text-gray-300 group-hover:text-emerald-500 transition"></i>
+                </div>
+
+                <div onclick="showQRISDetail()"
+                    class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                    <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600">
+                        <i class="fas fa-qrcode text-xl"></i>
+                    </div>
+                    <div class="ml-4 text-left">
+                        <p class="font-bold text-gray-800 leading-none">Scan QRIS (E-Wallet)</p>
+                        <p class="text-xs text-gray-500 mt-1">Dukungan Semua Dompet Digital</p>
+                    </div>
+                    <i class="fas fa-chevron-right ml-auto text-gray-300 group-hover:text-emerald-500 transition"></i>
+                </div>
+
+                <a href="https://wa.me/6288802333543?text=Assalamualaikum%20Admin%20Assalam%20Peduli,%20saya%20ingin%20konfirmasi%20donasi"
+                    target="_blank"
+                    class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group block">
+                    <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </div>
+                    <div class="ml-4 text-left">
+                        <p class="font-bold text-gray-800 leading-none">Konfirmasi Via WA</p>
+                        <p class="text-xs text-gray-500 mt-1">Hubungi admin untuk bantuan</p>
+                    </div>
+                    <i class="fas fa-external-link-alt ml-auto text-gray-300 text-xs group-hover:text-emerald-500"></i>
+                </a>
+            </div>
+
+            <div id="detailDonasi" class="hidden p-6 animate-fade-in text-center">
+                <button onclick="backToMethods()"
+                    class="text-emerald-600 font-bold text-sm mb-4 flex items-center mx-auto hover:underline">
+                    <i class="fas fa-arrow-left mr-2 text-xs"></i> Kembali ke Metode
+                </button>
+                <div id="detailContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
+            <div class="mb-10">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <img src="image/logo-kita.png" alt="Logo" class="h-10 w-auto">
+                    <span class="text-xl font-bold tracking-tight uppercase">
+                        KOMUNITAS <span class="text-emerald-500">ASSALAM PEDULI</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
+                    Sekretariat Komunitas Assalam Peduli <br>
+                    Kp. Cibogo RT. 001 RW. 001 Ds. Janggala Kec. Sukaraja <br>
+                    Kab. Tasikmalaya - Jawa Barat, 46183.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center space-y-4">
+                <h4 class="text-lg font-bold tracking-widest uppercase">Follow Us On</h4>
+                <div class="flex justify-center gap-4">
+                    <a href="https://www.instagram.com/assalam.peduli" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 hover:scale-110 transition"><i
+                            class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.youtube.com/@assalam_ofc" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 hover:scale-110 transition"><i
+                            class="fab fa-youtube text-xl"></i></a>
+                    <a href="https://www.tiktok.com/@assalam.peduli" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-black border border-gray-700 hover:scale-110 transition"><i
+                            class="fab fa-tiktok text-xl"></i></a>
+                    <a href="https://www.facebook.com/share/18oiquCJny/" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-700 hover:scale-110 transition"><i
+                            class="fab fa-facebook-f text-xl"></i></a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 w-full mt-12 pt-8 text-gray-500 text-[10px] uppercase tracking-widest">
+                <p>&copy; 2026 Komunitas Assalam Peduli. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const SHEET_ID = "1oeixew0tkk-O6XGFH55SHrYCwplWGF9Gp8i9-kasqqE";
+        const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+        const URL_NON_TUNAI = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=725526817`;
+
+        async function muatLaporan() {
+            const tabel = document.getElementById('tabel-data') || document.querySelector('tbody');
+            const tabelNonTunai = document.getElementById('tabel-non-tunai');
+            const cardUmum = document.getElementById('total-umum');
+            const cardBeasiswa = document.getElementById('total-beasiswa');
+            const status = document.getElementById('status');
+
+            try {
+                const [resTunai, resNonTunai] = await Promise.all([
+                    fetch(CSV_URL),
+                    fetch(URL_NON_TUNAI)
+                ]);
+
+                const text = await resTunai.text();
+                const textNonTunai = await resNonTunai.text();
+
+                const rows = text.split(/\r?\n/).filter(row => row.trim() !== "");
+                const rowsNT = textNonTunai.split(/\r?\n/).filter(row => row.trim() !== "");
+
+                let html = "";
+                let htmlNT = "";
+                let akumulasiUmum = 0;
+                let akumulasiBeasiswa = 0;
+
+                const clean = (val) => val ? val.replace(/^"|"$/g, '').trim() : "";
+
+                const toAngka = (val) => {
+                    if (!val) return 0;
+                    const bersih = val.replace(/[^0-9]/g, '');
+                    return parseInt(bersih) || 0;
+                };
+
+                const formatRupiah = (val) => {
+                    if (val === undefined || val === null || val === "" || val === 0 || val === "0") return "-";
+                    let angka = typeof val === 'string' ? toAngka(val) : val;
+                    if (angka === 0) return "-";
+                    return "Rp " + angka.toLocaleString('id-ID');
+                };
+
+                // --- PROSES TAB TUNAI (Dibuat Tengah / Center) ---
+                for (let i = 1; i < rows.length; i++) {
+                    const cols = rows[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                    if (cols.length < 2) continue;
+
+                    const tgl = clean(cols[0]);
+                    const ket = clean(cols[1]);
+                    const jns = clean(cols[2]);
+                    const msk = toAngka(cols[3]);
+                    const klr = toAngka(cols[4]);
+                    const sld = clean(cols[5]);
+
+                    const isBeasiswa = jns.toUpperCase().includes("BEASISWA");
+
+                    if (isBeasiswa) {
+                        akumulasiBeasiswa += (msk - klr);
+                        warnaBadge = "bg-blue-100 text-blue-700 border-blue-200";
+                    } else {
+                        akumulasiUmum += (msk - klr);
+                        warnaBadge = "bg-emerald-100 text-emerald-700 border-emerald-200";
+                    }
+
+                    html += `
+                <tr class="border-b hover:bg-gray-50/50 transition">
+                    <td class="p-4 text-sm text-gray-500 text-center font-mono">${tgl}</td>
+                    <td class="p-4 text-sm font-bold text-gray-800 text-center">${ket}</td>
+                    <td class="p-4 text-center">
+                        <span class="text-[10px] ${warnaBadge} px-2 py-1 rounded-md font-bold uppercase border">${jns || 'UMUM'}</span>
+                    </td>
+                    <td class="p-4 text-sm text-emerald-600 font-bold text-center">${formatRupiah(msk)}</td>
+                    <td class="p-4 text-sm text-red-500 font-bold text-center">${formatRupiah(klr)}</td>
+                    <td class="p-4 text-sm font-black text-gray-900 text-center font-mono">${formatRupiah(sld)}</td>
+                </tr>`;
+                }
+
+                // --- PROSES TAB NON-TUNAI (Dibuat Tengah & Satuan Sesuai Sheet) ---
+                for (let i = 1; i < rowsNT.length; i++) {
+                    const colsNT = rowsNT[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                    if (colsNT.length < 4) continue;
+
+                    const tglNT = clean(colsNT[0]);
+                    const donatur = clean(colsNT[1]);
+                    const bantuan = clean(colsNT[2]);
+                    const jumlahNT = clean(colsNT[3]);
+                    const statusNT = clean(colsNT[4]);
+                    const kategoriNT = clean(colsNT[5]);
+
+                    // BAGIAN INI DIUBAH: 
+                    // Kita tidak lagi menjumlahkan akumulasiUmum/Beasiswa di sini 
+                    // agar saldo kas tetap murni dari tabel Donasi Tunai saja.
+
+                    const statusColor = statusNT.toUpperCase().includes("TERSALURKAN")
+                        ? "bg-emerald-100 text-emerald-700"
+                        : "bg-blue-100 text-blue-700";
+
+                    htmlNT += `
+                    <tr class="hover:bg-gray-50 transition border-b">
+                        <td class="px-6 py-4 text-sm text-gray-600 text-center font-mono">${tglNT}</td>
+                        <td class="px-6 py-4 text-sm font-medium text-center text-gray-800">${donatur}</td>
+                        <td class="px-6 py-4 text-sm text-center text-gray-600">${bantuan}</td>
+                        <td class="px-6 py-4 text-sm text-center font-bold text-gray-900">${jumlahNT}</td>
+                        <td class="px-6 py-4 text-sm text-center">
+                            <span class="inline-block px-3 py-1 ${statusColor} rounded-full text-[10px] font-bold uppercase">
+                                ${statusNT}
+                            </span>
+                        </td>
+                    </tr>`;
+                }
+
+                if (tabel) tabel.innerHTML = html;
+                if (tabelNonTunai) tabelNonTunai.innerHTML = htmlNT;
+
+                if (cardUmum) cardUmum.innerText = formatRupiah(akumulasiUmum);
+                if (cardBeasiswa) cardBeasiswa.innerText = formatRupiah(akumulasiBeasiswa);
+
+                if (status) status.innerHTML = "● Terhubung ✅";
+            } catch (e) {
+                console.error(e);
+                if (status) status.innerHTML = "● Gagal Koneksi ❌";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', muatLaporan);
+
+        function openDonationModal() {
+            const modal = document.getElementById('donationModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Fungsi untuk menutup jendela modal
+        function closeDonationModal() {
+            const modal = document.getElementById('donationModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                backToMethods();
+            }
+        }
+
+        // Fungsi kembali ke daftar pilihan bank
+        function backToMethods() {
+            document.getElementById('detailDonasi').classList.add('hidden');
+            document.getElementById('methodList').classList.remove('hidden');
+        }
+
+        function showBankDetail() {
+            document.getElementById('methodList').classList.add('hidden');
+            const detail = document.getElementById('detailDonasi');
+            const content = document.getElementById('detailContent');
+
+            detail.classList.remove('hidden');
+            content.innerHTML = `
+        <div class="space-y-4">
+            <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center relative overflow-hidden">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" 
+                     alt="BRI" class="h-10 mx-auto mb-4">
+                
+                <p id="nomorRekening" class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
+                <p class="text-sm text-gray-600 font-medium italic uppercase mt-1">a.n Alen Purnama</p>
+            </div>
+            
+            <button onclick="copyOnly()" 
+               class="flex items-center justify-center gap-2 w-full bg-[#00529C] text-white rounded-xl p-3 hover:bg-blue-800 transition shadow-md group">
+                <i class="fas fa-copy text-lg group-active:scale-90 transition"></i>
+                <span class="font-bold text-base">Salin Nomor Rekening</span>
+            </button>
+
+            <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden animate-bounce">
+                <i class="fas fa-check-circle mr-1"></i> Berhasil Disalin!
+            </p>
+            
+            <p class="text-[10px] text-gray-400 text-center uppercase tracking-widest font-bold">
+                Assalam Peduli - Transparansi & Amanah
+            </p>
+        </div>
+    `;
+        }
+
+        // Fungsi baru khusus untuk salin saja tanpa membuka aplikasi
+        function copyOnly() {
+            const rek = "501128905504";
+            navigator.clipboard.writeText(rek).then(() => {
+                const status = document.getElementById('copyStatus');
+                if (status) {
+                    status.classList.remove('hidden');
+                    setTimeout(() => status.classList.add('hidden'), 2000);
+                }
+            });
+        }
+
+        function showQRISDetail() {
+            document.getElementById('methodList').classList.add('hidden');
+            const detail = document.getElementById('detailDonasi');
+            const content = document.getElementById('detailContent');
+            detail.classList.remove('hidden');
+            content.innerHTML = `
+        <div class="text-center">
+            <p class="text-sm text-gray-600 mb-4 font-medium italic">Klik gambar untuk memperbesar</p>
+            <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block shadow-lg cursor-zoom-in hover:scale-105 transition-transform" 
+                 onclick="openImagePreview('image/qris-assalam.jpeg')">
+                <img src="image/qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
+            </div>
+        </div>
+    `;
+        }
+
+        function openImagePreview(src) {
+            const modal = document.getElementById('imagePreviewModal');
+            const fullImg = document.getElementById('fullImage');
+            if (modal && fullImg) {
+                fullImg.src = src;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeImagePreview() {
+            const modal = document.getElementById('imagePreviewModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                // Hanya aktifkan scroll jika modal donasi utama juga tertutup
+                if (document.getElementById('donationModal').classList.contains('hidden')) {
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
+    </script>
+
+    <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
+        <div class="relative max-w-full max-h-full">
+            <button onclick="closeImagePreview()"
+                class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="fullImage" src="" alt="QRIS Full"
+                class="max-w-full max-h-[85vh] rounded-xl shadow-2xl border-4 border-white/20">
+            <p class="text-white text-center mt-4 font-medium tracking-wide">Silakan Scan atau Screenshot QRIS ini</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
