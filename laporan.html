@@ -554,18 +554,14 @@
 
         function showQRISDetail() {
             document.getElementById('methodList').classList.add('hidden');
-            const detail = document.getElementById('detailDonasi');
-            const content = document.getElementById('detailContent');
-            detail.classList.remove('hidden');
-            content.innerHTML = `
-        <div class="text-center">
-            <p class="text-sm text-gray-600 mb-4 font-medium italic">Klik gambar untuk memperbesar</p>
-            <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block shadow-lg cursor-zoom-in hover:scale-105 transition-transform" 
-                 onclick="openImagePreview('qris-assalam.jpeg')">
-                <img src="qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
-            </div>
-        </div>
-    `;
+            document.getElementById('detailDonasi').classList.remove('hidden');
+            document.getElementById('detailContent').innerHTML = `
+            <div class="text-center">
+                <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block cursor-zoom-in" onclick="openImagePreview('qris-assalam.jpeg')">
+                    <img src="qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
+                </div>
+                <p class="text-xs text-gray-500 mt-2 italic">Klik gambar untuk memperbesar</p>
+            </div>`;
         }
 
         function openImagePreview(src) {
