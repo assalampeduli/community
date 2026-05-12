@@ -178,7 +178,139 @@
             </div>
         </div>
 
+        <div id="donationModal" class="fixed inset-0 z-[100] hidden overflow-y-auto">
+            <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onclick="closeDonationModal()"></div>
+
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div
+                    class="relative bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform transition-all">
+                    <div class="bg-emerald-600 p-6 text-white text-center">
+                        <h3 class="text-xl font-bold">Salurkan Kebaikan Anda</h3>
+                        <p class="text-emerald-100 text-sm">Pilih metode donasi yang paling nyaman bagi Anda</p>
+                    </div>
+
+                    <div id="methodList" class="p-6 space-y-4">
+                        <div onclick="showBankDetail()"
+                            class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                            <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
+                                    class="fas fa-university text-xl"></i></div>
+                            <div class="ml-4 text-left">
+                                <p class="font-bold text-gray-800 leading-none">Transfer Bank BRI</p>
+                                <p class="text-xs text-gray-500 mt-1">Salin Nomor Rekening</p>
+                            </div>
+                        </div>
+
+                        <div onclick="showQRISDetail()"
+                            class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                            <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
+                                    class="fas fa-qrcode text-xl"></i></div>
+                            <div class="ml-4 text-left">
+                                <p class="font-bold text-gray-800 leading-none">Scan QRIS (E-Wallet)</p>
+                                <p class="text-xs text-gray-500 mt-1">Dukungan Semua Dompet Digital</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/6288802333543?text=Assalamualaikum%20Admin%20Assalam%20Peduli"
+                            target="_blank"
+                            class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                            <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
+                                    class="fab fa-whatsapp text-xl"></i></div>
+                            <div class="ml-4 text-left">
+                                <p class="font-bold text-gray-800 leading-none">Konfirmasi Via WA</p>
+                                <p class="text-xs text-gray-500 mt-1">Hubungi admin untuk bantuan</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="detailDonasi" class="hidden p-6 animate-fade-in">
+                        <button onclick="backToMethods()"
+                            class="text-emerald-600 font-bold text-sm mb-4 flex items-center">
+                            <i class="fas fa-arrow-left mr-2"></i> Kembali pilih metode
+                        </button>
+                        <div id="detailContent"></div>
+                    </div>
+
+                    <div class="p-4 bg-gray-50 text-center">
+                        <button onclick="closeDonationModal()"
+                            class="text-gray-500 font-medium text-sm hover:text-emerald-600 transition">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
+            <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
+            <div class="relative max-w-full max-h-full">
+                <button onclick="closeImagePreview()" class="absolute -top-12 right-0 text-white text-3xl">
+                    <i class="fas fa-times"></i>
+                </button>
+                <img id="fullImage" src="" class="max-w-full max-h-[85vh] rounded-xl border-4 border-white/20">
+            </div>
+        </div>
+
         <script>
+            // --- LOGIKA MODAL DONASI ---
+            function openDonationModal() {
+                document.getElementById('donationModal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeDonationModal() {
+                document.getElementById('donationModal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                backToMethods();
+            }
+
+            function showBankDetail() {
+                document.getElementById('methodList').classList.add('hidden');
+                document.getElementById('detailDonasi').classList.remove('hidden');
+                document.getElementById('detailContent').innerHTML = `
+            <div class="space-y-4">
+                <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" alt="BRI" class="h-10 mx-auto mb-4">
+                    <p class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
+                    <p class="text-sm text-gray-600 font-medium uppercase mt-1">a.n Alen Purnama</p>
+                </div>
+                <button onclick="copyOnly()" class="w-full bg-[#00529C] text-white rounded-xl p-3 font-bold">Salin Rekening</button>
+                <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden italic">Berhasil Disalin!</p>
+            </div>`;
+            }
+
+            function copyOnly() {
+                navigator.clipboard.writeText("501128905504").then(() => {
+                    const status = document.getElementById('copyStatus');
+                    status.classList.remove('hidden');
+                    setTimeout(() => status.classList.add('hidden'), 2000);
+                });
+            }
+
+            function showQRISDetail() {
+                document.getElementById('methodList').classList.add('hidden');
+                document.getElementById('detailDonasi').classList.remove('hidden');
+                document.getElementById('detailContent').innerHTML = `
+            <div class="text-center">
+                <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block cursor-zoom-in" onclick="openImagePreview('qris-assalam.jpeg')">
+                    <img src="qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
+                </div>
+                <p class="text-xs text-gray-500 mt-2 italic">Klik gambar untuk memperbesar</p>
+            </div>`;
+            }
+
+            function backToMethods() {
+                document.getElementById('detailDonasi').classList.add('hidden');
+                document.getElementById('methodList').classList.remove('hidden');
+            }
+
+            function openImagePreview(src) {
+                const modal = document.getElementById('imagePreviewModal');
+                document.getElementById('fullImage').src = src;
+                modal.classList.remove('hidden');
+            }
+
+            function closeImagePreview() {
+                document.getElementById('imagePreviewModal').classList.add('hidden');
+            }
+            
             function loadDetail() {
                 const urlParams = new URLSearchParams(window.location.search);
                 const judulTarget = urlParams.get('id');

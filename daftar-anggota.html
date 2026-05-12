@@ -274,7 +274,7 @@
                                 class="fas fa-university text-xl"></i></div>
                         <div class="ml-4 text-left">
                             <p class="font-bold text-gray-800 leading-none">Transfer Bank BRI</p>
-                            <p class="text-xs text-gray-500 mt-1">Otomatis Salin & Buka BRIMO</p>
+                            <p class="text-xs text-gray-500 mt-1">Salin Nomor Rekening</p>
                         </div>
                     </div>
 
@@ -284,8 +284,8 @@
                         <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
                                 class="fas fa-qrcode text-xl"></i></div>
                         <div class="ml-4 text-left">
-                            <p class="font-bold text-gray-800 leading-none">QRIS / E-Wallet</p>
-                            <p class="text-xs text-gray-500 mt-1">GoPay, OVO, Dana, LinkAja</p>
+                            <p class="font-bold text-gray-800 leading-none">Scan QRIS (E-Wallet)</p>
+                            <p class="text-xs text-gray-500 mt-1">Dukungan Semua Dompet Digital</p>
                         </div>
                     </div>
 
@@ -322,6 +322,30 @@
         </div>
     </div>
 
+    <div class="space-y-4">
+        <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center relative overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" alt="BRI"
+                class="h-10 mx-auto mb-4">
+
+            <p id="nomorRekening" class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
+            <p class="text-sm text-gray-600 font-medium italic uppercase mt-1">a.n Alen Purnama</p>
+        </div>
+
+        <button onclick="copyOnly()"
+            class="flex items-center justify-center gap-2 w-full bg-[#00529C] text-white rounded-xl p-3 hover:bg-blue-800 transition shadow-md group">
+            <i class="fas fa-copy text-lg group-active:scale-90 transition"></i>
+            <span class="font-bold text-base">Salin Nomor Rekening</span>
+        </button>
+
+        <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden animate-bounce">
+            <i class="fas fa-check-circle mr-1"></i> Berhasil Disalin!
+        </p>
+
+        <p class="text-[10px] text-gray-400 text-center uppercase tracking-widest font-bold">
+            Assalam Peduli - Transparansi & Amanah
+        </p>
+    </div>
+
     <script>
 
         // Fungsi untuk membuka modal donasi
@@ -349,29 +373,7 @@
 
             detail.classList.remove('hidden');
             content.innerHTML = `
-        <div class="space-y-4">
-            <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center relative overflow-hidden">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" 
-                     alt="BRI" class="h-10 mx-auto mb-4">
-                
-                <p id="nomorRekening" class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
-                <p class="text-sm text-gray-600 font-medium italic uppercase mt-1">a.n Alen Purnama</p>
-            </div>
-            
-            <button onclick="copyOnly()" 
-               class="flex items-center justify-center gap-2 w-full bg-[#00529C] text-white rounded-xl p-3 hover:bg-blue-800 transition shadow-md group">
-                <i class="fas fa-copy text-lg group-active:scale-90 transition"></i>
-                <span class="font-bold text-base">Salin Nomor Rekening</span>
-            </button>
-
-            <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden animate-bounce">
-                <i class="fas fa-check-circle mr-1"></i> Berhasil Disalin!
-            </p>
-            
-            <p class="text-[10px] text-gray-400 text-center uppercase tracking-widest font-bold">
-                Assalam Peduli - Transparansi & Amanah
-            </p>
-        </div>
+    
     `;
         }
 
@@ -402,22 +404,25 @@
     `;
         }
 
+        //    Fungsi untuk membuka Zoom QRIS
         function openImagePreview(src) {
             const modal = document.getElementById('imagePreviewModal');
             const fullImg = document.getElementById('fullImage');
             if (modal && fullImg) {
                 fullImg.src = src;
                 modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden'; // Kunci scroll
             }
         }
 
+        // Fungsi untuk menutup Zoom QRIS
         function closeImagePreview() {
             const modal = document.getElementById('imagePreviewModal');
             if (modal) {
                 modal.classList.add('hidden');
-                // Hanya aktifkan scroll jika modal donasi utama juga tertutup
-                if (document.getElementById('donationModal').classList.contains('hidden')) {
+                // Hanya buka scroll jika modal donasi juga tertutup
+                const donationModal = document.getElementById('donationModal');
+                if (!donationModal || donationModal.classList.contains('hidden')) {
                     document.body.style.overflow = 'auto';
                 }
             }
@@ -507,7 +512,18 @@
             });
         });
     </script>
-
+    <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
+        <div class="relative max-w-full max-h-full">
+            <button onclick="closeImagePreview()"
+                class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="fullImage" src="" alt="QRIS Full"
+                class="max-w-full max-h-[85vh] rounded-xl shadow-2xl border-4 border-white/20">
+            <p class="text-white text-center mt-4 font-medium italic">Klik di luar gambar untuk menutup</p>
+        </div>
+    </div>
 </body>
 
 </html>
