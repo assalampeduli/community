@@ -45,48 +45,37 @@
                         </span>
                     </a>
                 </div>
-                <div class="hidden md:block">
+
+                <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-4">
                         <a href="index.html"
-                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Beranda</a>
+                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Beranda</a>
 
-                        <!-- Dropdown Profil (Berisi 3 Sub-Menu) -->
                         <div class="relative group">
                             <button
                                 class="flex items-center text-gray-600 group-hover:text-emerald-600 px-3 py-2 font-medium focus:outline-none transition">
-                                Profil
-                                <i
+                                Profil <i
                                     class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
                             </button>
-
-                            <!-- Dropdown Menu -->
                             <div
                                 class="absolute left-0 w-64 mt-0 origin-top-left bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <div class="py-2 px-1">
-                                    <!-- Sub-Menu 1: Tentang Kami -->
                                     <a href="profil.html#tentang-kami"
                                         class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
-                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3">
-                                            <i class="fas fa-info-circle text-emerald-600 w-4 text-center"></i>
-                                        </div>
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
+                                                class="fas fa-info-circle text-emerald-600 w-4 text-center"></i></div>
                                         Tentang Kami
                                     </a>
-
-                                    <!-- Sub-Menu 2: Struktur Organisasi -->
                                     <a href="struktur-organisasi.html"
                                         class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
-                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3">
-                                            <i class="fas fa-sitemap text-emerald-600 w-4 text-center"></i>
-                                        </div>
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
+                                                class="fas fa-sitemap text-emerald-600 w-4 text-center"></i></div>
                                         Struktur Organisasi
                                     </a>
-
-                                    <!-- Sub-Menu 3: Berrita -->
                                     <a href="berita.html"
                                         class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
-                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3">
-                                            <i class="fas fa-newspaper text-emerald-600 w-4 text-center"></i>
-                                        </div>
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
+                                                class="fas fa-newspaper text-emerald-600 w-4 text-center"></i></div>
                                         Berita & Kegiatan
                                     </a>
                                 </div>
@@ -98,20 +87,74 @@
                         <a href="laporan.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
                         <a href="daftar-anggota.html" target="_blank"
-                            class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">
-                            Daftar Anggota
-                        </a>
-
-                        <!-- Tombol Donasi -->
+                            class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar
+                            Anggota</a>
                         <button onclick="openDonationModal()"
-                            class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 shadow-md transition-all hover:scale-105 active:scale-95 ml-2">
-                            Donasi Sekarang
-                        </button>
+                            class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 shadow-md transition-all ml-2">Donasi</button>
                     </div>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-600 hover:text-emerald-600 focus:outline-none p-2 rounded-lg bg-gray-50">
+                        <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html"
+                    class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Beranda</a>
+
+                <div class="py-2 border-b border-gray-50">
+                    <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Profil Komunitas</p>
+                    <a href="profil.html#tentang-kami"
+                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                            class="fas fa-info-circle mr-3 text-emerald-500"></i>Tentang Kami</a>
+                    <a href="struktur-organisasi.html"
+                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                            class="fas fa-sitemap mr-3 text-emerald-500"></i>Struktur Organisasi</a>
+                    <a href="berita.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                            class="fas fa-newspaper mr-3 text-emerald-500"></i>Berita & Kegiatan</a>
+                </div>
+
+                <a href="program.html"
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
+                <a href="laporan.html"
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
+
+                <div class="pt-4 grid grid-cols-1 gap-3 px-4">
+                    <a href="daftar-anggota.html" target="_blank"
+                        class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar
+                        Anggota</a>
+                    <button onclick="openDonationModal()"
+                        class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md">Donasi
+                        Sekarang</button>
                 </div>
             </div>
         </div>
     </nav>
+
+    <style>
+        @keyframes fade-in-down {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fade-in-down 0.3s ease-out;
+        }
+    </style>
 
     <header
         class="relative bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-900 py-24 text-white overflow-hidden">
@@ -353,6 +396,60 @@
                 document.body.style.overflow = 'auto';
             }
         }
+
+        // --- LOGIKA MENU MOBILE (BURGER) ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            // Fungsi untuk menutup menu
+            function closeMenu() {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+
+            // Fungsi untuk membuka menu
+            function openMenu() {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+
+            // Toggle menu saat tombol burger diklik
+            mobileMenuButton.addEventListener('click', function (e) {
+                e.stopPropagation(); // Mencegah event 'click' merambat ke window
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            // TUTUP MENU JIKA KLIK DI LUAR MENU
+            window.addEventListener('click', function (e) {
+                // Jika menu sedang terbuka DAN yang diklik bukan bagian dari mobileMenu atau tombol burger
+                if (!mobileMenu.classList.contains('hidden')) {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                        closeMenu();
+                    }
+                }
+            });
+
+            // Mencegah menu tertutup jika area di dalam menu itu sendiri diklik
+            mobileMenu.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
+            // Menutup menu jika layar di-resize ke ukuran laptop (lg: 1024px)
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024) {
+                    closeMenu();
+                }
+            });
+        });
     </script>
 
     <!-- Donation Modal -->
