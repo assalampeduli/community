@@ -244,40 +244,34 @@
                     container.innerHTML = '';
                     const dataTerbalik = [...rows].reverse();
 
-                    dataTerbalik.forEach(row => {
+                    dataTerbalik.forEach((row, index) => {
                         const c = row.c;
 
-                        // Pengaturan Kolom: A=0(Tgl), B=1(Judul), C=2(Kat), D=3(Ringkasan), E=4(Isi), F=5(Gambar)
+                        // Pastikan urutan: A=0(Tgl), B=1(Judul), C=2(Kat), D=3(Ringkasan), E=4(Isi), F=5(Gambar)
                         const tgl = c[0] ? (c[0].f || c[0].v) : '';
                         const judul = c[1] ? c[1].v : '';
                         const kat = c[2] ? c[2].v : '';
-                        const isi = c[4] ? c[4].v : (c[3] ? c[3].v : ''); // Ambil Kolom E (Isi)
-                        const gambar = c[5] ? c[5].v : 'https://via.placeholder.com/400x250?text=No+Image';
+                        const ringkasan = c[3] ? c[3].v : ''; // Ambil kolom D untuk Ringkasan
+                        const gambar = c[5] ? c[5].v : 'image/default.jpg';
 
                         if (judul && judul !== "Judul") {
                             container.innerHTML += `
-              <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col border border-gray-100 hover:shadow-2xl transition-all duration-300">
-                <div class="relative h-56">
-                  <img src="${gambar}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x250?text=Gambar+Rusak'">
-                  <span class="absolute top-4 left-4 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
-                    ${kat}
-                  </span>
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-row lg:flex-col border border-gray-100 h-32 lg:h-auto hover:shadow-md transition">
+                <div class="relative w-28 flex-shrink-0 lg:w-full lg:h-52">
+                    <img src="${gambar}" class="w-full h-full object-cover">
                 </div>
-                <div class="p-6 flex-grow text-left">
-                  <span class="text-emerald-500 text-[10px] font-bold mb-2 block font-mono">${tgl}</span>
-                  <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight">${judul}</h3>
-                  
-                  <p class="text-gray-600 text-sm mb-6 line-clamp-2 text-justify">
-                    ${isi}
-                  </p>
+                <div class="p-3 lg:p-6 flex flex-col justify-between flex-grow text-left">
+                    <div>
+                        <h3 class="text-sm lg:text-xl font-bold text-gray-800 line-clamp-2">${judul}</h3>
+                        <p class="hidden lg:block text-gray-600 text-sm mt-2 line-clamp-2 italic">
+                            ${ringkasan}
+                        </p>
+                    </div>
+                    <a href="detail-berita.html?id=${encodeURIComponent(judul)}" class="text-emerald-600 font-bold text-[10px] lg:text-sm mt-2">
+                        Baca Selengkapnya
+                    </a>
                 </div>
-                <div class="px-6 pb-6">
-                  <a href="detail-berita.html?id=${encodeURIComponent(judul)}" 
-                     class="block text-center py-3 bg-emerald-50 text-emerald-600 font-bold rounded-xl hover:bg-emerald-600 hover:text-white transition duration-300">
-                     Baca Selengkapnya
-                  </a>
-                </div>
-              </div>`;
+            </div>`;
                         }
                     });
                 })
