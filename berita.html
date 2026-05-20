@@ -32,15 +32,13 @@
 
 <body class="bg-gray-50 font-sans text-gray-900">
 
-    <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex-shrink-0 flex items-center gap-3">
                     <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                         <img src="logo-kita.png" alt="Logo Assalam Peduli" class="h-12 w-auto">
-                        <span
-                            class="text-xl md:text-2xl font-bold text-emerald-600 tracking-tight flex flex-col leading-none">
+                        <span class="text-xl md:text-2xl font-bold text-emerald-600 tracking-tight flex flex-col leading-none">
                             KOMUNITAS <span class="text-gray-800 text-lg md:text-xl">ASSALAM PEDULI</span>
                         </span>
                     </a>
@@ -48,91 +46,62 @@
 
                 <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-4">
-                        <a href="index.html"
-                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Beranda</a>
+                        <a href="index.html" class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Beranda</a>
 
                         <div class="relative group">
-                            <button
-                                class="flex items-center text-gray-600 group-hover:text-emerald-600 px-3 py-2 font-medium focus:outline-none transition">
-                                Profil <i
-                                    class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                            <button class="flex items-center text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500 focus:outline-none transition">
+                                Profil <i class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
                             </button>
-                            <div
-                                class="absolute left-0 w-64 mt-0 origin-top-left bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="absolute left-0 w-64 mt-0 origin-top-left bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <div class="py-2 px-1">
-                                    <a href="profil.html#tentang-kami"
-                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
-                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
-                                                class="fas fa-info-circle text-emerald-600 w-4 text-center"></i></div>
+                                    <a href="profil.html#tentang-kami" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i class="fas fa-info-circle text-emerald-600 w-4 text-center"></i></div>
                                         Tentang Kami
                                     </a>
-                                    <a href="struktur-organisasi.html"
-                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
-                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
-                                                class="fas fa-sitemap text-emerald-600 w-4 text-center"></i></div>
+                                    <a href="struktur-organisasi.html" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i class="fas fa-sitemap text-emerald-600 w-4 text-center"></i></div>
                                         Struktur Organisasi
                                     </a>
-                                    <a href="berita.html"
-                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
-                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
-                                                class="fas fa-newspaper text-emerald-600 w-4 text-center"></i></div>
+                                    <a href="berita.html" class="flex items-center px-4 py-3 text-sm text-emerald-600 bg-emerald-50 rounded-lg transition">
+                                        <div class="bg-emerald-200 p-2 rounded-lg mr-3"><i class="fas fa-newspaper text-emerald-600 w-4 text-center"></i></div>
                                         Berita & Kegiatan
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="program.html"
-                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
-                        <a href="laporan.html"
-                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
-                        <a href="daftar-anggota.html" target="_blank"
-                            class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar
-                            Anggota</a>
-                        <button onclick="openDonationModal()"
-                            class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 shadow-md transition-all ml-2">Donasi</button>
+                        <a href="program.html" class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
+                        <a href="laporan.html" class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
+                        <a href="daftar-anggota.html" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar Anggota</a>
+                        <button onclick="openDonationModal()" class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 shadow-md transition-all ml-2">Donasi</button>
                     </div>
                 </div>
 
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-button"
-                        class="text-gray-600 hover:text-emerald-600 focus:outline-none p-2 rounded-lg bg-gray-50">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-emerald-600 focus:outline-none p-2 rounded-lg bg-gray-50">
                         <i class="fas fa-bars text-2xl" id="menu-icon"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu"
-            class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
             <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="index.html"
-                    class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Beranda</a>
+                <a href="index.html" class="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-gray-50 rounded-xl">Beranda</a>
 
                 <div class="py-2 border-b border-gray-50">
                     <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Profil Komunitas</p>
-                    <a href="profil.html#tentang-kami"
-                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
-                            class="fas fa-info-circle mr-3 text-emerald-500"></i>Tentang Kami</a>
-                    <a href="struktur-organisasi.html"
-                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
-                            class="fas fa-sitemap mr-3 text-emerald-500"></i>Struktur Organisasi</a>
-                    <a href="berita.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
-                            class="fas fa-newspaper mr-3 text-emerald-500"></i>Berita & Kegiatan</a>
+                    <a href="profil.html#tentang-kami" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i class="fas fa-info-circle mr-3 text-emerald-500"></i>Tentang Kami</a>
+                    <a href="struktur-organisasi.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i class="fas fa-sitemap mr-3 text-emerald-500"></i>Struktur Organisasi</a>
+                    <a href="berita.html" class="block px-4 py-3 text-emerald-600 bg-emerald-50 rounded-xl font-bold"><i class="fas fa-newspaper mr-3 text-emerald-600"></i>Berita & Kegiatan</a>
                 </div>
 
-                <a href="program.html"
-                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
-                <a href="laporan.html"
-                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
+                <a href="program.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
+                <a href="laporan.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
 
                 <div class="pt-4 grid grid-cols-1 gap-3 px-4">
-                    <a href="daftar-anggota.html" target="_blank"
-                        class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar
-                        Anggota</a>
-                    <button onclick="openDonationModal()"
-                        class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md">Donasi
-                        Sekarang</button>
+                    <a href="daftar-anggota.html" target="_blank" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar Anggota</a>
+                    <button onclick="openDonationModal()" class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md">Donasi Sekarang</button>
                 </div>
             </div>
         </div>
@@ -140,51 +109,33 @@
 
     <style>
         @keyframes fade-in-down {
-            0% {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
-
-        .animate-fade-in-down {
-            animation: fade-in-down 0.3s ease-out;
-        }
+        .animate-fade-in-down { animation: fade-in-down 0.3s ease-out; }
     </style>
 
-    <header
-        class="relative bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-900 py-24 text-white overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
-        </div>
-        <div
-            class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-400/10 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl">
-        </div>
+    <header class="relative bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-900 py-24 text-white overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-400/10 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tighter drop-shadow-lg">
-                Pusat Informasi
-            </h1>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tighter drop-shadow-lg">Pusat Informasi</h1>
             <div class="w-24 h-1 bg-yellow-400 mx-auto mb-6 rounded-full"></div>
-            <p class="text-emerald-50 text-lg md:text-base opacity-90 italic max-w-2xl mx-auto leading-relaxed">
-                "Berita dan Kegiatan"
-            </p>
+            <p class="text-emerald-50 text-lg md:text-xl opacity-90 italic max-w-2xl mx-auto leading-relaxed">"Berita dan Kegiatan Komunitas"</p>
         </div>
     </header>
 
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4">
+    <section id="news-section" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
             <div id="all-news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div id="loading" class="col-span-3 text-center py-20">
-                    <div
-                        class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-emerald-500 border-t-transparent">
-                    </div>
+                    <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-emerald-500 border-t-transparent"></div>
                     <p class="mt-4 text-gray-500 font-medium">Mengambil kabar terbaru...</p>
                 </div>
             </div>
+            
+            <div id="pagination-container"></div>
         </div>
     </section>
 
@@ -193,9 +144,7 @@
             <div class="mb-10">
                 <div class="flex items-center justify-center gap-3 mb-4">
                     <img src="logo-kita.png" alt="Logo" class="h-10 w-auto">
-                    <span class="text-xl font-bold tracking-tight uppercase">
-                        KOMUNITAS <span class="text-emerald-500">ASSALAM PEDULI</span>
-                    </span>
+                    <span class="text-xl font-bold tracking-tight uppercase">KOMUNITAS <span class="text-emerald-500">ASSALAM PEDULI</span></span>
                 </div>
                 <p class="text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
                     Sekretariat Komunitas Assalam Peduli <br>
@@ -207,18 +156,10 @@
             <div class="flex flex-col items-center space-y-4">
                 <h4 class="text-lg font-bold tracking-widest uppercase">Follow Us On</h4>
                 <div class="flex justify-center gap-4">
-                    <a href="https://www.instagram.com/assalam.peduli" target="_blank"
-                        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 hover:scale-110 transition"><i
-                            class="fab fa-instagram text-xl"></i></a>
-                    <a href="https://www.youtube.com/@assalam_ofc" target="_blank"
-                        class="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 hover:scale-110 transition"><i
-                            class="fab fa-youtube text-xl"></i></a>
-                    <a href="https://www.tiktok.com/@assalam.peduli" target="_blank"
-                        class="w-12 h-12 flex items-center justify-center rounded-full bg-black border border-gray-700 hover:scale-110 transition"><i
-                            class="fab fa-tiktok text-xl"></i></a>
-                    <a href="https://www.facebook.com/share/18oiquCJny/" target="_blank"
-                        class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-700 hover:scale-110 transition"><i
-                            class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://www.instagram.com/assalam.peduli" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 hover:scale-110 transition"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.youtube.com/@assalam_ofc" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 hover:scale-110 transition"><i class="fab fa-youtube text-xl"></i></a>
+                    <a href="https://www.tiktok.com/@assalam.peduli" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-black border border-gray-700 hover:scale-110 transition"><i class="fab fa-tiktok text-xl"></i></a>
+                    <a href="https://www.facebook.com/share/18oiquCJny/" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-700 hover:scale-110 transition"><i class="fab fa-facebook-f text-xl"></i></a>
                 </div>
             </div>
 
@@ -228,118 +169,213 @@
         </div>
     </footer>
 
+    <div id="donationModal" class="fixed inset-0 z-[100] hidden overflow-y-auto">
+        <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onclick="closeDonationModal()"></div>
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="relative bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform transition-all">
+                <div class="bg-emerald-600 p-6 text-white text-center">
+                    <h3 class="text-xl font-bold">Salurkan Kebaikan Anda</h3>
+                    <p class="text-emerald-100 text-sm">Pilih metode donasi yang paling nyaman bagi Anda</p>
+                </div>
+
+                <div id="methodList" class="p-6 space-y-4">
+                    <div onclick="showBankDetail()" class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i class="fas fa-university text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Transfer Bank BRI</p>
+                            <p class="text-xs text-gray-500 mt-1">Salin Nomor Rekening</p>
+                        </div>
+                    </div>
+
+                    <div onclick="showQRISDetail()" class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i class="fas fa-qrcode text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Scan QRIS (E-Wallet)</p>
+                            <p class="text-xs text-gray-500 mt-1">Dukungan Semua Dompet Digital</p>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6288802333543?text=Assalamualaikum%20Admin%20Assalam%20Peduli,%20saya%20ingin%20konfirmasi%20donasi" target="_blank" class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i class="fab fa-whatsapp text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Konfirmasi Via WA</p>
+                            <p class="text-xs text-gray-500 mt-1">Hubungi admin untuk bantuan</p>
+                        </div>
+                        <i class="fas fa-external-link-alt ml-auto text-gray-300 text-xs group-hover:text-emerald-500"></i>
+                    </a>
+                </div>
+
+                <div id="detailDonasi" class="hidden p-6 animate-fade-in">
+                    <button onclick="backToMethods()" class="text-emerald-600 font-bold text-sm mb-4 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Kembali pilih metode</button>
+                    <div id="detailContent"></div>
+                </div>
+
+                <div class="p-4 bg-gray-50 text-center">
+                    <button onclick="closeDonationModal()" class="text-gray-500 font-medium text-sm hover:text-emerald-600 transition">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
+        <div class="relative max-w-full max-h-full">
+            <button onclick="closeImagePreview()" class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300"><i class="fas fa-times"></i></button>
+            <img id="fullImage" src="" alt="QRIS Full" class="max-w-full max-h-[85vh] rounded-xl shadow-2xl border-4 border-white/20">
+            <p class="text-white text-center mt-4 font-medium tracking-wide">Silakan Scan atau Screenshot QRIS ini</p>
+        </div>
+    </div>
+
     <script>
+        // --- LOGIKA AMBIL BERITA & PAGINATION DINAMIS ---
+        const SHEET_ID = "16eSEAcfdk2i3o1-_jnFpXcFPdJYN_pdwr8Xi6e1z1gQ";
+        const URL_SHEET = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+
+        let semuaBerita = []; 
+        let halamanSekarang = 1;
+        const beritaPerHalaman = 10; 
+
         function fetchAllNews() {
             const container = document.getElementById('all-news-container');
-            const sheetID = "16eSEAcfdk2i3o1-_jnFpXcFPdJYN_pdwr8Xi6e1z1gQ"; // ID Sheets Anda
-            const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
 
-            fetch(url)
+            fetch(URL_SHEET)
                 .then(res => res.text())
                 .then(txt => {
                     const jsonText = txt.match(/\{.*\}/)[0];
                     const data = JSON.parse(jsonText);
                     const rows = data.table.rows;
-
-                    container.innerHTML = '';
-                    const dataTerbalik = [...rows].reverse();
-
-                    dataTerbalik.forEach((row, index) => {
-                        const c = row.c;
-
-                        // Pastikan urutan: A=0(Tgl), B=1(Judul), C=2(Kat), D=3(Ringkasan), E=4(Isi), F=5(Gambar)
-                        const tgl = c[0] ? (c[0].f || c[0].v) : '';
-                        const judul = c[1] ? c[1].v : '';
-                        const kat = c[2] ? c[2].v : '';
-                        const ringkasan = c[3] ? c[3].v : ''; // Ambil kolom D untuk Ringkasan
-                        const gambar = c[5] ? c[5].v : 'image/default.jpg';
-
-                        if (judul && judul !== "Judul") {
-                            container.innerHTML += `
-            <div class="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-row lg:flex-col border border-gray-100 h-32 lg:h-auto hover:shadow-md transition">
-                <div class="relative w-28 flex-shrink-0 lg:w-full lg:h-52">
-                    <img src="${gambar}" class="w-full h-full object-cover">
-                </div>
-                <div class="p-3 lg:p-6 flex flex-col justify-between flex-grow text-left">
-                    <div>
-                        <h3 class="text-sm lg:text-xl font-bold text-gray-800 line-clamp-2">${judul}</h3>
-                        <p class="hidden lg:block text-gray-600 text-sm mt-2 line-clamp-2 italic">
-                            ${ringkasan}
-                        </p>
-                    </div>
-                    <a href="detail-berita.html?id=${encodeURIComponent(judul)}" class="text-emerald-600 font-bold text-[10px] lg:text-sm mt-2">
-                        Baca Selengkapnya
-                    </a>
-                </div>
-            </div>`;
-                        }
+                    
+                    // Filter baris kosong atau tajuk tabel
+                    semuaBerita = rows.filter(row => {
+                        const judul = row.c[1] ? row.c[1].v : '';
+                        return judul && judul !== "Judul";
                     });
+
+                    // Susun dari berita paling baru (Terbalik)
+                    semuaBerita.reverse();
+
+                    // Render halaman pertama
+                    tampilkanHalaman(halamanSekarang);
                 })
                 .catch(err => {
                     console.error(err);
-                    container.innerHTML = '<p class="text-center py-10 text-red-500 font-bold">Aya gangguan jaringan/izin! Pastikan link bener & akses geus Anyone.</p>';
+                    container.innerHTML = '<p class="col-span-3 text-center py-10 text-red-500 font-bold">Terjadi gangguan jaringan atau masalah izin akses Google Sheets!</p>';
                 });
         }
 
-        document.addEventListener('DOMContentLoaded', fetchAllNews);
-    </script>
+        function tampilkanHalaman(page) {
+            const container = document.getElementById('all-news-container');
+            container.innerHTML = '';
 
-    <!-- Script Utama -->
-    <script>
-        // 1. Logika untuk Baca Selengkapnya (yang sudah ada)
-        function toggleAbout() {
-            // ... kode yang sudah kita buat sebelumnya ...
+            const indeksAwal = (page - 1) * beritaPerHalaman;
+            const indeksAkhir = indeksAwal + beritaPerHalaman;
+            const dataHalamanIni = semuaBerita.slice(indeksAwal, indeksAkhir);
+
+            if (dataHalamanIni.length === 0) {
+                container.innerHTML = '<p class="col-span-3 text-center text-gray-500 py-10">Belum ada berita yang diterbitkan.</p>';
+                return;
+            }
+
+            dataHalamanIni.forEach(row => {
+                const c = row.c;
+                const tgl = c[0] ? (c[0].f || c[0].v) : '';
+                const judul = c[1] ? c[1].v : '';
+                const kat = c[2] ? c[2].v : 'Umum';
+                const ringkasan = c[3] ? c[3].v : '';
+                const gambar = c[5] ? c[5].v : 'https://via.placeholder.com/400x250?text=No+Image';
+
+                container.innerHTML += `
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col border border-gray-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 text-left">
+                    <div class="relative h-52 w-full">
+                        <img src="${gambar}" class="w-full h-full object-cover" loading="lazy">
+                        <span class="absolute top-4 left-4 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">${kat}</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <span class="text-emerald-500 text-[10px] font-bold mb-2 block font-mono">${tgl}</span>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${judul}</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 text-justify leading-relaxed">${ringkasan}</p>
+                        </div>
+                        <a href="detail-berita.html?id=${encodeURIComponent(judul)}" class="text-emerald-600 font-bold text-sm flex items-center hover:underline mt-auto">
+                            Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>`;
+            });
+
+            buatTombolNavigasi();
         }
 
-        // 2. Logika untuk Kontrol Modal Donasi (Buka/Tutup)
+        function buatTombolNavigasi() {
+            const controlsContainer = document.getElementById('pagination-container');
+            controlsContainer.innerHTML = '';
+
+            const totalHalaman = Math.ceil(semuaBerita.length / beritaPerHalaman);
+            if (totalHalaman <= 1) return; 
+
+            const navDiv = document.createElement('div');
+            navDiv.className = 'flex justify-center items-center gap-4 mt-12';
+            navDiv.innerHTML = `
+                <button onclick="pindahHalaman(${halamanSekarang - 1})" ${halamanSekarang === 1 ? 'disabled' : ''} 
+                    class="px-5 py-2 border-2 border-emerald-600 text-emerald-600 rounded-full font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-emerald-600 hover:text-white transition shadow-sm flex items-center">
+                    <i class="fas fa-arrow-left mr-2 text-xs"></i> Sebelumnya
+                </button>
+                <span class="text-gray-600 font-medium text-sm">Halaman <b>${halamanSekarang}</b> dari ${totalHalaman}</span>
+                <button onclick="pindahHalaman(${halamanSekarang + 1})" ${halamanSekarang === totalHalaman ? 'disabled' : ''} 
+                    class="px-5 py-2 border-2 border-emerald-600 text-emerald-600 rounded-full font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-emerald-600 hover:text-white transition shadow-sm flex items-center">
+                    Selanjutnya <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </button>
+            `;
+            controlsContainer.appendChild(navDiv);
+        }
+
+        function pindahHalaman(pageBaru) {
+            const totalHalaman = Math.ceil(semuaBerita.length / beritaPerHalaman);
+            if (pageBaru < 1 || pageBaru > totalHalaman) return;
+
+            halamanSekarang = pageBaru;
+            tampilkanHalaman(halamanSekarang);
+
+            // Scroll otomatis kembali ke area atas grid berita
+            document.getElementById('news-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchAllNews);
+
+        // --- LOGIKA MODAL DONASI ---
         function openDonationModal() {
-            const modal = document.getElementById('donationModal');
-            modal.classList.remove('hidden');
+            document.getElementById('donationModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
 
         function closeDonationModal() {
-            const modal = document.getElementById('donationModal');
-            modal.classList.add('hidden');
+            document.getElementById('donationModal').classList.add('hidden');
             document.body.style.overflow = 'auto';
-            backToMethods(); // Reset ke menu utama saat modal ditutup
+            backToMethods();
         }
 
-        // 3. Logika untuk Pilihan 1 & 2 (Transfer Bank & QRIS)
         function showBankDetail() {
             document.getElementById('methodList').classList.add('hidden');
             const detail = document.getElementById('detailDonasi');
             const content = document.getElementById('detailContent');
-
             detail.classList.remove('hidden');
             content.innerHTML = `
-        <div class="space-y-4">
-            <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center relative overflow-hidden">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" 
-                     alt="BRI" class="h-10 mx-auto mb-4">
-                
-                <p id="nomorRekening" class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
-                <p class="text-sm text-gray-600 font-medium italic uppercase mt-1">a.n Alen Purnama</p>
-            </div>
-            
-            <button onclick="copyOnly()" 
-               class="flex items-center justify-center gap-2 w-full bg-[#00529C] text-white rounded-xl p-3 hover:bg-blue-800 transition shadow-md group">
-                <i class="fas fa-copy text-lg group-active:scale-90 transition"></i>
-                <span class="font-bold text-base">Salin Nomor Rekening</span>
-            </button>
-
-            <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden animate-bounce">
-                <i class="fas fa-check-circle mr-1"></i> Berhasil Disalin!
-            </p>
-            
-            <p class="text-[10px] text-gray-400 text-center uppercase tracking-widest font-bold">
-                Assalam Peduli - Transparansi & Amanah
-            </p>
-        </div>
-    `;
+                <div class="space-y-4">
+                    <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center relative overflow-hidden">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" alt="BRI" class="h-10 mx-auto mb-4">
+                        <p id="nomorRekening" class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
+                        <p class="text-sm text-gray-600 font-medium italic uppercase mt-1">a.n Alen Purnama</p>
+                    </div>
+                    <button onclick="copyOnly()" class="flex items-center justify-center gap-2 w-full bg-[#00529C] text-white rounded-xl p-3 hover:bg-blue-800 transition shadow-md group">
+                        <i class="fas fa-copy text-lg group-active:scale-90 transition"></i>
+                        <span class="font-bold text-base">Salin Nomor Rekening</span>
+                    </button>
+                    <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden animate-bounce">
+                        <i class="fas fa-check-circle mr-1"></i> Berhasil Disalin!
+                    </p>
+                </div>`;
         }
 
-        // Fungsi baru khusus untuk salin saja tanpa membuka aplikasi
         function copyOnly() {
             const rek = "501128905504";
             navigator.clipboard.writeText(rek).then(() => {
@@ -350,20 +386,19 @@
                 }
             });
         }
+
         function showQRISDetail() {
             document.getElementById('methodList').classList.add('hidden');
             const detail = document.getElementById('detailDonasi');
             const content = document.getElementById('detailContent');
             detail.classList.remove('hidden');
             content.innerHTML = `
-        <div class="text-center">
-            <p class="text-sm text-gray-600 mb-4 font-medium italic">Klik gambar untuk memperbesar</p>
-            <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block shadow-lg cursor-zoom-in hover:scale-105 transition-transform" 
-                 onclick="openImagePreview('qris-assalam.jpeg')">
-                <img src="qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
-            </div>
-        </div>
-    `;
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 mb-4 font-medium italic">Klik gambar untuk memperbesar</p>
+                    <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block shadow-lg cursor-zoom-in hover:scale-105 transition-transform" onclick="openImagePreview('qris-assalam.jpeg')">
+                        <img src="qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
+                    </div>
+                </div>`;
         }
 
         function backToMethods() {
@@ -371,165 +406,55 @@
             document.getElementById('methodList').classList.remove('hidden');
         }
 
-        // Fungsi untuk membuka gambar secara penuh
         function openImagePreview(src) {
             const modal = document.getElementById('imagePreviewModal');
             const fullImg = document.getElementById('fullImage');
             fullImg.src = src;
             modal.classList.remove('hidden');
-            // Mencegah scroll pada background
             document.body.style.overflow = 'hidden';
         }
 
-        // Fungsi untuk menutup tampilan penuh
         function closeImagePreview() {
             const modal = document.getElementById('imagePreviewModal');
             modal.classList.add('hidden');
-            // Mengembalikan scroll jika modal donasi juga tertutup
             if (document.getElementById('donationModal').classList.contains('hidden')) {
                 document.body.style.overflow = 'auto';
             }
         }
 
-        // --- LOGIKA MENU MOBILE (BURGER) ---
+        // --- MOBILE MENU BURGER KONTROL ---
         document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const menuIcon = document.getElementById('menu-icon');
 
-            // Fungsi untuk menutup menu
             function closeMenu() {
                 mobileMenu.classList.add('hidden');
                 menuIcon.classList.remove('fa-times');
                 menuIcon.classList.add('fa-bars');
             }
 
-            // Fungsi untuk membuka menu
             function openMenu() {
                 mobileMenu.classList.remove('hidden');
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
             }
 
-            // Toggle menu saat tombol burger diklik
             mobileMenuButton.addEventListener('click', function (e) {
-                e.stopPropagation(); // Mencegah event 'click' merambat ke window
-                const isHidden = mobileMenu.classList.contains('hidden');
-                if (isHidden) {
-                    openMenu();
-                } else {
-                    closeMenu();
-                }
-            });
-
-            // TUTUP MENU JIKA KLIK DI LUAR MENU
-            window.addEventListener('click', function (e) {
-                // Jika menu sedang terbuka DAN yang diklik bukan bagian dari mobileMenu atau tombol burger
-                if (!mobileMenu.classList.contains('hidden')) {
-                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                        closeMenu();
-                    }
-                }
-            });
-
-            // Mencegah menu tertutup jika area di dalam menu itu sendiri diklik
-            mobileMenu.addEventListener('click', function (e) {
                 e.stopPropagation();
+                if (mobileMenu.classList.contains('hidden')) { openMenu(); } else { closeMenu(); }
             });
 
-            // Menutup menu jika layar di-resize ke ukuran laptop (lg: 1024px)
-            window.addEventListener('resize', function () {
-                if (window.innerWidth >= 1024) {
-                    closeMenu();
+            window.addEventListener('click', function (e) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) { closeMenu(); }
                 }
             });
+
+            mobileMenu.addEventListener('click', e => e.stopPropagation());
+            window.addEventListener('resize', () => { if (window.innerWidth >= 1024) closeMenu(); });
         });
     </script>
-
-    <!-- Donation Modal -->
-    <div id="donationModal" class="fixed inset-0 z-[100] hidden overflow-y-auto">
-        <!-- Overlay Gelap -->
-        <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onclick="closeDonationModal()"></div>
-
-        <!-- Konten Modal -->
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div
-                class="relative bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform transition-all">
-                <!-- Header Modal -->
-                <div class="bg-emerald-600 p-6 text-white text-center">
-                    <h3 class="text-xl font-bold">Salurkan Kebaikan Anda</h3>
-                    <p class="text-emerald-100 text-sm">Pilih metode donasi yang paling nyaman bagi Anda</p>
-                </div>
-
-                <!-- List Metode Pembayaran -->
-                <div id="methodList" class="p-6 space-y-4">
-                    <!-- Opsi 1: Transfer Bank -->
-                    <div onclick="showBankDetail()"
-                        class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
-                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
-                                class="fas fa-university text-xl"></i></div>
-                        <div class="ml-4 text-left">
-                            <p class="font-bold text-gray-800 leading-none">Transfer Bank BRI</p>
-                            <p class="text-xs text-gray-500 mt-1">Salin Nomor Rekening</p>
-                        </div>
-                    </div>
-
-                    <!-- Opsi 2: QRIS (E-Wallet) -->
-                    <div onclick="showQRISDetail()"
-                        class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
-                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
-                                class="fas fa-qrcode text-xl"></i></div>
-                        <div class="ml-4 text-left">
-                            <p class="font-bold text-gray-800 leading-none">Scan QRIS (E-Wallet)</p>
-                            <p class="text-xs text-gray-500 mt-1">Dukungan Semua Dompet Digital</p>
-                        </div>
-                    </div>
-
-                    <!-- Opsi 3: Konfirmasi Via WA (YANG TADI HILANG) -->
-                    <a href="https://wa.me/6288802333543?text=Assalamualaikum%20Admin%20Assalam%20Peduli,%20saya%20ingin%20konfirmasi%20donasi"
-                        target="_blank"
-                        class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
-                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                        </div>
-                        <div class="ml-4 text-left">
-                            <p class="font-bold text-gray-800 leading-none">Konfirmasi Via WA</p>
-                            <p class="text-xs text-gray-500 mt-1">Hubungi admin untuk bantuan</p>
-                        </div>
-                        <i
-                            class="fas fa-external-link-alt ml-auto text-gray-300 text-xs group-hover:text-emerald-500"></i>
-                    </a>
-                </div>
-
-                <!-- Area Detail (Awalnya Tersembunyi) -->
-                <div id="detailDonasi" class="hidden p-6 animate-fade-in">
-                    <button onclick="backToMethods()" class="text-emerald-600 font-bold text-sm mb-4 flex items-center">
-                        <i class="fas fa-arrow-left mr-2"></i> Kembali pilih metode
-                    </button>
-                    <div id="detailContent"></div>
-                </div>
-
-                <!-- Footer Modal -->
-                <div class="p-4 bg-gray-50 text-center">
-                    <button onclick="closeDonationModal()"
-                        class="text-gray-500 font-medium text-sm hover:text-emerald-600 transition">Tutup</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
-        <div class="relative max-w-full max-h-full">
-            <button onclick="closeImagePreview()"
-                class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300">
-                <i class="fas fa-times"></i>
-            </button>
-            <img id="fullImage" src="" alt="QRIS Full"
-                class="max-w-full max-h-[85vh] rounded-xl shadow-2xl border-4 border-white/20">
-            <p class="text-white text-center mt-4 font-medium tracking-wide">Silakan Scan atau Screenshot QRIS ini</p>
-        </div>
-    </div>
 </body>
 
 </html>
