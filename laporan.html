@@ -12,7 +12,6 @@
 
 <body class="bg-gray-50 font-sans">
 
-    <!-- Navigation (Sinkron dengan Index, Profil, Program) -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -136,7 +135,6 @@
         }
     </style>
 
-    <!-- Header Laporan -->
     <header
         class="relative bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-900 py-24 text-white overflow-hidden">
         <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
@@ -156,17 +154,14 @@
         </div>
     </header>
 
-    <!-- Bagian Konten Utama Laporan -->
     <main class="max-w-7xl mx-auto px-4 py-12">
 
-        <!-- BAGIAN 1: DONASI TUNAI -->
         <div class="mb-20">
             <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
                 <i class="fas fa-money-bill-wave text-emerald-600 mr-4"></i>
                 1. Donasi Tunai
             </h2>
 
-            <!-- Ringkasan Saldo Kas Tunai -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                 <div class="bg-white p-8 rounded-3xl shadow-sm border-l-8 border-emerald-500">
                     <p class="text-gray-500 text-xs uppercase font-bold tracking-widest">Saldo Kas Umum</p>
@@ -179,8 +174,7 @@
                 </div>
             </div>
 
-            <!-- Tabel Kas Umum -->
-            <div class="max-w-7xl mx-auto px-4 py-10">
+            <div class="max-w-7xl mx-auto px-4 py-5">
                 <div class="bg-white rounded-3xl shadow-sm border overflow-hidden">
                     <div class="bg-gray-50 px-6 py-4 border-b flex justify-between items-center">
                         <h3 class="font-bold text-gray-700">Detail Kas Umum</h3>
@@ -190,10 +184,10 @@
                         </span>
                     </div>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
+                        <table class="w-full text-left border-collapse font-mono">
                             <thead>
                                 <tr class="bg-gray-100 text-gray-600 text-xs uppercase">
-                                    <th class="p-4 border-b text-center">Tanggal</th>
+                                    <th class="p-4 border-b text-center" style="min-width: 140px;">Tanggal</th>
                                     <th class="p-4 border-b text-center">Keterangan</th>
                                     <th class="p-4 border-b text-center">Jenis Kas</th>
                                     <th class="p-4 border-b text-center text-emerald-600">Masuk</th>
@@ -210,44 +204,56 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-
-            <!-- BAGIAN 2: DONASI NON-TUNAI (Barang/Makanan) -->
-            <div class="mb-20">
-                <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
-                    <i class="fas fa-box-open text-orange-500 mr-4"></i>
-                    2. Donasi Non-Tunai
-                </h2>
-
-                <div class="bg-white rounded-3xl shadow-sm border overflow-hidden">
-                    <div class="bg-orange-50 px-6 py-4 border-b border-orange-100">
-                        <h3 class="font-bold text-orange-800">Catatan Donasi Barang & Logistik</h3>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
-                            <thead class="bg-gray-50 border-b">
-                                <tr>
-                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Tanggal
-                                    </th>
-                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Nama
-                                        Donatur</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Jenis
-                                        Bantuan</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">
-                                        Jumlah/Satuan</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Status
-                                        Penyaluran
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabel-non-tunai" class="divide-y">
-
-                            </tbody>
-                        </table>
+                    <div class="bg-white px-6 py-4 border-t flex items-center justify-between flex-wrap gap-4" id="paginasi-tunai-container">
+                        <div class="text-sm text-gray-600" id="info-halaman-tunai">
+                            Menampilkan data...
+                        </div>
+                        <div class="inline-flex gap-2" id="tombol-paginasi-tunai">
+                            </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+                <i class="fas fa-box-open text-orange-500 mr-4"></i>
+                2. Donasi Non-Tunai
+            </h2>
+
+            <div class="bg-white rounded-3xl shadow-sm border overflow-hidden">
+                <div class="bg-orange-50 px-6 py-4 border-b border-orange-100">
+                    <h3 class="font-bold text-orange-800">Catatan Donasi Barang & Logistik</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse font-mono">
+                        <thead class="bg-gray-50 border-b">
+                            <tr>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center" style="min-width: 140px;">Tanggal</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Nama Donatur</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Jenis Bantuan</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Jumlah/Satuan</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Status Penyaluran</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabel-non-tunai" class="divide-y">
+                            <tr>
+                                <td colspan="5" class="px-6 py-10 text-center text-gray-400 italic">
+                                    Memuat data logistik...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-white px-6 py-4 border-t flex items-center justify-between flex-wrap gap-4" id="paginasi-nontunai-container">
+                    <div class="text-sm text-gray-600" id="info-halaman-nontunai">
+                        Menampilkan data...
+                    </div>
+                    <div class="inline-flex gap-2" id="tombol-paginasi-nontunai">
+                        </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <div id="donationModal" class="fixed inset-0 z-[100] hidden">
@@ -260,8 +266,7 @@
                     <i class="fas fa-times"></i>
                 </button>
                 <h3 class="text-xl font-bold">Donasi Sekarang</h3>
-                <p class="text-emerald-100 text-xs mt-1 uppercase tracking-widest font-medium">Bantu Sesama, Raih
-                    Keberkahan</p>
+                <p class="text-emerald-100 text-xs mt-1 uppercase tracking-widest font-medium">Bantu Sesama, Raih Keberkahan</p>
             </div>
 
             <div id="methodList" class="p-6 space-y-3">
@@ -315,7 +320,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
             <div class="mb-10">
@@ -361,126 +365,250 @@
         const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
         const URL_NON_TUNAI = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=725526817`;
 
-        async function muatLaporan() {
-            const tabel = document.getElementById('tabel-data') || document.querySelector('tbody');
-            const tabelNonTunai = document.getElementById('tabel-non-tunai');
-            const cardUmum = document.getElementById('total-umum');
-            const cardBeasiswa = document.getElementById('total-beasiswa');
-            const status = document.getElementById('status');
+        const BARIS_PER_HALAMAN = 10;
+        let dataTunaiMentah = [];
+        let dataNonTunaiMentah = [];
+        let halamanTunaiSekarang = 1;
+        let halamanNonTunaiSekarang = 1;
 
+        const clean = (val) => val ? val.replace(/^"|"$/g, '').trim() : "";
+        const toAngka = (val) => {
+            if (!val) return 0;
+            const bersih = val.replace(/[^0-9]/g, '');
+            return parseInt(bersih) || 0;
+        };
+        const formatRupiah = (val) => {
+            if (val === undefined || val === null || val === "" || val === 0 || val === "0") return "-";
+            let angka = typeof val === 'string' ? toAngka(val) : val;
+            if (angka === 0) return "-";
+            return "Rp " + angka.toLocaleString('id-ID');
+        };
+
+        async function muatLaporan() {
+            const statusKoneksi = document.getElementById('status-koneksi');
             try {
                 const [resTunai, resNonTunai] = await Promise.all([
                     fetch(CSV_URL),
                     fetch(URL_NON_TUNAI)
                 ]);
 
-                const text = await resTunai.text();
+                const textTunai = await resTunai.text();
                 const textNonTunai = await resNonTunai.text();
 
-                const rows = text.split(/\r?\n/).filter(row => row.trim() !== "");
-                const rowsNT = textNonTunai.split(/\r?\n/).filter(row => row.trim() !== "");
+                const barisTunai = textTunai.split(/\r?\n/).filter(row => row.trim() !== "");
+                const barisNonTunai = textNonTunai.split(/\r?\n/).filter(row => row.trim() !== "");
 
-                let html = "";
-                let htmlNT = "";
                 let akumulasiUmum = 0;
                 let akumulasiBeasiswa = 0;
 
-                const clean = (val) => val ? val.replace(/^"|"$/g, '').trim() : "";
-
-                const toAngka = (val) => {
-                    if (!val) return 0;
-                    const bersih = val.replace(/[^0-9]/g, '');
-                    return parseInt(bersih) || 0;
-                };
-
-                const formatRupiah = (val) => {
-                    if (val === undefined || val === null || val === "" || val === 0 || val === "0") return "-";
-                    let angka = typeof val === 'string' ? toAngka(val) : val;
-                    if (angka === 0) return "-";
-                    return "Rp " + angka.toLocaleString('id-ID');
-                };
-
-                // --- PROSES TAB TUNAI (Dibuat Tengah / Center) ---
-                for (let i = 1; i < rows.length; i++) {
-                    const cols = rows[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                // 1. Ambil Data Tunai & Hitung Akumulasi Saldo Total Matematika dari Atas ke Bawah
+                dataTunaiMentah = [];
+                for (let i = 1; i < barisTunai.length; i++) {
+                    const cols = barisTunai[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
                     if (cols.length < 2) continue;
 
-                    const tgl = clean(cols[0]);
-                    const ket = clean(cols[1]);
-                    const jns = clean(cols[2]);
                     const msk = toAngka(cols[3]);
                     const klr = toAngka(cols[4]);
-                    const sld = clean(cols[5]);
+                    const jns = clean(cols[2]);
 
-                    const isBeasiswa = jns.toUpperCase().includes("BEASISWA");
-
-                    if (isBeasiswa) {
+                    if (jns.toUpperCase().includes("BEASISWA")) {
                         akumulasiBeasiswa += (msk - klr);
-                        warnaBadge = "bg-blue-100 text-blue-700 border-blue-200";
                     } else {
                         akumulasiUmum += (msk - klr);
-                        warnaBadge = "bg-emerald-100 text-emerald-700 border-emerald-200";
                     }
 
-                    html += `
-                <tr class="border-b hover:bg-gray-50/50 transition">
-                    <td class="p-4 text-sm text-gray-500 text-center font-mono">${tgl}</td>
-                    <td class="p-4 text-sm font-bold text-gray-800 text-center">${ket}</td>
-                    <td class="p-4 text-center">
-                        <span class="text-[10px] ${warnaBadge} px-2 py-1 rounded-md font-bold uppercase border">${jns || 'UMUM'}</span>
-                    </td>
-                    <td class="p-4 text-sm text-emerald-600 font-bold text-center">${formatRupiah(msk)}</td>
-                    <td class="p-4 text-sm text-red-500 font-bold text-center">${formatRupiah(klr)}</td>
-                    <td class="p-4 text-sm font-black text-gray-900 text-center font-mono">${formatRupiah(sld)}</td>
-                </tr>`;
+                    // Push object data mentah apa adanya
+                    dataTunaiMentah.push({
+                        tgl: clean(cols[0]),
+                        ket: clean(cols[1]),
+                        jns: jns,
+                        msk: msk,
+                        klr: klr,
+                        sld: clean(cols[5])
+                    });
                 }
 
-                // --- PROSES TAB NON-TUNAI (Dibuat Tengah & Satuan Sesuai Sheet) ---
-                for (let i = 1; i < rowsNT.length; i++) {
-                    const colsNT = rowsNT[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                // KUNCI UTAMA: Balik urutan isi array data supaya baris terbawah Google Sheets berada di index teratas array
+                dataTunaiMentah.reverse();
+
+                if (document.getElementById('total-umum')) document.getElementById('total-umum').innerText = formatRupiah(akumulasiUmum);
+                if (document.getElementById('total-beasiswa')) document.getElementById('total-beasiswa').innerText = formatRupiah(akumulasiBeasiswa);
+
+                // 2. Ambil Data Non-Tunai
+                dataNonTunaiMentah = [];
+                for (let i = 1; i < barisNonTunai.length; i++) {
+                    const colsNT = barisNonTunai[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
                     if (colsNT.length < 4) continue;
 
-                    const tglNT = clean(colsNT[0]);
-                    const donatur = clean(colsNT[1]);
-                    const bantuan = clean(colsNT[2]);
-                    const jumlahNT = clean(colsNT[3]);
-                    const statusNT = clean(colsNT[4]);
-                    const kategoriNT = clean(colsNT[5]);
-
-                    // BAGIAN INI DIUBAH: 
-                    // Kita tidak lagi menjumlahkan akumulasiUmum/Beasiswa di sini 
-                    // agar saldo kas tetap murni dari tabel Donasi Tunai saja.
-
-                    const statusColor = statusNT.toUpperCase().includes("TERSALURKAN")
-                        ? "bg-emerald-100 text-emerald-700"
-                        : "bg-blue-100 text-blue-700";
-
-                    htmlNT += `
-                    <tr class="hover:bg-gray-50 transition border-b">
-                        <td class="px-6 py-4 text-sm text-gray-600 text-center font-mono">${tglNT}</td>
-                        <td class="px-6 py-4 text-sm font-medium text-center text-gray-800">${donatur}</td>
-                        <td class="px-6 py-4 text-sm text-center text-gray-600">${bantuan}</td>
-                        <td class="px-6 py-4 text-sm text-center font-bold text-gray-900">${jumlahNT}</td>
-                        <td class="px-6 py-4 text-sm text-center">
-                            <span class="inline-block px-3 py-1 ${statusColor} rounded-full text-[10px] font-bold uppercase">
-                                ${statusNT}
-                            </span>
-                        </td>
-                    </tr>`;
+                    dataNonTunaiMentah.push({
+                        tglNT: clean(colsNT[0]),
+                        donatur: clean(colsNT[1]),
+                        bantuan: clean(colsNT[2]),
+                        jumlahNT: clean(colsNT[3]),
+                        statusNT: clean(colsNT[4])
+                    });
                 }
 
-                if (tabel) tabel.innerHTML = html;
-                if (tabelNonTunai) tabelNonTunai.innerHTML = htmlNT;
+                // KUNCI UTAMA: Balik urutan isi array non-tunai
+                dataNonTunaiMentah.reverse();
 
-                if (cardUmum) cardUmum.innerText = formatRupiah(akumulasiUmum);
-                if (cardBeasiswa) cardBeasiswa.innerText = formatRupiah(akumulasiBeasiswa);
+                // Tampilkan halaman pertama untuk kedua kategori tabel
+                tampilkanHalamanTunai(1);
+                tampilkanHalamanNonTunai(1);
 
-                if (status) status.innerHTML = "● Terhubung ✅";
+                if (statusKoneksi) {
+                    statusKoneksi.className = "text-xs font-medium px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200";
+                    statusKoneksi.innerHTML = "● Terhubung ✅";
+                }
             } catch (e) {
                 console.error(e);
-                if (status) status.innerHTML = "● Gagal Koneksi ❌";
+                if (statusKoneksi) {
+                    statusKoneksi.className = "text-xs font-medium px-3 py-1 rounded-full bg-red-100 text-red-700 border border-red-200";
+                    statusKoneksi.innerHTML = "● Gagal Koneksi ❌";
+                }
             }
         }
+
+        function tampilkanHalamanTunai(halaman) {
+            halamanTunaiSekarang = halaman;
+            const tbody = document.getElementById('laporan-body');
+            if (!tbody) return;
+
+            if (dataTunaiMentah.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-gray-400 italic">Tidak ada data tunai.</td></tr>`;
+                return;
+            }
+
+            // Slice 10 data berdasarkan parameter halaman aktif
+            const indeksMulai = (halaman - 1) * BARIS_PER_HALAMAN;
+            const indeksSelesai = Math.min(indeksMulai + BARIS_PER_HALAMAN, dataTunaiMentah.length);
+            const dataHalamanIni = dataTunaiMentah.slice(indeksMulai, indeksSelesai);
+
+            let html = "";
+            dataHalamanIni.forEach(item => {
+                const isBeasiswa = item.jns.toUpperCase().includes("BEASISWA");
+                const warnaBadge = isBeasiswa ? "bg-blue-100 text-blue-700 border-blue-200" : "bg-emerald-100 text-emerald-700 border-emerald-200";
+
+                // Menghapus font-mono individu karena sekarang diwarisi langsung dari elemen induk <table>
+                // Menambahkan kelas font-bold pada teks isi tabel agar terlihat tegas & rapi
+                html += `
+                <tr class="border-b hover:bg-gray-50/50 transition">
+                    <td class="p-4 text-sm text-gray-500 text-center">${item.tgl}</td>
+                    <td class="p-4 text-sm font-bold text-gray-800 text-center">${item.ket}</td>
+                    <td class="p-4 text-center">
+                        <span class="text-[10px] ${warnaBadge} px-2 py-1 rounded-md font-bold uppercase border">${item.jns || 'UMUM'}</span>
+                    </td>
+                    <td class="p-4 text-sm text-emerald-600 font-bold text-center">${formatRupiah(item.msk)}</td>
+                    <td class="p-4 text-sm text-red-500 font-bold text-center">${formatRupiah(item.klr)}</td>
+                    <td class="p-4 text-sm font-black text-gray-900 text-center">${formatRupiah(item.sld)}</td>
+                </tr>`;
+            });
+
+            tbody.innerHTML = html;
+            buatNavigasiPaginasi('tunai', dataTunaiMentah.length, halaman, tampilkanHalamanTunai);
+        }
+
+        function tampilkanHalamanNonTunai(halaman) {
+            halamanNonTunaiSekarang = halaman;
+            const tbody = document.getElementById('tabel-non-tunai');
+            if (!tbody) return;
+
+            if (dataNonTunaiMentah.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-10 text-center text-gray-400 italic">Tidak ada data non-tunai.</td></tr>`;
+                return;
+            }
+
+            // Slice 10 data berdasarkan parameter halaman aktif
+            const indeksMulai = (halaman - 1) * BARIS_PER_HALAMAN;
+            const indeksSelesai = Math.min(indeksMulai + BARIS_PER_HALAMAN, dataNonTunaiMentah.length);
+            const dataHalamanIni = dataNonTunaiMentah.slice(indeksMulai, indeksSelesai);
+
+            let html = "";
+            dataHalamanIni.forEach(item => {
+                const statusColor = item.statusNT.toUpperCase().includes("TERSALURKAN") ? "bg-emerald-100 text-emerald-700" : "bg-blue-100 text-blue-700";
+
+                // Menghapus kelas font-mono individu karena diwarisi langsung dari elemen induk <table>
+                html += `
+                <tr class="hover:bg-gray-50 transition border-b">
+                    <td class="px-6 py-4 text-sm text-gray-600 text-center">${item.tglNT}</td>
+                    <td class="px-6 py-4 text-sm font-medium text-center text-gray-800">${item.donatur}</td>
+                    <td class="px-6 py-4 text-sm text-center text-gray-600">${item.bantuan}</td>
+                    <td class="px-6 py-4 text-sm text-center font-bold text-gray-900">${item.jumlahNT}</td>
+                    <td class="px-6 py-4 text-sm text-center">
+                        <span class="inline-block px-3 py-1 ${statusColor} rounded-full text-[10px] font-bold uppercase">
+                            ${item.statusNT}
+                        </span>
+                    </td>
+                </tr>`;
+            });
+
+            tbody.innerHTML = html;
+            buatNavigasiPaginasi('nontunai', dataNonTunaiMentah.length, halaman, tampilkanHalamanNonTunai);
+        }
+
+        function buatNavigasiPaginasi(tipe, totalData, halamanSekarang, fungsiPanggilBalik) {
+            const kontainerTombol = document.getElementById(`tombol-paginasi-${tipe}`);
+            const kontainerInfo = document.getElementById(`info-halaman-${tipe}`);
+            if (!kontainerTombol || !kontainerInfo) return;
+
+            const totalHalaman = Math.ceil(totalData / BARIS_PER_HALAMAN);
+            const batasBawah = (halamanSekarang - 1) * BARIS_PER_HALAMAN + 1;
+            const batasAtas = Math.min(halamanSekarang * BARIS_PER_HALAMAN, totalData);
+
+            let labelTambahan = halamanSekarang === 1 
+                ? " <span class='text-emerald-600 font-bold'>(Data Terbaru)</span>" 
+                : " <span class='text-gray-500 font-medium'>(Kelanjutan Data)</span>";
+
+            kontainerInfo.innerHTML = totalData > 0 
+                ? `Menampilkan baris ke <b>${batasBawah}-${batasAtas}</b> dari <b>${totalData}</b> log ${labelTambahan}` 
+                : `Tidak ada data`;
+
+            let komponenNavigasi = "";
+
+            // Tombol Previous
+            komponenNavigasi += `
+                <button onclick="${halamanSekarang > 1 ? `${fungsiPanggilBalik.name}(${halamanSekarang - 1})` : ''}" 
+                    class="px-3 py-1.5 rounded-lg border text-sm font-medium transition ${halamanSekarang === 1 ? 'text-gray-300 bg-gray-50 cursor-not-allowed' : 'text-gray-700 bg-white hover:bg-gray-50'}" ${halamanSekarang === 1 ? 'disabled' : ''}>
+                    <i class="fas fa-chevron-left text-xs"></i>
+                </button>
+            `;
+
+            let startPage = Math.max(1, halamanSekarang - 2);
+            let endPage = Math.min(totalHalaman, startPage + 4);
+            if (endPage - startPage < 4) {
+                startPage = Math.max(1, endPage - 4);
+            }
+
+            if (startPage > 1) {
+                komponenNavigasi += `<button onclick="${fungsiPanggilBalik.name}(1)" class="px-3 py-1.5 rounded-lg border text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">1</button>`;
+                if (startPage > 2) komponenNavigasi += `<span class="px-2 text-gray-400 text-sm align-bottom">...</span>`;
+            }
+
+            for (let hal = startPage; hal <= endPage; hal++) {
+                komponenNavigasi += `
+                    <button onclick="${fungsiPanggilBalik.name}(${hal})" 
+                        class="px-3 py-1.5 rounded-lg border text-sm font-bold transition ${hal === halamanSekarang ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' : 'bg-white text-gray-700 hover:bg-gray-50'}">
+                        ${hal}
+                    </button>
+                `;
+            }
+
+            if (endPage < totalHalaman) {
+                if (endPage < totalHalaman - 1) komponenNavigasi += `<span class="px-2 text-gray-400 text-sm align-bottom">...</span>`;
+                komponenNavigasi += `<button onclick="${fungsiPanggilBalik.name}(totalHalaman)" class="px-3 py-1.5 rounded-lg border text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">${totalHalaman}</button>`;
+            }
+
+            // Tombol Next
+            komponenNavigasi += `
+                <button onclick="${halamanSekarang < totalHalaman ? `${fungsiPanggilBalik.name}(${halamanSekarang + 1})` : ''}" 
+                    class="px-3 py-1.5 rounded-lg border text-sm font-medium transition ${halamanSekarang === totalHalaman ? 'text-gray-300 bg-gray-50 cursor-not-allowed' : 'text-gray-700 bg-white hover:bg-gray-50'}" ${halamanSekarang === totalHalaman ? 'disabled' : ''}>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+            `;
+
+            kontainerTombol.innerHTML = totalHalaman > 1 ? komponenNavigasi : "";
+        }
+
         document.addEventListener('DOMContentLoaded', muatLaporan);
 
         function openDonationModal() {
@@ -491,7 +619,6 @@
             }
         }
 
-        // Fungsi untuk menutup jendela modal
         function closeDonationModal() {
             const modal = document.getElementById('donationModal');
             if (modal) {
@@ -501,7 +628,6 @@
             }
         }
 
-        // Fungsi kembali ke daftar pilihan bank
         function backToMethods() {
             document.getElementById('detailDonasi').classList.add('hidden');
             document.getElementById('methodList').classList.remove('hidden');
@@ -514,33 +640,24 @@
 
             detail.classList.remove('hidden');
             content.innerHTML = `
-        <div class="space-y-4">
-            <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center relative overflow-hidden">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" 
-                     alt="BRI" class="h-10 mx-auto mb-4">
-                
-                <p id="nomorRekening" class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
-                <p class="text-sm text-gray-600 font-medium italic uppercase mt-1">a.n Alen Purnama</p>
-            </div>
-            
-            <button onclick="copyOnly()" 
-               class="flex items-center justify-center gap-2 w-full bg-[#00529C] text-white rounded-xl p-3 hover:bg-blue-800 transition shadow-md group">
-                <i class="fas fa-copy text-lg group-active:scale-90 transition"></i>
-                <span class="font-bold text-base">Salin Nomor Rekening</span>
-            </button>
-
-            <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden animate-bounce">
-                <i class="fas fa-check-circle mr-1"></i> Berhasil Disalin!
-            </p>
-            
-            <p class="text-[10px] text-gray-400 text-center uppercase tracking-widest font-bold">
-                Assalam Peduli - Transparansi & Amanah
-            </p>
-        </div>
-    `;
+                <div class="space-y-4">
+                    <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center relative overflow-hidden">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" alt="BRI" class="h-10 mx-auto mb-4">
+                        <p id="nomorRekening" class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
+                        <p class="text-sm text-gray-600 font-medium italic uppercase mt-1">a.n Alen Purnama</p>
+                    </div>
+                    <button onclick="copyOnly()" class="flex items-center justify-center gap-2 w-full bg-[#00529C] text-white rounded-xl p-3 hover:bg-blue-800 transition shadow-md group">
+                        <i class="fas fa-copy text-lg group-active:scale-90 transition"></i>
+                        <span class="font-bold text-base">Salin Nomor Rekening</span>
+                    </button>
+                    <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden animate-bounce">
+                        <i class="fas fa-check-circle mr-1"></i> Berhasil Disalin!
+                    </p>
+                    <p class="text-[10px] text-gray-400 text-center uppercase tracking-widest font-bold">Assalam Peduli - Transparansi & Amanah</p>
+                </div>
+            `;
         }
 
-        // Fungsi baru khusus untuk salin saja tanpa membuka aplikasi
         function copyOnly() {
             const rek = "501128905504";
             navigator.clipboard.writeText(rek).then(() => {
@@ -574,85 +691,61 @@
             }
         }
 
-        function closeImagePreview() {
-            const modal = document.getElementById('imagePreviewModal');
-            if (modal) {
-                modal.classList.add('hidden');
-                // Hanya aktifkan scroll jika modal donasi utama juga tertutup
-                if (document.getElementById('donationModal').classList.contains('hidden')) {
-                    document.body.style.overflow = 'auto';
-                }
-            }
-        }
-
-        // --- LOGIKA MENU MOBILE (BURGER) ---
         document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const menuIcon = document.getElementById('menu-icon');
 
-            // Fungsi untuk menutup menu
             function closeMenu() {
                 mobileMenu.classList.add('hidden');
                 menuIcon.classList.remove('fa-times');
                 menuIcon.classList.add('fa-bars');
             }
 
-            // Fungsi untuk membuka menu
             function openMenu() {
                 mobileMenu.classList.remove('hidden');
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
             }
 
-            // Toggle menu saat tombol burger diklik
             mobileMenuButton.addEventListener('click', function (e) {
-                e.stopPropagation(); // Mencegah event 'click' merambat ke window
-                const isHidden = mobileMenu.classList.contains('hidden');
-                if (isHidden) {
-                    openMenu();
-                } else {
-                    closeMenu();
-                }
-            });
-
-            // TUTUP MENU JIKA KLIK DI LUAR MENU
-            window.addEventListener('click', function (e) {
-                // Jika menu sedang terbuka DAN yang diklik bukan bagian dari mobileMenu atau tombol burger
-                if (!mobileMenu.classList.contains('hidden')) {
-                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                        closeMenu();
-                    }
-                }
-            });
-
-            // Mencegah menu tertutup jika area di dalam menu itu sendiri diklik
-            mobileMenu.addEventListener('click', function (e) {
                 e.stopPropagation();
+                if (mobileMenu.classList.contains('hidden')) { openMenu(); } else { closeMenu(); }
             });
 
-            // Menutup menu jika layar di-resize ke ukuran laptop (lg: 1024px)
-            window.addEventListener('resize', function () {
-                if (window.innerWidth >= 1024) {
-                    closeMenu();
+            window.addEventListener('click', function (e) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) { closeMenu(); }
                 }
             });
+
+            mobileMenu.addEventListener('click', function (e) { e.stopPropagation(); });
+            window.addEventListener('resize', function () { if (window.innerWidth >= 1024) closeMenu(); });
         });
+
+        function closeImagePreview() {
+            const modal = document.getElementById('imagePreviewModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                if (document.getElementById('donationModal').classList.contains('hidden')) {
+                    document.body.style.overflow = 'auto';
+                } else {
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        }
     </script>
 
     <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
         <div class="relative max-w-full max-h-full">
-            <button onclick="closeImagePreview()"
-                class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300">
+            <button onclick="closeImagePreview()" class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300">
                 <i class="fas fa-times"></i>
             </button>
-            <img id="fullImage" src="" alt="QRIS Full"
-                class="max-w-full max-h-[85vh] rounded-xl shadow-2xl border-4 border-white/20">
+            <img id="fullImage" src="" alt="QRIS Full" class="max-w-full max-h-[85vh] rounded-xl shadow-2xl border-4 border-white/20">
             <p class="text-white text-center mt-4 font-medium tracking-wide">Silakan Scan atau Screenshot QRIS ini</p>
         </div>
     </div>
 
 </body>
-
 </html>
