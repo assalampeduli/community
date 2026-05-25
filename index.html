@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BerbagiKebaikan | Platform Donasi</title>
-    <link rel="icon" type="image/png" href="logo-kita.png">
+    <link class="sub_page" rel="icon" type="image/png" href="logo-kita.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -19,7 +19,6 @@
 
 <body class="bg-gray-50 font-sans">
 
-    <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -73,6 +72,10 @@
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
                         <a href="laporan.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
+                        <a href="ruangbaca.html"
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium flex items-center gap-1">
+                            <i class="fas fa-book-reader text-sm"></i> Ruang Baca
+                        </a>
                         <a href="daftar-anggota.html" target="_blank"
                             class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar
                             Anggota</a>
@@ -112,6 +115,9 @@
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
                 <a href="laporan.html"
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
+                <a href="ruang-baca.html"
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i
+                        class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
 
                 <div class="pt-4 grid grid-cols-1 gap-3 px-4">
                     <a href="daftar-anggota.html" target="_blank"
@@ -143,7 +149,6 @@
         }
     </style>
 
-    <!-- Hero Section -->
     <header class="hero-gradient h-[500px] flex items-center justify-center text-center text-white px-4">
         <div class="max-w-3xl">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Bahagiakan Diri, Dengan Berbagi.</h1>
@@ -162,7 +167,6 @@
         </div>
     </header>
 
-    <!-- Impact Stats -->
     <section class="max-w-7xl mx-auto px-4 -mt-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-emerald-500">
@@ -212,7 +216,36 @@
         </div>
     </section>
 
-    <!-- Campaign Section dengan Progress Bar -->
+    <section id="ruang-baca-section" class="py-16 bg-gray-50 border-t border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2 flex items-center">
+                        <span class="bg-emerald-100 text-emerald-600 p-2 rounded-lg mr-4 italic"><i
+                                class="fas fa-book"></i></span>
+                        Ruang Baca Assalam
+                    </h2>
+                    <p class="text-gray-600 max-w-xl">Meningkatkan literasi generasi bangsa. Yuk, intip beberapa koleksi
+                        buku bermanfaat yang tersedia di perpustakaan kami!</p>
+                </div>
+                <a href="ruangbaca.html"
+                    class="mt-4 md:mt-0 text-emerald-600 font-bold hover:text-emerald-700 transition flex items-center gap-2 group">
+                    Lihat Semua Koleksi Buku <i
+                        class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="home-book-container">
+                <div class="col-span-full text-center py-12">
+                    <div
+                        class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-emerald-500 border-t-transparent">
+                    </div>
+                    <p class="mt-2 text-sm text-gray-400">Memuat koleksi buku terbaru...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="campaign-section" class="max-w-7xl mx-auto px-4 py-16">
         <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
             <span class="bg-emerald-100 text-emerald-600 p-2 rounded-lg mr-4 italic">#</span>
@@ -246,8 +279,6 @@
     </section>
 
 
-    <!-----------------------------------------------
-    --------------- FOOTER-------------------------->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
             <div class="mb-10">
@@ -357,9 +388,6 @@
         </div>
     </div>
 
-    <!------------------------------------------------------
-    -------------------- DONASI ----------------------------
-    -------------------------------------------------------->
     <script>
         // --- LOGIKA MODAL DONASI ---
         function openDonationModal() {
@@ -423,20 +451,18 @@
             document.getElementById('imagePreviewModal').classList.add('hidden');
         }
 
-        // --- LOGIKA AMBIL BERITA (OPTIMAL) ---
+        // --- LOGIKA AMBEL BERITA ---
         const SHEET_ID = "16eSEAcfdk2i3o1-_jnFpXcFPdJYN_pdwr8Xi6e1z1gQ";
         const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
 
         function fetchLatestNews() {
             const container = document.getElementById('news-container');
 
-            // 1. Cek Cache dulu supaya instan
             const cached = localStorage.getItem('news_cache');
             if (cached) {
                 renderNews(JSON.parse(cached));
             }
 
-            // 2. Ambil data terbaru dari Google Sheets
             fetch(SHEET_URL)
                 .then(res => res.text())
                 .then(txt => {
@@ -457,7 +483,6 @@
             const container = document.getElementById('news-container');
             container.innerHTML = '';
 
-            // Ambil 3 data paling bawah (terbaru)
             const latestData = [...rows].reverse().slice(0, 3);
 
             latestData.forEach(row => {
@@ -488,7 +513,6 @@
             });
         }
 
-        // Jalankan saat halaman siap
         document.addEventListener('DOMContentLoaded', fetchLatestNews);
 
         // --- LOGIKA MENU MOBILE (BURGER) ---
@@ -497,23 +521,20 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const menuIcon = document.getElementById('menu-icon');
 
-            // Fungsi untuk menutup menu
             function closeMenu() {
                 mobileMenu.classList.add('hidden');
                 menuIcon.classList.remove('fa-times');
                 menuIcon.classList.add('fa-bars');
             }
 
-            // Fungsi untuk membuka menu
             function openMenu() {
                 mobileMenu.classList.remove('hidden');
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
             }
 
-            // Toggle menu saat tombol burger diklik
             mobileMenuButton.addEventListener('click', function (e) {
-                e.stopPropagation(); // Mencegah event 'click' merambat ke window
+                e.stopPropagation();
                 const isHidden = mobileMenu.classList.contains('hidden');
                 if (isHidden) {
                     openMenu();
@@ -522,9 +543,7 @@
                 }
             });
 
-            // TUTUP MENU JIKA KLIK DI LUAR MENU
             window.addEventListener('click', function (e) {
-                // Jika menu sedang terbuka DAN yang diklik bukan bagian dari mobileMenu atau tombol burger
                 if (!mobileMenu.classList.contains('hidden')) {
                     if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
                         closeMenu();
@@ -532,12 +551,10 @@
                 }
             });
 
-            // Mencegah menu tertutup jika area di dalam menu itu sendiri diklik
             mobileMenu.addEventListener('click', function (e) {
                 e.stopPropagation();
             });
 
-            // Menutup menu jika layar di-resize ke ukuran laptop (lg: 1024px)
             window.addEventListener('resize', function () {
                 if (window.innerWidth >= 1024) {
                     closeMenu();
@@ -545,6 +562,121 @@
             });
         });
 
+        // =========================================================
+        // SINKRONISASI 4 BUKU TERBARU DI BERANDA (JSON METHOD)
+        // =========================================================
+        const SHEET_ID_BUKU = "1-RZSrxOkm1tnL22rbZRERUmDCLmzhg8jyrWPc1htBJA";
+        const URL_SHEET_BUKU = `https://docs.google.com/spreadsheets/d/${SHEET_ID_BUKU}/gviz/tq?tqx=out:json`;
+
+        function fetchHomeBooks() {
+            const container = document.getElementById('home-book-container');
+            if (!container) return;
+
+            fetch(URL_SHEET_BUKU)
+                .then(res => res.text())
+                .then(txt => {
+                    const jsonText = txt.match(/\{.*\}/)[0];
+                    const data = JSON.parse(jsonText);
+                    const cols = data.table.cols;
+                    const rows = data.table.rows;
+
+                    // Pencarian Indeks Kolom Otomatis berdasarkan Header Sheet
+                    let idxJudul = 1, idxKategori = 2, idxPenulis = 3, idxCover = 5;
+                    cols.forEach((col, index) => {
+                        if (col.label) {
+                            const label = col.label.toLowerCase().trim();
+                            if (label.includes('judul')) idxJudul = index;
+                            if (label.includes('kategori')) idxKategori = index;
+                            if (label.includes('penulis') || label.includes('pengarang')) idxPenulis = index;
+                            if (label.includes('gambar') || label.includes('cover') || label.includes('sampul')) idxCover = index;
+                        }
+                    });
+
+                    // Filter dan mapping data
+                    let daftarBuku = rows.filter(row => {
+                        if (!row.c || !row.c[idxJudul]) return false;
+                        const judul = row.c[idxJudul].v ? String(row.c[idxJudul].v).trim() : '';
+                        return judul && judul !== "Judul" && judul !== "Judul Buku";
+                    }).map(row => {
+                        const cells = row.c;
+                        let rawCoverUrl = cells[idxCover] && cells[idxCover].v ? String(cells[idxCover].v).trim() : '';
+                        let finalCoverUrl = 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=400'; // Default
+
+                        if (rawCoverUrl) {
+                            if (rawCoverUrl.includes('drive.google.com')) {
+                                let fileId = '';
+                                if (rawCoverUrl.includes('/file/d/')) {
+                                    fileId = rawCoverUrl.split('/file/d/')[1].split('/')[0].split('?')[0];
+                                } else if (rawCoverUrl.includes('id=')) {
+                                    fileId = rawCoverUrl.split('id=')[1].split('&')[0];
+                                }
+                                if (fileId) finalCoverUrl = `https://docs.google.com/uc?export=view&id=${fileId}`;
+                            } else if (rawCoverUrl.includes('googleusercontent.com')) {
+                                finalCoverUrl = rawCoverUrl.replace('http://', 'https://').split('=')[0] + '=s400';
+                            } else {
+                                finalCoverUrl = rawCoverUrl;
+                            }
+                        }
+
+                        return {
+                            judul: cells[idxJudul] && cells[idxJudul].v ? cells[idxJudul].v : 'Tanpa Judul',
+                            kategori: cells[idxKategori] && cells[idxKategori].v ? cells[idxKategori].v : 'Umum',
+                            penulis: cells[idxPenulis] && cells[idxPenulis].v ? cells[idxPenulis].v : 'Anonim',
+                            cover: finalCoverUrl
+                        };
+                    });
+
+                    // Balik urutan (data paling bawah di sheet jadi paling atas), lalu ambil 4 data teratas
+                    daftarBuku.reverse();
+                    const empatBukuTerbaru = daftarBuku.slice(0, 4);
+
+                    container.innerHTML = "";
+                    if (empatBukuTerbaru.length === 0) {
+                        container.innerHTML = `<p class="col-span-full text-center text-gray-400 py-6">Belum ada koleksi buku terbaru.</p>`;
+                        return;
+                    }
+
+                    // Render kartu buku ke grid beranda tanpa menampilkan info Rak
+                    empatBukuTerbaru.forEach(buku => {
+                        let katBadgeColor = 'bg-emerald-600';
+                        const katLow = buku.kategori.toLowerCase();
+                        if (katLow === 'islami') katBadgeColor = 'bg-blue-600';
+                        else if (katLow === 'cerita') katBadgeColor = 'bg-orange-600';
+                        else if (katLow === 'motivasi') katBadgeColor = 'bg-purple-600';
+                        else if (katLow === 'edukasi') katBadgeColor = 'bg-emerald-600';
+
+                        const cardHTML = `
+                            <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col group border border-gray-100">
+                                <div class="bg-gray-100 rounded-xl overflow-hidden mb-4 relative aspect-[3/4]">
+                                    <img src="${buku.cover}" alt="${buku.judul}"
+                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                        loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=400'">
+                                    <span class="absolute bottom-2 left-2 ${katBadgeColor} text-white text-[9px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wide">${buku.kategori}</span>
+                                </div>
+                                <div class="flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-gray-800 text-sm md:text-base line-clamp-2 leading-snug mb-1">${buku.judul}</h3>
+                                        <p class="text-xs text-gray-400 font-medium mb-2">Oleh: ${buku.penulis}</p>
+                                    </div>
+                                    <div class="border-t border-gray-100 pt-2 flex justify-between items-center text-[11px]">
+                                        <span class="text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">Tersedia</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        container.insertAdjacentHTML('beforeend', cardHTML);
+                    });
+                })
+                .catch(err => {
+                    console.error(err);
+                    container.innerHTML = `<p class="col-span-full text-center text-red-500 py-6 font-medium">Gagal sinkronisasi buku terbaru.</p>`;
+                });
+        }
+
+        // Jalankan fungsi otomatis saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function () {
+            fetchHomeBooks();
+        });
     </script>
 </body>
 

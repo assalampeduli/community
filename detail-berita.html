@@ -36,7 +36,7 @@
 
 <body class="bg-gray-50 font-sans text-gray-900">
 
-    <!-- Navigation -->
+    /* Navigation */
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -90,6 +90,10 @@
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
                         <a href="laporan.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
+                        <a href="ruangbaca.html"
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium flex items-center gap-1">
+                            <i class="fas fa-book-reader text-sm"></i> Ruang Baca
+                        </a>
                         <a href="daftar-anggota.html" target="_blank"
                             class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar
                             Anggota</a>
@@ -129,6 +133,9 @@
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
                 <a href="laporan.html"
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
+                <a href="ruang-baca.html"
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i
+                        class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
 
                 <div class="pt-4 grid grid-cols-1 gap-3 px-4">
                     <a href="daftar-anggota.html" target="_blank"
@@ -310,7 +317,7 @@
             function closeImagePreview() {
                 document.getElementById('imagePreviewModal').classList.add('hidden');
             }
-            
+
             function loadDetail() {
                 const urlParams = new URLSearchParams(window.location.search);
                 const judulTarget = urlParams.get('id');

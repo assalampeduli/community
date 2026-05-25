@@ -23,7 +23,6 @@
 
 <body class="bg-gray-50 font-sans">
 
-    <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -77,6 +76,10 @@
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
                         <a href="laporan.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
+                        <a href="ruangbaca.html"
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium flex items-center gap-1">
+                            <i class="fas fa-book-reader text-sm"></i> Ruang Baca
+                        </a>
                         <a href="daftar-anggota.html" target="_blank"
                             class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar
                             Anggota</a>
@@ -116,7 +119,9 @@
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
                 <a href="laporan.html"
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
-
+                <a href="ruang-baca.html"
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i
+                        class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
                 <div class="pt-4 grid grid-cols-1 gap-3 px-4">
                     <a href="daftar-anggota.html" target="_blank"
                         class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar
@@ -147,7 +152,6 @@
         }
     </style>
 
-    <!-- Header Program -->
     <header
         class="relative bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-900 py-24 text-white overflow-hidden">
         <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
@@ -158,7 +162,7 @@
 
         <div class="relative max-w-7xl mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-tighter drop-shadow-lg">
-                Program Unggulan
+                Program Utama
             </h1>
             <div class="w-24 h-1 bg-yellow-400 mx-auto mb-6 rounded-full"></div>
             <p class="text-emerald-50 text-lg md:text-base opacity-90 italic max-w-2xl mx-auto leading-relaxed">
@@ -173,7 +177,6 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-4 py-12">
-        <!-- Filter Kategori -->
         <div class="flex flex-wrap justify-center gap-3 mb-12">
             <button onclick="filterProgram('all', this)"
                 class="filter-btn active-filter px-6 py-2 rounded-full text-sm font-semibold shadow-sm border transition">Semua
@@ -186,10 +189,8 @@
                 class="filter-btn bg-white text-gray-600 hover:border-emerald-500 px-6 py-2 rounded-full text-sm font-semibold shadow-sm border transition">Lingkungan</button>
         </div>
 
-        <!-- Grid Program -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- 1. BEASISWA BRILLIANT -->
             <div
                 class="program-card category-pendidikan bg-white rounded-3xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl">
                 <div class="relative overflow-hidden h-56">
@@ -214,7 +215,6 @@
                 </div>
             </div>
 
-            <!-- 2. PELITA -->
             <div
                 class="program-card category-sosial bg-white rounded-3xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl">
                 <div class="relative overflow-hidden h-56">
@@ -226,8 +226,12 @@
                 </div>
                 <div class="p-8">
                     <h3 class="font-bold text-xl text-gray-800 mb-3 uppercase">PELITA</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6 text-justify">(Program Empati Lansia dan Dhuafa
-                        Rentan) Inisiatif sosial yang berfokus pada pemberian perhatian, empati, dan bantuan nyata
+                    <p
+                        class="text-gray-500 text-sm leading-relaxed mb-6 text-justify italic font-medium tracking-tight">
+                        "Program Empati Lansia dan Dhuafa
+                        Rentan"</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 text-justify">Inisiatif sosial yang berfokus
+                        pada pemberian perhatian, empati, dan bantuan nyata
                         kepada lansia serta dhuafa dalam kondisi rentan. Melalui program ini, diharapkan tercipta
                         kepedulian bersama untuk menghadirkan dukungan yang bermakna, meningkatkan kesejahteraan, serta
                         menumbuhkan harapan bagi mereka yang membutuhkan.</p>
@@ -236,7 +240,6 @@
                 </div>
             </div>
 
-            <!-- 3. PAGARBATIS -->
             <div
                 class="program-card category-sosial bg-white rounded-3xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl">
                 <div class="relative overflow-hidden h-56">
@@ -248,8 +251,11 @@
                 </div>
                 <div class="p-8">
                     <h3 class="font-bold text-xl text-gray-800 mb-3 uppercase">PAGARBATIS</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6 text-justify">(Pasar Pakaian Gratis Bekas dan
-                        Istimewa) Program penyediaan pakaian layak pakai secara gratis bagi masyarakat pra-sejahtera.
+                    <p
+                        class="text-gray-500 text-sm leading-relaxed mb-6 text-justify italic font-medium tracking-tight">
+                        "Pasar Pakaian Gratis Bekas danIstimewa"</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 text-justify">Penyediaan pakaian layak pakai
+                        secara gratis bagi masyarakat pra-sejahtera.
                         Kegiatan ini bertujuan membantu masyarakat memenuhi kebutuhan sandang menjelang Hari Raya Idul
                         Fitri serta menghadirkan rasa layak dan bermartabat bagi para penerima manfaat.</p>
                     <button onclick="openDonationModal()" class="text-emerald-600 font-bold hover:underline">Donasi
@@ -257,7 +263,6 @@
                 </div>
             </div>
 
-            <!-- 4. SANTUNAN YATIM PIATU -->
             <div
                 class="program-card category-sosial bg-white rounded-3xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl">
                 <div class="relative overflow-hidden h-56">
@@ -268,7 +273,7 @@
                         SOSIAL</div>
                 </div>
                 <div class="p-8">
-                    <h3 class="font-bold text-xl text-gray-800 mb-3 uppercase">SANTUNAN YATIM PIATU</h3>
+                    <h3 class="font-bold text-xl text-gray-800 mb-3 uppercase">SANTUNAN YATIM PIATU DAN DUAFA</h3>
                     <p class="text-gray-500 text-sm leading-relaxed mb-6 text-justify">Program pemberian santunan berupa
                         bantuan paket sembako, uang tunai, kepada anak yatim piatu dan kaum dhuafa sebagai bentuk
                         kepedulian dan dukungan menjelang Hari Raya Idul Fitri.</p>
@@ -277,7 +282,6 @@
                 </div>
             </div>
 
-            <!-- 5. PEDULI LITERASI -->
             <div
                 class="program-card category-pendidikan bg-white rounded-3xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl">
                 <div class="relative overflow-hidden h-56">
@@ -290,7 +294,7 @@
                 <div class="p-8">
                     <h3 class="font-bold text-xl text-gray-800 mb-3 uppercase">PEDULI LITERASI</h3>
                     <p class="text-gray-500 text-sm leading-relaxed mb-6 text-justify">Program edukatif yang ditujukan
-                        bagi anak-anak maupun masyarakat umum dengan fokus pada peningkatan minat baca dan pemahaman
+                        bagi anak-anak maupun masyarakat umum dengan focus pada peningkatan minat baca dan pemahaman
                         literasi dasar. Bentuk kegiatan akan disesuaikan dengan kondisi dan kebutuhan. Seperti pada
                         kegiatan Peduli Lingkungan dan membuat pojok literasi pada kegiatan Pasar Pakaian Gratis,
                         sehingga tidak terbatas pada satu bidang literasi tertentu. Program ini dirancang secara
@@ -301,7 +305,6 @@
                 </div>
             </div>
 
-            <!-- 6. PEPELING -->
             <div
                 class="program-card category-lingkungan bg-white rounded-3xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl">
                 <div class="relative overflow-hidden h-56">
@@ -313,8 +316,12 @@
                 </div>
                 <div class="p-8">
                     <h3 class="font-bold text-xl text-gray-800 mb-3 uppercase">PEPELING</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6 text-justify text-justify">(Penanaman Pepohonan
-                        Keliling) merupakan program peduli lingkungan sebagai bentuk kontribusi nyata dalam menjaga
+                    <p
+                        class="text-gray-500 text-sm leading-relaxed mb-6 text-justify italic font-medium tracking-tight">
+                        "Penanaman Pepohonan
+                        Keliling"</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 text-justify">Merupakan program peduli
+                        lingkungan sebagai bentuk kontribusi nyata dalam menjaga
                         kelestarian alam di wilayah Kec. Sukaraja. Kegiatan ini meliputi edukasi literasi lingkungan
                         untuk meningkatkan kesadaran masyarakat akan pentingnya menjaga alam, serta penanaman pohon di
                         wilayah rawan bencana.
@@ -325,7 +332,6 @@
                 </div>
             </div>
 
-            <!-- 7. TEBAR HEWAN QURBAN -->
             <div
                 class="program-card category-sosial bg-white rounded-3xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl">
                 <div class="relative overflow-hidden h-56">
@@ -348,7 +354,6 @@
                 </div>
             </div>
 
-            <!-- 8. AKSI TANGGAP DARURAT -->
             <div
                 class="program-card category-sosial bg-white rounded-3xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl">
                 <div class="relative overflow-hidden h-56">
@@ -371,10 +376,38 @@
                 </div>
             </div>
 
+            <div
+                class="program-card category-pendidikan bg-white rounded-3xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl">
+                <div class="relative overflow-hidden h-56">
+                    <img src="ruangbaca.jpeg" class="w-full h-full object-cover transition-transform duration-500"
+                        alt="Ruang Baca">
+                    <div
+                        class="absolute top-4 left-4 bg-orange-600 text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                        PENDIDIKAN</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="font-bold text-xl text-gray-800 mb-3 uppercase">Ruang Baca</h3>
+                    <p
+                        class="text-gray-500 text-sm leading-relaxed mb-6 text-justify italic font-medium tracking-tight">
+                        "Ruang Belajar dan Cinta Aksara"</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 text-justify"> Merupakan program literasi dari
+                        Komunitas Assalam Peduli yang menghadirkan wadah
+                        membaca, belajar, dan berbagi pengetahuan untuk masyarakat. Program ini menyediakan layanan
+                        peminjaman buku layaknya perpustakaan mini komunitas, dengan berbagai koleksi bacaan edukatif,
+                        islami, motivasi, hingga buku anak.
+                        <br>Melalui RUANG BACA, kami ingin membangun budaya literasi yang hangat, mudah diakses, dan
+                        bermanfaat bagi semua kalangan. Tidak hanya menjadi tempat meminjam buku, RUANG BACA juga
+                        diharapkan menjadi ruang tumbuh bersama untuk menambah wawasan, menebar inspirasi, dan
+                        memperkuat semangat belajar di lingkungan masyarakat.
+                    </p>
+                    <button onclick="openDonationModal()" class="text-emerald-600 font-bold hover:underline">Donasi
+                        Sekarang <i class="fas fa-arrow-right ml-1"></i></button>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
             <div class="mb-10">
@@ -415,7 +448,6 @@
         </div>
     </footer>
 
-    <!-- Modal & Script (Fungsi Donasi & Filter) -->
     <div id="donationModal" class="fixed inset-0 z-[100] hidden overflow-y-auto">
         <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onclick="closeDonationModal()"></div>
         <div class="flex items-center justify-center min-h-screen p-4">
@@ -625,19 +657,4 @@
 
     </script>
 
-    <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
-        <div class="relative max-w-full max-h-full">
-            <button onclick="closeImagePreview()"
-                class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300">
-                <i class="fas fa-times"></i>
-            </button>
-            <img id="fullImage" src="" alt="QRIS Full"
-                class="max-w-full max-h-[85vh] rounded-xl shadow-2xl border-4 border-white/20">
-            <p class="text-white text-center mt-4 font-medium tracking-wide">Silakan Scan atau Screenshot QRIS ini</p>
-        </div>
-    </div>
-
-</body>
-
-</html>
+    <div id="imagePreviewModal" class="fixed

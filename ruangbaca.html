@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruang Baca | Komunitas Assalam Peduli</title>
+    <link rel="icon" type="image/png" href="logo-kita.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <img src="logo-kita.png" alt="Logo Assalam Peduli" class="h-12 w-auto">
+                        <span
+                            class="text-xl md:text-2xl font-bold text-emerald-600 tracking-tight flex flex-col leading-none">
+                            KOMUNITAS <span class="text-gray-800 text-lg md:text-xl">ASSALAM PEDULI</span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="index.html"
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Beranda</a>
+
+                        <div class="relative group">
+                            <button
+                                class="flex items-center text-gray-600 group-hover:text-emerald-600 px-3 py-2 font-medium focus:outline-none transition">
+                                Profil <i
+                                    class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                            </button>
+                            <div
+                                class="absolute left-0 w-64 mt-0 origin-top-left bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div class="py-2 px-1">
+                                    <a href="profil.html#tentang-kami"
+                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
+                                                class="fas fa-info-circle text-emerald-600 w-4 text-center"></i></div>
+                                        Tentang Kami
+                                    </a>
+                                    <a href="struktur-organisasi.html"
+                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
+                                                class="fas fa-sitemap text-emerald-600 w-4 text-center"></i></div>
+                                        Struktur Organisasi
+                                    </a>
+                                    <a href="berita.html"
+                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
+                                                class="fas fa-newspaper text-emerald-600 w-4 text-center"></i></div>
+                                        Berita & Kegiatan
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="program.html"
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
+                        <a href="laporan.html"
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
+                        <a href="ruang-baca.html"
+                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500 flex items-center gap-1">
+                            <i class="fas fa-book-reader text-sm"></i> Ruang Baca
+                        </a>
+                        <a href="daftar-anggota.html" target="_blank"
+                            class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar
+                            Anggota</a>
+                        <button onclick="openDonationModal()"
+                            class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 shadow-md transition-all ml-2">Donasi</button>
+                    </div>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-600 hover:text-emerald-600 focus:outline-none p-2 rounded-lg bg-gray-50">
+                        <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html"
+                    class="block px-4 py-3 text-base font-medium text-gray-600 hover:bg-gray-50 rounded-xl">Beranda</a>
+
+                <div class="py-2 border-b border-gray-50">
+                    <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Profil Komunitas</p>
+                    <a href="profil.html#tentang-kami"
+                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                            class="fas fa-info-circle mr-3 text-emerald-500"></i>Tentang Kami</a>
+                    <a href="struktur-organisasi.html"
+                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                            class="fas fa-sitemap mr-3 text-emerald-500"></i>Struktur Organisasi</a>
+                    <a href="berita.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                            class="fas fa-newspaper mr-3 text-emerald-500"></i>Berita & Kegiatan</a>
+                </div>
+
+                <a href="program.html"
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
+                <a href="laporan.html"
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
+                <a href="ruang-baca.html" class="block px-4 py-3 text-emerald-600 bg-emerald-50 rounded-xl font-bold"><i
+                        class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
+
+                <div class="pt-4 grid grid-cols-1 gap-3 px-4">
+                    <a href="daftar-anggota.html" target="_blank"
+                        class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar
+                        Anggota</a>
+                    <button onclick="openDonationModal()"
+                        class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md">Donasi
+                        Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        @keyframes fade-in-down {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fade-in-down 0.3s ease-out;
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.4s ease-out;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+
+    <header class="bg-gradient-to-r from-emerald-800 to-emerald-600 text-white py-16 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <span
+                class="bg-emerald-500/30 text-emerald-100 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-emerald-400/20 mb-4 inline-block">
+                <i class="fas fa-book mr-2"></i> Pojok Literasi Assalam
+            </span>
+            <h1 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Jendela Dunia di Ruang Baca Kami</h1>
+            <p class="text-emerald-100 text-sm md:text-base max-w-2xl mx-auto opacity-90">
+                Mari tumbuh bersama lewat setiap halaman bacaan. Temukan, baca, dan pinjam buku favoritmu di RUANG BACA
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+
+        <div
+            class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 mb-10 flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div class="relative w-full md:w-80">
+                <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+                <input type="text" id="search-input" oninput="filterBuku()"
+                    placeholder="Cari judul buku atau penulis..."
+                    class="w-full bg-gray-50 pl-11 pr-4 py-2.5 rounded-xl text-sm border border-transparent focus:bg-white focus:border-emerald-500 focus:outline-none transition">
+            </div>
+            <div class="flex gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+                <button onclick="filterKategori('Semua')"
+                    class="category-btn bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap shadow-sm">Semua
+                    Buku</button>
+                <button onclick="filterKategori('Islami')"
+                    class="category-btn bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-600 px-4 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition">Islami</button>
+                <button onclick="filterKategori('Edukasi')"
+                    class="category-btn bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-600 px-4 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition">Edukasi</button>
+                <button onclick="filterKategori('Cerita')"
+                    class="category-btn bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-600 px-4 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition">Cerita</button>
+                <button onclick="filterKategori('Motivasi')"
+                    class="category-btn bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-600 px-4 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition">Motivasi</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6" id="book-container">
+            <div class="col-span-full text-center py-20">
+                <div
+                    class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-emerald-500 border-t-transparent">
+                </div>
+                <p class="mt-4 text-gray-500 font-medium">Memuat data koleksi buku...</p>
+            </div>
+        </div>
+
+        <div
+            class="mt-16 bg-emerald-50 rounded-[32px] p-8 md:p-12 border border-emerald-100/60 flex flex-col lg:flex-row gap-8 items-center justify-between">
+            <div class="flex flex-col md:flex-row gap-8 items-center flex-grow">
+                <div class="bg-emerald-600 text-white p-6 rounded-2xl text-4xl shadow-md shrink-0">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-emerald-900 mb-2">Informasi Penting Pengunjung</h3>
+                    <p class="text-emerald-800 text-sm leading-relaxed mb-4 max-w-3xl text-justify">
+                        Seluruh buku di RUANG BACA dapat dibaca maupun dipinjam untuk dibawa ke rumah secara gratis.
+                        Setiap
+                        peminjaman memiliki durasi maksimal 7 hari agar buku dapat terus bergantian dibaca oleh
+                        pengunjung
+                        lainnya. Kami mengajak seluruh pembaca untuk menjaga buku dengan baik dan mengembalikannya tepat
+                        waktu sebagai bentuk kepedulian bersama terhadap budaya literasi dan berbagi ilmu.
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-xs font-bold text-emerald-700">
+                        <span><i class="fas fa-clock mr-1.5"></i> Buka: Setiap Hari</span>
+                        <span><i class="fas fa-map-marker-alt mr-1.5"></i> Lokasi: Sekretariat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-auto shrink-0 flex justify-center">
+                <a href="https://wa.me/6288802333543?text=Assalamualaikum%20Admin%2C%20saya%20ingin%20bertanya%20mengenai%20prosedur%20peminjaman%20buku%20di%20Ruang%20Baca."
+                    target="_blank"
+                    class="w-full lg:w-auto bg-emerald-650 bg-emerald-600 text-white px-6 py-4 rounded-2xl font-bold text-sm shadow-md hover:bg-emerald-700 transition flex items-center justify-center gap-3 group border border-emerald-500/20">
+                    <div class="bg-white/20 p-2 rounded-xl group-hover:scale-110 transition-transform">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </div>
+                    <div class="text-left leading-tight">
+                        <span class="block text-[11px] font-medium text-emerald-100 uppercase tracking-wider">Hubungi
+                            Admin</span>
+                        <span class="block text-base">Info Peminjaman</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center gap-2 mt-12" id="pagination-container">
+        </div>
+
+    </main>
+
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
+            <div class="mb-10">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <img src="logo-kita.png" alt="Logo" class="h-10 w-auto">
+                    <span class="text-xl font-bold tracking-tight uppercase">
+                        KOMUNITAS <span class="text-emerald-500">ASSALAM PEDULI</span>
+                    </span>
+                </div>
+                <p class="text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
+                    Sekretariat Komunitas Assalam Peduli <br>
+                    Kp. Cibogo RT. 001 RW. 001 Ds. Janggala Kec. Sukaraja <br>
+                    Kab. Tasikmalaya - Jawa Barat, 46183.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center space-y-4">
+                <h4 class="text-lg font-bold tracking-widest uppercase">Follow Us On</h4>
+                <div class="flex justify-center gap-4">
+                    <a href="https://www.instagram.com/assalam.peduli" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 hover:scale-110 transition"><i
+                            class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.youtube.com/@assalam_ofc" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 hover:scale-110 transition"><i
+                            class="fab fa-youtube text-xl"></i></a>
+                    <a href="https://www.tiktok.com/@assalam.peduli" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-black border border-gray-700 hover:scale-110 transition"><i
+                            class="fab fa-tiktok text-xl"></i></a>
+                    <a href="https://www.facebook.com/share/18oiquCJny/" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-700 hover:scale-110 transition"><i
+                            class="fab fa-facebook-f text-xl"></i></a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 w-full mt-12 pt-8 text-gray-500 text-[10px] uppercase tracking-widest">
+                <p>&copy; 2026 Komunitas Assalam Peduli. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="donationModal" class="fixed inset-0 z-[100] hidden overflow-y-auto">
+        <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onclick="closeDonationModal()"></div>
+
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div
+                class="relative bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform transition-all">
+                <div class="bg-emerald-600 p-6 text-white text-center">
+                    <h3 class="text-xl font-bold">Salurkan Kebaikan Anda</h3>
+                    <p class="text-emerald-100 text-sm">Pilih metode donasi yang paling nyaman bagi Anda</p>
+                </div>
+
+                <div id="methodList" class="p-6 space-y-4">
+                    <div onclick="showBankDetail()"
+                        class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
+                                class="fas fa-university text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Transfer Bank BRI</p>
+                            <p class="text-xs text-gray-500 mt-1">Salin Nomor Rekening</p>
+                        </div>
+                    </div>
+
+                    <div onclick="showQRISDetail()"
+                        class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
+                                class="fas fa-qrcode text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Scan QRIS (E-Wallet)</p>
+                            <p class="text-xs text-gray-500 mt-1">Dukungan Semua Dompet Digital</p>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6288802333543?text=Assalamualaikum%20Admin%20Assalam%20Peduli"
+                        target="_blank"
+                        class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
+                                class="fab fa-whatsapp text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Konfirmasi Via WA</p>
+                            <p class="text-xs text-gray-500 mt-1">Hubungi admin untuk bantuan</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div id="detailDonasi" class="hidden p-6 animate-fade-in">
+                    <button onclick="backToMethods()" class="text-emerald-600 font-bold text-sm mb-4 flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Kembali pilih metode
+                    </button>
+                    <div id="detailContent"></div>
+                </div>
+
+                <div class="p-4 bg-gray-50 text-center">
+                    <button onclick="closeDonationModal()"
+                        class="text-gray-500 font-medium text-sm hover:text-emerald-600 transition">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
+        <div class="relative max-w-full max-h-full">
+            <button onclick="closeImagePreview()" class="absolute -top-12 right-0 text-white text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="fullImage" src="" class="max-w-full max-h-[85vh] rounded-xl border-4 border-white/20">
+        </div>
+    </div>
+
+
+    <script>
+        // ==========================================
+        // KONFIGURASI UTAMA GOOGLE SHEETS (LANGSUNG)
+        // ==========================================
+        const SHEET_ID = "1-RZSrxOkm1tnL22rbZRERUmDCLmzhg8jyrWPc1htBJA";
+        const URL_SHEET = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/pub?output=csv`;
+
+        let kumpulanBuku = [];
+        let bukuTerfilter = []; 
+        let kategoriTerpilih = "Semua";
+        
+        // Konfigurasi Paginasi (10 Buku Berurutan dari Bawah Sheet)
+        const itemPerHalaman = 10;
+        let halamanAktif = 1;
+
+        // 1. Ambil Data Buku Langsung Dari Google Sheet
+        function fetchAllBooks() {
+            const container = document.getElementById('book-container');
+            const SHEET_URL_JSON = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+
+            fetch(SHEET_URL_JSON)
+                .then(res => res.text())
+                .then(txt => {
+                    const jsonText = txt.match(/\{.*\}/)[0];
+                    const data = JSON.parse(jsonText);
+                    const cols = data.table.cols;
+                    const rows = data.table.rows;
+
+                    let idxJudul = 1, idxKategori = 2, idxPenulis = 3, idxRak = 4, idxCover = 5;
+
+                    cols.forEach((col, index) => {
+                        if (col.label) {
+                            const label = col.label.toLowerCase().trim();
+                            if (label.includes('judul')) idxJudul = index;
+                            if (label.includes('kategori')) idxKategori = index;
+                            if (label.includes('penulis') || label.includes('pengarang')) idxPenulis = index;
+                            if (label.includes('rak') || label.includes('ringkasan')) idxRak = index;
+                            if (label.includes('gambar') || label.includes('cover') || label.includes('sampul')) idxCover = index;
+                        }
+                    });
+
+                    kumpulanBuku = rows.filter(row => {
+                        if (!row.c || !row.c[idxJudul]) return false;
+                        const judulBuku = row.c[idxJudul].v ? String(row.c[idxJudul].v).trim() : '';
+                        return judulBuku && judulBuku !== "Judul" && judulBuku !== "Judul Buku";
+                    }).map(row => {
+                        const cells = row.c;
+                        let rawCoverUrl = cells[idxCover] && cells[idxCover].v ? String(cells[idxCover].v).trim() : '';
+                        let finalCoverUrl = 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=400';
+
+                        if (rawCoverUrl) {
+                            if (rawCoverUrl.includes('="') && rawCoverUrl.includes('"')) {
+                                rawCoverUrl = rawCoverUrl.split('="')[1].split('"')[0];
+                            }
+
+                            if (rawCoverUrl.includes('drive.google.com')) {
+                                let fileId = '';
+                                if (rawCoverUrl.includes('/file/d/')) {
+                                    fileId = rawCoverUrl.split('/file/d/')[1].split('/')[0].split('?')[0];
+                                } else if (rawCoverUrl.includes('id=')) {
+                                    fileId = rawCoverUrl.split('id=')[1].split('&')[0];
+                                }
+
+                                if (fileId) {
+                                    finalCoverUrl = `https://docs.google.com/uc?export=view&id=${fileId}`;
+                                }
+                            } else if (rawCoverUrl.includes('googleusercontent.com')) {
+                                let cleanUrl = rawCoverUrl.replace('http://', 'https://').split('=')[0];
+                                finalCoverUrl = cleanUrl + '=s400';
+                            } else {
+                                finalCoverUrl = rawCoverUrl;
+                            }
+                        }
+
+                        return {
+                            tanggal: cells[0] ? (cells[0].f || cells[0].v || '-') : '-',
+                            judul: cells[idxJudul] && cells[idxJudul].v ? cells[idxJudul].v : 'Tanpa Judul',
+                            kategori: cells[idxKategori] && cells[idxKategori].v ? cells[idxKategori].v : 'Umum',
+                            penulis: cells[idxPenulis] && cells[idxPenulis].v ? cells[idxPenulis].v : 'Anonim',
+                            rak: cells[idxRak] && cells[idxRak].v ? cells[idxRak].v : 'Internal',
+                            cover: finalCoverUrl,
+                            status: 'tersedia'
+                        };
+                    });
+
+                    // Urutan di balik (Row paling bawah Google Sheet menjadi buku teratas/terbaru)
+                    kumpulanBuku.reverse();
+                    bukuTerfilter = [...kumpulanBuku];
+                    
+                    halamanAktif = 1;
+                    tampilkanHalaman(halamanAktif);
+                })
+                .catch(err => {
+                    console.error("Detail Error:", err);
+                    container.innerHTML = `
+                        <div class="col-span-full text-center py-12 text-red-500 font-bold">
+                            <i class="fas fa-exclamation-triangle text-3xl mb-2"></i>
+                            <p>Terjadi gangguan sinkronisasi data Google Sheets!</p>
+                        </div>`;
+                });
+        }
+
+        // 2. Fungsi Pembagi Data Per Halaman
+        function tampilkanHalaman(halaman) {
+            halamanAktif = halaman;
+            const indeksAwal = (halaman - 1) * itemPerHalaman;
+            const indeksAkhir = indeksAwal + itemPerHalaman;
+            
+            const bukuHalamanIni = bukuTerfilter.slice(indeksAwal, indeksAkhir);
+            renderBuku(bukuHalamanIni);
+            renderPaginasi();
+        }
+
+        // 3. Tampilkan Kartu Buku ke HTML Grid
+        function renderBuku(daftarBuku) {
+            const container = document.getElementById('book-container');
+            container.innerHTML = "";
+
+            if (daftarBuku.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-400">
+                        <i class="fas fa-book-open text-3xl mb-2"></i>
+                        <p>Buku tidak ditemukan.</p>
+                    </div>`;
+                return;
+            }
+
+            daftarBuku.forEach(buku => {
+                const isTersedia = buku.status === 'tersedia';
+                const statusBadgeClass = isTersedia ? 'text-emerald-600 bg-emerald-50' : 'text-orange-600 bg-orange-50';
+                const statusText = isTersedia ? 'Tersedia' : 'Dipinjam';
+
+                let katBadgeColor = 'bg-emerald-600';
+                const katLow = buku.kategori.toLowerCase();
+                if (katLow === 'islami') katBadgeColor = 'bg-blue-600';
+                else if (katLow === 'cerita') katBadgeColor = 'bg-orange-600';
+                else if (katLow === 'motivasi') katBadgeColor = 'bg-purple-600';
+                else if (katLow === 'edukasi') katBadgeColor = 'bg-emerald-600';
+
+                const kartuHTML = `
+                    <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col group border border-gray-100 animate-fade-in">
+                        <div class="bg-gray-100 rounded-xl overflow-hidden mb-4 relative aspect-[3/4]">
+                            <img src="${buku.cover}" alt="${buku.judul}"
+                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=400'">
+                            <span class="absolute bottom-2 left-2 ${katBadgeColor} text-white text-[9px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wide">${buku.kategori}</span>
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-sm md:text-base line-clamp-2 leading-snug mb-1">${buku.judul}</h3>
+                                <p class="text-xs text-gray-400 font-medium mb-2">Oleh: ${buku.penulis}</p>
+                            </div>
+                            <div class="border-t border-gray-100 pt-2 flex justify-between items-center text-[11px]">
+                                <span class="${statusBadgeClass} font-semibold px-2 py-0.5 rounded-full">${statusText}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', kartuHTML);
+            });
+        }
+
+        // 4. Membuat Navigasi Angka Halaman
+        function renderPaginasi() {
+            const paginationContainer = document.getElementById('pagination-container');
+            paginationContainer.innerHTML = "";
+
+            const totalHalaman = Math.ceil(bukuTerfilter.length / itemPerHalaman);
+            if (totalHalaman <= 1) return;
+
+            if (halamanAktif > 1) {
+                paginationContainer.insertAdjacentHTML('beforeend', `
+                    <button onclick="tampilkanHalaman(${halamanAktif - 1})" class="px-3 py-2 rounded-xl bg-gray-100 text-gray-600 text-xs font-bold hover:bg-emerald-50 hover:text-emerald-600 transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                `);
+            }
+
+            for (let i = 1; i <= totalHalaman; i++) {
+                const tombolAktifClass = (i === halamanAktif) 
+                    ? "bg-emerald-600 text-white shadow-sm font-bold" 
+                    : "bg-gray-100 text-gray-600 font-medium hover:bg-emerald-50 hover:text-emerald-600";
+                
+                paginationContainer.insertAdjacentHTML('beforeend', `
+                    <button onclick="tampilkanHalaman(${i})" class="px-3.5 py-2 text-xs rounded-xl transition ${tombolAktifClass}">
+                        ${i}
+                    </button>
+                `);
+            }
+
+            if (halamanAktif < totalHalaman) {
+                paginationContainer.insertAdjacentHTML('beforeend', `
+                    <button onclick="tampilkanHalaman(${halamanAktif + 1})" class="px-3 py-2 rounded-xl bg-gray-100 text-gray-600 text-xs font-bold hover:bg-emerald-50 hover:text-emerald-600 transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                `);
+            }
+        }
+
+        // 5. Sistem Pencarian & Filter Kategori
+        function filterBuku() {
+            const kataKunci = document.getElementById('search-input').value.toLowerCase();
+
+            bukuTerfilter = kumpulanBuku.filter(buku => {
+                const cocokKategori = (kategoriTerpilih === "Semua" || buku.kategori.toLowerCase() === kategoriTerpilih.toLowerCase());
+                const cocokKataKunci = buku.judul.toLowerCase().includes(kataKunci) || buku.penulis.toLowerCase().includes(kataKunci);
+                return cocokKategori && cocokKataKunci;
+            });
+
+            halamanAktif = 1;
+            tampilkanHalaman(halamanAktif);
+        }
+
+        function filterKategori(kategori) {
+            kategoriTerpilih = kategori;
+            const tombols = document.querySelectorAll('.category-btn');
+            tombols.forEach(btn => {
+                if (btn.innerText.trim() === kategori || (kategori === 'Semua' && btn.innerText.includes('Semua'))) {
+                    btn.className = "category-btn bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap shadow-sm";
+                } else {
+                    btn.className = "category-btn bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-600 px-4 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition";
+                }
+            });
+            filterBuku();
+        }
+
+        // --- LOGIKA MODAL DONASI ---
+        function openDonationModal() {
+            document.getElementById('donationModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDonationModal() {
+            document.getElementById('donationModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            backToMethods();
+        }
+
+        function showBankDetail() {
+            document.getElementById('methodList').classList.add('hidden');
+            document.getElementById('detailDonasi').classList.remove('hidden');
+            document.getElementById('detailContent').innerHTML = `
+            <div class="space-y-4">
+                <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center relative overflow-hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" alt="BRI" class="h-10 mx-auto mb-4">
+                    <p class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
+                    <p class="text-sm text-gray-600 font-medium uppercase mt-1">a.n Alen Purnama</p>
+                </div>
+                <button onclick="copyOnly()" class="w-full bg-[#00529C] text-white rounded-xl p-3 font-bold">Salin Rekening</button>
+                <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden italic">Berhasil Disalin!</p>
+            </div>`;
+        }
+
+        function copyOnly() {
+            navigator.clipboard.writeText("501128905504").then(() => {
+                const status = document.getElementById('copyStatus');
+                status.classList.remove('hidden');
+                setTimeout(() => status.classList.add('hidden'), 2000);
+            });
+        }
+
+        function showQRISDetail() {
+            document.getElementById('methodList').classList.add('hidden');
+            document.getElementById('detailDonasi').classList.remove('hidden');
+            document.getElementById('detailContent').innerHTML = `
+            <div class="text-center">
+                <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block cursor-zoom-in" onclick="openImagePreview('qris-assalam.jpeg')">
+                    <img src="qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
+                </div>
+                <p class="text-xs text-gray-500 mt-2 italic">Klik gambar untuk memperbesar</p>
+            </div>`;
+        }
+
+        function backToMethods() {
+            document.getElementById('detailDonasi').classList.add('hidden');
+            document.getElementById('methodList').classList.remove('hidden');
+        }
+
+        function openImagePreview(src) {
+            const modal = document.getElementById('imagePreviewModal');
+            document.getElementById('fullImage').src = src;
+            modal.classList.remove('hidden');
+        }
+
+        function closeImagePreview() {
+            document.getElementById('imagePreviewModal').classList.add('hidden');
+        }
+
+        // --- LOGIKA MENU MOBILE BURGER ---
+        document.addEventListener('DOMContentLoaded', function () {
+            fetchAllBooks();
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            function closeMenu() {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+
+            function openMenu() {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+
+            mobileMenuButton.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) { openMenu(); } else { closeMenu(); }
+            });
+
+            window.addEventListener('click', function (e) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                        closeMenu();
+                    }
+                }
+            });
+
+            mobileMenu.addEventListener('click', function (e) { e.stopPropagation(); });
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024) { closeMenu(); }
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

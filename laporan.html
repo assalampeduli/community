@@ -65,6 +65,10 @@
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
                         <a href="laporan.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
+                        <a href="ruangbaca.html"
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium flex items-center gap-1">
+                            <i class="fas fa-book-reader text-sm"></i> Ruang Baca
+                        </a>
                         <a href="daftar-anggota.html" target="_blank"
                             class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar
                             Anggota</a>
@@ -104,6 +108,9 @@
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
                 <a href="laporan.html"
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
+                <a href="ruang-baca.html"
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i
+                        class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
 
                 <div class="pt-4 grid grid-cols-1 gap-3 px-4">
                     <a href="daftar-anggota.html" target="_blank"
@@ -175,6 +182,32 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 py-5">
+                <div
+                    class="mb-4 flex flex-wrap gap-3 items-center justify-end bg-white p-4 rounded-2xl shadow-sm border">
+                    <span class="text-sm font-bold text-gray-600"><i
+                            class="fas fa-filter mr-2 text-emerald-600"></i>Filter Data:</span>
+                    <select id="filter-bulan-tunai" onchange="tampilkanHalamanTunai(1)"
+                        class="text-sm p-2 bg-gray-50 border rounded-xl focus:outline-none focus:border-emerald-500 font-medium text-gray-700">
+                        <option value="">Semua Bulan</option>
+                        <option value="01">Januari</option>
+                        <option value="02">Februari</option>
+                        <option value="03">Maret</option>
+                        <option value="04">April</option>
+                        <option value="05">Mei</option>
+                        <option value="06">Juni</option>
+                        <option value="07">Juli</option>
+                        <option value="08">Agustus</option>
+                        <option value="09">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
+                    </select>
+                    <select id="filter-tahun-tunai" onchange="tampilkanHalamanTunai(1)"
+                        class="text-sm p-2 bg-gray-50 border rounded-xl focus:outline-none focus:border-emerald-500 font-medium text-gray-700">
+                        <option value="">Semua Tahun</option>
+                    </select>
+                </div>
+
                 <div class="bg-white rounded-3xl shadow-sm border overflow-hidden">
                     <div class="bg-gray-50 px-6 py-4 border-b flex justify-between items-center">
                         <h3 class="font-bold text-gray-700">Detail Kas Umum</h3>
@@ -204,12 +237,13 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="bg-white px-6 py-4 border-t flex items-center justify-between flex-wrap gap-4" id="paginasi-tunai-container">
+                    <div class="bg-white px-6 py-4 border-t flex items-center justify-between flex-wrap gap-4"
+                        id="paginasi-tunai-container">
                         <div class="text-sm text-gray-600" id="info-halaman-tunai">
                             Menampilkan data...
                         </div>
                         <div class="inline-flex gap-2" id="tombol-paginasi-tunai">
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,6 +255,31 @@
                 2. Donasi Non-Tunai
             </h2>
 
+            <div class="mb-4 flex flex-wrap gap-3 items-center justify-end bg-white p-4 rounded-2xl shadow-sm border">
+                <span class="text-sm font-bold text-gray-600"><i class="fas fa-filter mr-2 text-orange-500"></i>Filter
+                    Data:</span>
+                <select id="filter-bulan-nontunai" onchange="tampilkanHalamanNonTunai(1)"
+                    class="text-sm p-2 bg-gray-50 border rounded-xl focus:outline-none focus:border-orange-500 font-medium text-gray-700">
+                    <option value="">Semua Bulan</option>
+                    <option value="01">Januari</option>
+                    <option value="02">Februari</option>
+                    <option value="03">Maret</option>
+                    <option value="04">April</option>
+                    <option value="05">Mei</option>
+                    <option value="06">Juni</option>
+                    <option value="07">Juli</option>
+                    <option value="08">Agustus</option>
+                    <option value="09">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">Desember</option>
+                </select>
+                <select id="filter-tahun-nontunai" onchange="tampilkanHalamanNonTunai(1)"
+                    class="text-sm p-2 bg-gray-50 border rounded-xl focus:outline-none focus:border-orange-500 font-medium text-gray-700">
+                    <option value="">Semua Tahun</option>
+                </select>
+            </div>
+
             <div class="bg-white rounded-3xl shadow-sm border overflow-hidden">
                 <div class="bg-orange-50 px-6 py-4 border-b border-orange-100">
                     <h3 class="font-bold text-orange-800">Catatan Donasi Barang & Logistik</h3>
@@ -229,11 +288,16 @@
                     <table class="w-full text-left border-collapse font-mono">
                         <thead class="bg-gray-50 border-b">
                             <tr>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center" style="min-width: 140px;">Tanggal</th>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Nama Donatur</th>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Jenis Bantuan</th>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Jumlah/Satuan</th>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Status Penyaluran</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center"
+                                    style="min-width: 140px;">Tanggal</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Nama Donatur
+                                </th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Jenis
+                                    Bantuan</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">
+                                    Jumlah/Satuan</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Status
+                                    Penyaluran</th>
                             </tr>
                         </thead>
                         <tbody id="tabel-non-tunai" class="divide-y">
@@ -245,12 +309,13 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="bg-white px-6 py-4 border-t flex items-center justify-between flex-wrap gap-4" id="paginasi-nontunai-container">
+                <div class="bg-white px-6 py-4 border-t flex items-center justify-between flex-wrap gap-4"
+                    id="paginasi-nontunai-container">
                     <div class="text-sm text-gray-600" id="info-halaman-nontunai">
                         Menampilkan data...
                     </div>
                     <div class="inline-flex gap-2" id="tombol-paginasi-nontunai">
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -266,7 +331,8 @@
                     <i class="fas fa-times"></i>
                 </button>
                 <h3 class="text-xl font-bold">Donasi Sekarang</h3>
-                <p class="text-emerald-100 text-xs mt-1 uppercase tracking-widest font-medium">Bantu Sesama, Raih Keberkahan</p>
+                <p class="text-emerald-100 text-xs mt-1 uppercase tracking-widest font-medium">Bantu Sesama, Raih
+                    Keberkahan</p>
             </div>
 
             <div id="methodList" class="p-6 space-y-3">
@@ -384,6 +450,75 @@
             return "Rp " + angka.toLocaleString('id-ID');
         };
 
+        // Fungsi mengekstrak Bulan dan Tahun dari segala jenis bentuk format string tanggal secara aman
+        function parsingTanggal(strTanggal) {
+            if (!strTanggal) return { bulan: "", tahun: "" };
+
+            const teksMurni = strTanggal.trim();
+
+            // 1. Cek format standar ISO/Database (YYYY-MM-DD atau YYYY/MM/DD)
+            const matchISO = teksMurni.match(/^(\d{4})[\/\-\s](\d{1,2})[\/\-\s](\d{1,2})/);
+            if (matchISO) {
+                return {
+                    bulan: matchISO[2].padStart(2, '0'),
+                    tahun: matchISO[1]
+                };
+            }
+
+            // 2. Cek format lokal (DD-MM-YYYY atau DD/MM/YYYY)
+            const matchLokal = teksMurni.match(/^(\d{1,2})[\/\-\s](\d{1,2})[\/\-\s](\d{4})/);
+            if (matchLokal) {
+                return {
+                    bulan: matchLokal[2].padStart(2, '0'),
+                    tahun: matchLokal[3]
+                };
+            }
+
+            // 3. Fallback jika format menggunakan teks nama bulan (misal: "22 Mei 2026")
+            const daftarBulanTeks = ["jan", "feb", "mar", "apr", "mei", "jun", "jul", "agu", "sep", "okt", "nov", "des"];
+            let stringLower = teksMurni.toLowerCase();
+            let blnDitemukan = "";
+            let thnDitemukan = "";
+
+            // Cari 4 digit angka berturut-turut sebagai tahun
+            const matchTahunSaja = stringLower.match(/\b(\d{4})\b/);
+            if (matchTahunSaja) thnDitemukan = matchTahunSaja[1];
+
+            // Cari nama bulan berdasarkan teks kemiripan kata kunci
+            for (let idx = 0; idx < daftarBulanTeks.length; idx++) {
+                if (stringLower.includes(daftarBulanTeks[idx])) {
+                    blnDitemukan = String(idx + 1).padStart(2, '0');
+                    break;
+                }
+            }
+
+            return { bulan: blnDitemukan, tahun: thnDitemukan };
+        }
+
+        // Memperbarui dropdown tahun secara otomatis & diurutkan dari terkecil ke terbesar
+        function updateOpsiTahun(data, elementId, keyTanggal) {
+            const selectTahun = document.getElementById(elementId);
+            if (!selectTahun) return;
+
+            let tahunSet = new Set();
+            data.forEach(item => {
+                const info = parsingTanggal(item[keyTanggal]);
+                if (info.tahun && info.tahun.length === 4) {
+                    tahunSet.add(info.tahun);
+                }
+            });
+
+            const tahunUrut = Array.from(tahunSet).sort((a, b) => parseInt(a) - parseInt(b));
+
+            const nilaiLama = selectTahun.value;
+            selectTahun.innerHTML = '<option value="">Semua Tahun</option>';
+            tahunUrut.forEach(th => {
+                selectTahun.innerHTML += `<option value="${th}">${th}</option>`;
+            });
+
+            if (nilaiLama && tahunSet.has(nilaiLama)) selectTahun.value = nilaiLama;
+        }
+
         async function muatLaporan() {
             const statusKoneksi = document.getElementById('status-koneksi');
             try {
@@ -401,7 +536,6 @@
                 let akumulasiUmum = 0;
                 let akumulasiBeasiswa = 0;
 
-                // 1. Ambil Data Tunai & Hitung Akumulasi Saldo Total Matematika dari Atas ke Bawah
                 dataTunaiMentah = [];
                 for (let i = 1; i < barisTunai.length; i++) {
                     const cols = barisTunai[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
@@ -417,7 +551,6 @@
                         akumulasiUmum += (msk - klr);
                     }
 
-                    // Push object data mentah apa adanya
                     dataTunaiMentah.push({
                         tgl: clean(cols[0]),
                         ket: clean(cols[1]),
@@ -428,13 +561,13 @@
                     });
                 }
 
-                // KUNCI UTAMA: Balik urutan isi array data supaya baris terbawah Google Sheets berada di index teratas array
                 dataTunaiMentah.reverse();
 
                 if (document.getElementById('total-umum')) document.getElementById('total-umum').innerText = formatRupiah(akumulasiUmum);
                 if (document.getElementById('total-beasiswa')) document.getElementById('total-beasiswa').innerText = formatRupiah(akumulasiBeasiswa);
 
-                // 2. Ambil Data Non-Tunai
+                updateOpsiTahun(dataTunaiMentah, 'filter-tahun-tunai', 'tgl');
+
                 dataNonTunaiMentah = [];
                 for (let i = 1; i < barisNonTunai.length; i++) {
                     const colsNT = barisNonTunai[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
@@ -449,10 +582,10 @@
                     });
                 }
 
-                // KUNCI UTAMA: Balik urutan isi array non-tunai
                 dataNonTunaiMentah.reverse();
 
-                // Tampilkan halaman pertama untuk kedua kategori tabel
+                updateOpsiTahun(dataNonTunaiMentah, 'filter-tahun-nontunai', 'tglNT');
+
                 tampilkanHalamanTunai(1);
                 tampilkanHalamanNonTunai(1);
 
@@ -474,23 +607,32 @@
             const tbody = document.getElementById('laporan-body');
             if (!tbody) return;
 
-            if (dataTunaiMentah.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-gray-400 italic">Tidak ada data tunai.</td></tr>`;
+            const filterBulan = document.getElementById('filter-bulan-tunai').value;
+            const filterTahun = document.getElementById('filter-tahun-tunai').value;
+
+            let dataTerfilter = dataTunaiMentah.filter(item => {
+                const info = parsingTanggal(item.tgl);
+                let lolosBulan = filterBulan === "" || info.bulan === filterBulan;
+                let lolosTahun = filterTahun === "" || info.tahun === filterTahun;
+                return lolosBulan && lolosTahun;
+            });
+
+            if (dataTerfilter.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-gray-400 italic">Tidak ada data tunai yang cocok dengan filter.</td></tr>`;
+                if (document.getElementById('info-halaman-tunai')) document.getElementById('info-halaman-tunai').innerHTML = `Tidak ada data`;
+                if (document.getElementById('tombol-paginasi-tunai')) document.getElementById('tombol-paginasi-tunai').innerHTML = "";
                 return;
             }
 
-            // Slice 10 data berdasarkan parameter halaman aktif
             const indeksMulai = (halaman - 1) * BARIS_PER_HALAMAN;
-            const indeksSelesai = Math.min(indeksMulai + BARIS_PER_HALAMAN, dataTunaiMentah.length);
-            const dataHalamanIni = dataTunaiMentah.slice(indeksMulai, indeksSelesai);
+            const indeksSelesai = Math.min(indeksMulai + BARIS_PER_HALAMAN, dataTerfilter.length);
+            const dataHalamanIni = dataTerfilter.slice(indeksMulai, indeksSelesai);
 
             let html = "";
             dataHalamanIni.forEach(item => {
                 const isBeasiswa = item.jns.toUpperCase().includes("BEASISWA");
                 const warnaBadge = isBeasiswa ? "bg-blue-100 text-blue-700 border-blue-200" : "bg-emerald-100 text-emerald-700 border-emerald-200";
 
-                // Menghapus font-mono individu karena sekarang diwarisi langsung dari elemen induk <table>
-                // Menambahkan kelas font-bold pada teks isi tabel agar terlihat tegas & rapi
                 html += `
                 <tr class="border-b hover:bg-gray-50/50 transition">
                     <td class="p-4 text-sm text-gray-500 text-center">${item.tgl}</td>
@@ -505,7 +647,7 @@
             });
 
             tbody.innerHTML = html;
-            buatNavigasiPaginasi('tunai', dataTunaiMentah.length, halaman, tampilkanHalamanTunai);
+            buatNavigasiPaginasi('tunai', dataTerfilter.length, halaman, tampilkanHalamanTunai);
         }
 
         function tampilkanHalamanNonTunai(halaman) {
@@ -513,21 +655,31 @@
             const tbody = document.getElementById('tabel-non-tunai');
             if (!tbody) return;
 
-            if (dataNonTunaiMentah.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-10 text-center text-gray-400 italic">Tidak ada data non-tunai.</td></tr>`;
+            const filterBulan = document.getElementById('filter-bulan-nontunai').value;
+            const filterTahun = document.getElementById('filter-tahun-nontunai').value;
+
+            let dataTerfilter = dataNonTunaiMentah.filter(item => {
+                const info = parsingTanggal(item.tglNT);
+                let lolosBulan = filterBulan === "" || info.bulan === filterBulan;
+                let lolosTahun = filterTahun === "" || info.tahun === filterTahun;
+                return lolosBulan && lolosTahun;
+            });
+
+            if (dataTerfilter.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-10 text-center text-gray-400 italic">Tidak ada data non-tunai yang cocok dengan filter.</td></tr>`;
+                if (document.getElementById('info-halaman-nontunai')) document.getElementById('info-halaman-nontunai').innerHTML = `Tidak ada data`;
+                if (document.getElementById('tombol-paginasi-nontunai')) document.getElementById('tombol-paginasi-nontunai').innerHTML = "";
                 return;
             }
 
-            // Slice 10 data berdasarkan parameter halaman aktif
             const indeksMulai = (halaman - 1) * BARIS_PER_HALAMAN;
-            const indeksSelesai = Math.min(indeksMulai + BARIS_PER_HALAMAN, dataNonTunaiMentah.length);
-            const dataHalamanIni = dataNonTunaiMentah.slice(indeksMulai, indeksSelesai);
+            const indeksSelesai = Math.min(indeksMulai + BARIS_PER_HALAMAN, dataTerfilter.length);
+            const dataHalamanIni = dataTerfilter.slice(indeksMulai, indeksSelesai);
 
             let html = "";
             dataHalamanIni.forEach(item => {
                 const statusColor = item.statusNT.toUpperCase().includes("TERSALURKAN") ? "bg-emerald-100 text-emerald-700" : "bg-blue-100 text-blue-700";
 
-                // Menghapus kelas font-mono individu karena diwarisi langsung dari elemen induk <table>
                 html += `
                 <tr class="hover:bg-gray-50 transition border-b">
                     <td class="px-6 py-4 text-sm text-gray-600 text-center">${item.tglNT}</td>
@@ -543,7 +695,7 @@
             });
 
             tbody.innerHTML = html;
-            buatNavigasiPaginasi('nontunai', dataNonTunaiMentah.length, halaman, tampilkanHalamanNonTunai);
+            buatNavigasiPaginasi('nontunai', dataTerfilter.length, halaman, tampilkanHalamanNonTunai);
         }
 
         function buatNavigasiPaginasi(tipe, totalData, halamanSekarang, fungsiPanggilBalik) {
@@ -555,17 +707,16 @@
             const batasBawah = (halamanSekarang - 1) * BARIS_PER_HALAMAN + 1;
             const batasAtas = Math.min(halamanSekarang * BARIS_PER_HALAMAN, totalData);
 
-            let labelTambahan = halamanSekarang === 1 
-                ? " <span class='text-emerald-600 font-bold'>(Data Terbaru)</span>" 
+            let labelTambahan = halamanSekarang === 1
+                ? " <span class='text-emerald-600 font-bold'>(Data Terbaru)</span>"
                 : " <span class='text-gray-500 font-medium'>(Kelanjutan Data)</span>";
 
-            kontainerInfo.innerHTML = totalData > 0 
-                ? `Menampilkan baris ke <b>${batasBawah}-${batasAtas}</b> dari <b>${totalData}</b> log ${labelTambahan}` 
+            kontainerInfo.innerHTML = totalData > 0
+                ? `Menampilkan baris ke <b>${batasBawah}-${batasAtas}</b> dari <b>${totalData}</b> log ${labelTambahan}`
                 : `Tidak ada data`;
 
             let komponenNavigasi = "";
 
-            // Tombol Previous
             komponenNavigasi += `
                 <button onclick="${halamanSekarang > 1 ? `${fungsiPanggilBalik.name}(${halamanSekarang - 1})` : ''}" 
                     class="px-3 py-1.5 rounded-lg border text-sm font-medium transition ${halamanSekarang === 1 ? 'text-gray-300 bg-gray-50 cursor-not-allowed' : 'text-gray-700 bg-white hover:bg-gray-50'}" ${halamanSekarang === 1 ? 'disabled' : ''}>
@@ -595,10 +746,9 @@
 
             if (endPage < totalHalaman) {
                 if (endPage < totalHalaman - 1) komponenNavigasi += `<span class="px-2 text-gray-400 text-sm align-bottom">...</span>`;
-                komponenNavigasi += `<button onclick="${fungsiPanggilBalik.name}(totalHalaman)" class="px-3 py-1.5 rounded-lg border text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">${totalHalaman}</button>`;
+                komponenNavigasi += `<button onclick="${fungsiPanggilBalik.name}(${totalHalaman})" class="px-3 py-1.5 rounded-lg border text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">${totalHalaman}</button>`;
             }
 
-            // Tombol Next
             komponenNavigasi += `
                 <button onclick="${halamanSekarang < totalHalaman ? `${fungsiPanggilBalik.name}(${halamanSekarang + 1})` : ''}" 
                     class="px-3 py-1.5 rounded-lg border text-sm font-medium transition ${halamanSekarang === totalHalaman ? 'text-gray-300 bg-gray-50 cursor-not-allowed' : 'text-gray-700 bg-white hover:bg-gray-50'}" ${halamanSekarang === totalHalaman ? 'disabled' : ''}>
@@ -739,13 +889,16 @@
     <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
         <div class="relative max-w-full max-h-full">
-            <button onclick="closeImagePreview()" class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300">
+            <button onclick="closeImagePreview()"
+                class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300">
                 <i class="fas fa-times"></i>
             </button>
-            <img id="fullImage" src="" alt="QRIS Full" class="max-w-full max-h-[85vh] rounded-xl shadow-2xl border-4 border-white/20">
+            <img id="fullImage" src="" alt="QRIS Full"
+                class="max-w-full max-h-[85vh] rounded-xl shadow-2xl border-4 border-white/20">
             <p class="text-white text-center mt-4 font-medium tracking-wide">Silakan Scan atau Screenshot QRIS ini</p>
         </div>
     </div>
 
 </body>
+
 </html>
