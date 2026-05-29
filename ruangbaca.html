@@ -209,6 +209,9 @@
             </div>
         </div>
 
+        <div class="flex justify-center items-center gap-2 mt-12" id="pagination-container">
+        </div>
+
         <div
             class="mt-16 bg-emerald-50 rounded-[32px] p-8 md:p-12 border border-emerald-100/60 flex flex-col lg:flex-row gap-8 items-center justify-between">
             <div class="flex flex-col md:flex-row gap-8 items-center flex-grow">
@@ -246,9 +249,6 @@
                     </div>
                 </a>
             </div>
-        </div>
-
-        <div class="flex justify-center items-center gap-2 mt-12" id="pagination-container">
         </div>
 
     </main>
@@ -372,9 +372,9 @@
         const URL_SHEET = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/pub?output=csv`;
 
         let kumpulanBuku = [];
-        let bukuTerfilter = []; 
+        let bukuTerfilter = [];
         let kategoriTerpilih = "Semua";
-        
+
         // Konfigurasi Paginasi (10 Buku Berurutan dari Bawah Sheet)
         const itemPerHalaman = 10;
         let halamanAktif = 1;
@@ -452,7 +452,7 @@
                     // Urutan di balik (Row paling bawah Google Sheet menjadi buku teratas/terbaru)
                     kumpulanBuku.reverse();
                     bukuTerfilter = [...kumpulanBuku];
-                    
+
                     halamanAktif = 1;
                     tampilkanHalaman(halamanAktif);
                 })
@@ -471,7 +471,7 @@
             halamanAktif = halaman;
             const indeksAwal = (halaman - 1) * itemPerHalaman;
             const indeksAkhir = indeksAwal + itemPerHalaman;
-            
+
             const bukuHalamanIni = bukuTerfilter.slice(indeksAwal, indeksAkhir);
             renderBuku(bukuHalamanIni);
             renderPaginasi();
@@ -543,10 +543,10 @@
             }
 
             for (let i = 1; i <= totalHalaman; i++) {
-                const tombolAktifClass = (i === halamanAktif) 
-                    ? "bg-emerald-600 text-white shadow-sm font-bold" 
+                const tombolAktifClass = (i === halamanAktif)
+                    ? "bg-emerald-600 text-white shadow-sm font-bold"
                     : "bg-gray-100 text-gray-600 font-medium hover:bg-emerald-50 hover:text-emerald-600";
-                
+
                 paginationContainer.insertAdjacentHTML('beforeend', `
                     <button onclick="tampilkanHalaman(${i})" class="px-3.5 py-2 text-xs rounded-xl transition ${tombolAktifClass}">
                         ${i}
@@ -692,7 +692,7 @@
             });
         });
     </script>
-    
+
 </body>
 
 </html>
