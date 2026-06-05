@@ -392,7 +392,8 @@
                     const cols = data.table.cols;
                     const rows = data.table.rows;
 
-                    let idxJudul = 1, idxKategori = 2, idxPenulis = 3, idxRak = 4, idxCover = 5;
+                    // Inisialisasi default indeks kolom
+                    let idxJudul = 1, idxKategori = 2, idxPenulis = 3, idxRak = 4, idxCover = 5, idxStatus = 6;
 
                     cols.forEach((col, index) => {
                         if (col.label) {
@@ -402,6 +403,7 @@
                             if (label.includes('penulis') || label.includes('pengarang')) idxPenulis = index;
                             if (label.includes('rak') || label.includes('ringkasan')) idxRak = index;
                             if (label.includes('gambar') || label.includes('cover') || label.includes('sampul')) idxCover = index;
+                            if (label.includes('status') || label.includes('keterangan')) idxStatus = index;
                         }
                     });
 
@@ -438,6 +440,9 @@
                             }
                         }
 
+                        // Mengambil status langsung dari kolom status di Google Sheet
+                        let statusDariSheet = cells[idxStatus] && cells[idxStatus].v ? String(cells[idxStatus].v).trim() : 'tersedia';
+
                         return {
                             tanggal: cells[0] ? (cells[0].f || cells[0].v || '-') : '-',
                             judul: cells[idxJudul] && cells[idxJudul].v ? cells[idxJudul].v : 'Tanpa Judul',
@@ -445,7 +450,7 @@
                             penulis: cells[idxPenulis] && cells[idxPenulis].v ? cells[idxPenulis].v : 'Anonim',
                             rak: cells[idxRak] && cells[idxRak].v ? cells[idxRak].v : 'Internal',
                             cover: finalCoverUrl,
-                            status: 'tersedia'
+                            status: statusDariSheet
                         };
                     });
 
@@ -492,9 +497,23 @@
             }
 
             daftarBuku.forEach(buku => {
-                const isTersedia = buku.status === 'tersedia';
-                const statusBadgeClass = isTersedia ? 'text-emerald-600 bg-emerald-50' : 'text-orange-600 bg-orange-50';
-                const statusText = isTersedia ? 'Tersedia' : 'Dipinjam';
+                // Mengambil status asli dari Excel/Google Sheet (diubah ke lowercase agar konsisten)
+                const statusBuku = buku.status ? String(buku.status).toLowerCase().trim() : 'tersedia';
+
+                let statusBadgeClass = 'text-emerald-600 bg-emerald-50';
+                let statusText = 'Tersedia';
+
+                // Menyesuaikan warna badge dan teks berdasarkan status di Excel
+                if (statusBuku === 'dipinjam') {
+                    statusBadgeClass = 'text-orange-600 bg-orange-50';
+                    statusText = 'Dipinjam';
+                } else if (statusBuku === 'rusak') {
+                    statusBadgeClass = 'text-red-600 bg-red-50';
+                    statusText = 'Rusak';
+                } else {
+                    statusBadgeClass = 'text-emerald-600 bg-emerald-50';
+                    statusText = 'Tersedia';
+                }
 
                 let katBadgeColor = 'bg-emerald-600';
                 const katLow = buku.kategori.toLowerCase();
@@ -517,7 +536,7 @@
                                 <p class="text-xs text-gray-400 font-medium mb-2">Oleh: ${buku.penulis}</p>
                             </div>
                             <div class="border-t border-gray-100 pt-2 flex justify-between items-center text-[11px]">
-                                <span class="${statusBadgeClass} font-semibold px-2 py-0.5 rounded-full">${statusText}</span>
+                                <span class="${statusBadgeClass} font-semibold px-2.5 py-0.5 rounded-full">${statusText}</span>
                             </div>
                         </div>
                     </div>
