@@ -35,7 +35,7 @@
                 <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-4">
                         <a href="index.html"
-                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Beranda</a>
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium transition">Beranda</a>
 
                         <div class="relative group">
                             <button
@@ -416,6 +416,7 @@
             </div>`;
         }
 
+        // Fungsi Salin Rekening
         function copyOnly() {
             navigator.clipboard.writeText("501128905504").then(() => {
                 const status = document.getElementById('copyStatus');
@@ -451,7 +452,7 @@
             document.getElementById('imagePreviewModal').classList.add('hidden');
         }
 
-        // --- LOGIKA AMBEL BERITA ---
+        // --- LOGIKA AMBIL BERITA ---
         const SHEET_ID = "16eSEAcfdk2i3o1-_jnFpXcFPdJYN_pdwr8Xi6e1z1gQ";
         const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
 
@@ -581,7 +582,7 @@
                     const rows = data.table.rows;
 
                     // Pencarian Indeks Kolom Otomatis berdasarkan Header Sheet
-                    let idxJudul = 1, idxKategori = 2, idxPenulis = 3, idxCover = 5;
+                    let idxJudul = 1, idxKategori = 2, idxPenulis = 3, idxCover = 5, idxStatus = 4;
                     cols.forEach((col, index) => {
                         if (col.label) {
                             const label = col.label.toLowerCase().trim();
@@ -589,6 +590,7 @@
                             if (label.includes('kategori')) idxKategori = index;
                             if (label.includes('penulis') || label.includes('pengarang')) idxPenulis = index;
                             if (label.includes('gambar') || label.includes('cover') || label.includes('sampul')) idxCover = index;
+                            if (label.includes('status') || label.includes('ketersediaan')) idxStatus = index;
                         }
                     });
 
@@ -618,11 +620,19 @@
                             }
                         }
 
+                        // Proteksi pembacaan kolom Status jika kosong
+                        let rawStatus = cells[idxStatus] && cells[idxStatus].v ? String(cells[idxStatus].v).trim() : '';
+                        if (!rawStatus) rawStatus = 'Tersedia';
+
+                        // Mengubah teks kapital menjadi format tulisan normal ("TERSEDIA" -> "Tersedia")
+                        let formattedStatus = rawStatus.charAt(0).toUpperCase() + rawStatus.slice(1).toLowerCase();
+
                         return {
                             judul: cells[idxJudul] && cells[idxJudul].v ? cells[idxJudul].v : 'Tanpa Judul',
                             kategori: cells[idxKategori] && cells[idxKategori].v ? cells[idxKategori].v : 'Umum',
                             penulis: cells[idxPenulis] && cells[idxPenulis].v ? cells[idxPenulis].v : 'Anonim',
-                            cover: finalCoverUrl
+                            cover: finalCoverUrl,
+                            status: formattedStatus
                         };
                     });
 
@@ -636,7 +646,7 @@
                         return;
                     }
 
-                    // Render kartu buku ke grid beranda tanpa menampilkan info Rak
+                    // Render kartu buku ke grid beranda dengan status dinamis
                     empatBukuTerbaru.forEach(buku => {
                         let katBadgeColor = 'bg-emerald-600';
                         const katLow = buku.kategori.toLowerCase();
@@ -644,6 +654,16 @@
                         else if (katLow === 'cerita') katBadgeColor = 'bg-orange-600';
                         else if (katLow === 'motivasi') katBadgeColor = 'bg-purple-600';
                         else if (katLow === 'edukasi') katBadgeColor = 'bg-emerald-600';
+
+                        // Menentukan warna badge berdasarkan kondisi teks status
+                        let statusBadgeColor = 'text-emerald-600 bg-emerald-50'; // Default: Tersedia
+                        const statusLow = buku.status.toLowerCase();
+                        
+                        if (statusLow.includes('pinjam')) {
+                            statusBadgeColor = 'text-orange-600 bg-orange-50';
+                        } else if (statusLow.includes('rusak') || statusLow.includes('hilang')) {
+                            statusBadgeColor = 'text-red-600 bg-red-50';
+                        }
 
                         const cardHTML = `
                             <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col group border border-gray-100">
@@ -659,7 +679,7 @@
                                         <p class="text-xs text-gray-400 font-medium mb-2">Oleh: ${buku.penulis}</p>
                                     </div>
                                     <div class="border-t border-gray-100 pt-2 flex justify-between items-center text-[11px]">
-                                        <span class="text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">Tersedia</span>
+                                        <span class="${statusBadgeColor} font-semibold px-2 py-0.5 rounded-full">${buku.status}</span>
                                     </div>
                                 </div>
                             </div>
