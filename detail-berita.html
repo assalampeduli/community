@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita & Kegiatan | Komunitas Assalam Peduli</title>
-    <link rel="icon" type="image/png" href="logo-kita.png">
+    <link class="flex-shrink-0" rel="icon" type="image/png" href="logo-kita.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome v6.5.2 untuk memastikan semua simbol brand muncul sempurna -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         html {
             scroll-behavior: smooth;
@@ -31,20 +32,20 @@
         .text-justify {
             text-align: justify;
             text-justify: inter-word;
+        }
     </style>
 </head>
 
 <body class="bg-gray-50 font-sans text-gray-900">
 
-    /* Navigation */
+    <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex-shrink-0 flex items-center gap-3">
                     <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                         <img src="logo-kita.png" alt="Logo Assalam Peduli" class="h-12 w-auto">
-                        <span
-                            class="text-xl md:text-2xl font-bold text-emerald-600 tracking-tight flex flex-col leading-none">
+                        <span class="text-xl md:text-2xl font-bold text-emerald-600 tracking-tight flex flex-col leading-none">
                             KOMUNITAS <span class="text-gray-800 text-lg md:text-xl">ASSALAM PEDULI</span>
                         </span>
                     </a>
@@ -52,98 +53,66 @@
 
                 <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-4">
-                        <a href="index.html"
-                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Beranda</a>
+                        <a href="index.html" class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Beranda</a>
 
                         <div class="relative group">
-                            <button
-                                class="flex items-center text-gray-600 group-hover:text-emerald-600 px-3 py-2 font-medium focus:outline-none transition">
-                                Profil <i
-                                    class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
+                            <button class="flex items-center text-gray-600 group-hover:text-emerald-600 px-3 py-2 font-medium focus:outline-none transition">
+                                Profil <i class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
                             </button>
-                            <div
-                                class="absolute left-0 w-64 mt-0 origin-top-left bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="absolute left-0 w-64 mt-0 origin-top-left bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                 <div class="py-2 px-1">
-                                    <a href="profil.html#tentang-kami"
-                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
-                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
-                                                class="fas fa-info-circle text-emerald-600 w-4 text-center"></i></div>
+                                    <a href="profil.html#tentang-kami" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i class="fas fa-info-circle text-emerald-600 w-4 text-center"></i></div>
                                         Tentang Kami
                                     </a>
-                                    <a href="struktur-organisasi.html"
-                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
-                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
-                                                class="fas fa-sitemap text-emerald-600 w-4 text-center"></i></div>
+                                    <a href="struktur-organisasi.html" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i class="fas fa-sitemap text-emerald-600 w-4 text-center"></i></div>
                                         Struktur Organisasi
                                     </a>
-                                    <a href="berita.html"
-                                        class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
-                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i
-                                                class="fas fa-newspaper text-emerald-600 w-4 text-center"></i></div>
+                                    <a href="berita.html" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition">
+                                        <div class="bg-emerald-100 p-2 rounded-lg mr-3"><i class="fas fa-newspaper text-emerald-600 w-4 text-center"></i></div>
                                         Berita & Kegiatan
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="program.html"
-                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
-                        <a href="laporan.html"
-                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
-                        <a href="ruangbaca.html"
-                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium flex items-center gap-1">
+                        <a href="program.html" class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
+                        <a href="laporan.html" class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
+                        <a href="ruangbaca.html" class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium flex items-center gap-1">
                             <i class="fas fa-book-reader text-sm"></i> Ruang Baca
                         </a>
-                        <a href="daftar-anggota.html" target="_blank"
-                            class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar
-                            Anggota</a>
-                        <button onclick="openDonationModal()"
-                            class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 shadow-md transition-all ml-2">Donasi</button>
+                        <a href="daftar-anggota.html" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md transition-all">Daftar Anggota</a>
+                        <button onclick="openDonationModal()" class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700 shadow-md transition-all ml-2">Donasi</button>
                     </div>
                 </div>
 
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-button"
-                        class="text-gray-600 hover:text-emerald-600 focus:outline-none p-2 rounded-lg bg-gray-50">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-emerald-600 focus:outline-none p-2 rounded-lg bg-gray-50">
                         <i class="fas fa-bars text-2xl" id="menu-icon"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu"
-            class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
             <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="index.html"
-                    class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Beranda</a>
+                <a href="index.html" class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Beranda</a>
 
                 <div class="py-2 border-b border-gray-50">
                     <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Profil Komunitas</p>
-                    <a href="profil.html#tentang-kami"
-                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
-                            class="fas fa-info-circle mr-3 text-emerald-500"></i>Tentang Kami</a>
-                    <a href="struktur-organisasi.html"
-                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
-                            class="fas fa-sitemap mr-3 text-emerald-500"></i>Struktur Organisasi</a>
-                    <a href="berita.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
-                            class="fas fa-newspaper mr-3 text-emerald-500"></i>Berita & Kegiatan</a>
+                    <a href="profil.html#tentang-kami" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i class="fas fa-info-circle mr-3 text-emerald-500"></i>Tentang Kami</a>
+                    <a href="struktur-organisasi.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i class="fas fa-sitemap mr-3 text-emerald-500"></i>Struktur Organisasi</a>
+                    <a href="berita.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i class="fas fa-newspaper mr-3 text-emerald-500"></i>Berita & Kegiatan</a>
                 </div>
 
-                <a href="program.html"
-                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
-                <a href="laporan.html"
-                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
-                <a href="ruang-baca.html"
-                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i
-                        class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
+                <a href="program.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
+                <a href="laporan.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
+                <a href="ruang-baca.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
 
                 <div class="pt-4 grid grid-cols-1 gap-3 px-4">
-                    <a href="daftar-anggota.html" target="_blank"
-                        class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar
-                        Anggota</a>
-                    <button onclick="openDonationModal()"
-                        class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md">Donasi
-                        Sekarang</button>
+                    <a href="daftar-anggota.html" target="_blank" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar Anggota</a>
+                    <button onclick="openDonationModal()" class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Donasi Sekarang</button>
                 </div>
             </div>
         </div>
@@ -151,15 +120,8 @@
 
     <style>
         @keyframes fade-in-down {
-            0% {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         .animate-fade-in-down {
@@ -167,297 +129,376 @@
         }
     </style>
 
+    <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden p-8 my-6" id="detail-container">
+        <a href="berita.html" class="inline-block mb-6 text-emerald-600 font-bold">← Kembali ke Daftar Berita</a>
 
-    <body class="bg-gray-50 p-6">
-        <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden p-8" id="detail-container">
-            <a href="berita.html" class="inline-block mb-6 text-emerald-600 font-bold">← Kembali ke Daftar Berita</a>
+        <div id="loading" class="text-center py-10">Loading...</div>
 
-            <div id="loading" class="text-center py-10">Loading...</div>
+        <div id="berita-content" class="hidden">
+            <img id="detail-gambar" src="" class="w-full h-80 object-cover rounded-2xl mb-6">
+            <span id="detail-kategori" class="bg-emerald-100 text-emerald-600 text-xs font-bold px-3 py-1 rounded-full uppercase"></span>
+            
+            <!-- Judul Berita Menggunakan Baris Penuh -->
+            <h1 id="detail-judul" class="text-3xl font-bold text-gray-900 mt-4 mb-4 leading-tight"></h1>
+            
+            <!-- Baris Metadata Terpadu (Tanggal, Like, dan Simbol Share Sejajar) -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6 border-b border-gray-100 pb-4">
+                <!-- Sisi Kiri: Tanggal Berita -->
+                <p id="detail-tanggal" class="text-gray-400 text-sm font-medium"></p>
+                
+                <!-- Sisi Kanan: Interaksi (Like + Simbol Share) -->
+                <div class="flex items-center gap-3">
+                    <!-- Tombol Like Mini -->
+                    <button id="like-button" onclick="toggleLike()" class="flex items-center gap-1.5 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-xl shadow-sm hover:bg-red-50 hover:border-red-200 transition-all group" title="Suka berita ini">
+                        <i id="like-icon" class="far fa-heart text-base text-gray-500 group-hover:text-red-500 transition-colors"></i>
+                        <span id="like-count" class="text-sm font-bold text-gray-700 group-hover:text-red-600">0</span>
+                    </button>
 
-            <div id="berita-content" class="hidden">
-                <img id="detail-gambar" src="" class="w-full h-80 object-cover rounded-2xl mb-6">
-                <span id="detail-kategori"
-                    class="bg-emerald-100 text-emerald-600 text-xs font-bold px-3 py-1 rounded-full uppercase"></span>
-                <h1 id="detail-judul" class="text-3xl font-bold text-gray-900 mt-4 mb-2"></h1>
-                <p id="detail-tanggal" class="text-gray-400 text-sm mb-8"></p>
-                <hr class="mb-8">
-                <div id="detail-isi" class="text-gray-700 leading-relaxed text-lg text-justify"></div>
-            </div>
-        </div>
-
-        <div id="donationModal" class="fixed inset-0 z-[100] hidden overflow-y-auto">
-            <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onclick="closeDonationModal()"></div>
-
-            <div class="flex items-center justify-center min-h-screen p-4">
-                <div
-                    class="relative bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform transition-all">
-                    <div class="bg-emerald-600 p-6 text-white text-center">
-                        <h3 class="text-xl font-bold">Salurkan Kebaikan Anda</h3>
-                        <p class="text-emerald-100 text-sm">Pilih metode donasi yang paling nyaman bagi Anda</p>
-                    </div>
-
-                    <div id="methodList" class="p-6 space-y-4">
-                        <div onclick="showBankDetail()"
-                            class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
-                            <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
-                                    class="fas fa-university text-xl"></i></div>
-                            <div class="ml-4 text-left">
-                                <p class="font-bold text-gray-800 leading-none">Transfer Bank BRI</p>
-                                <p class="text-xs text-gray-500 mt-1">Salin Nomor Rekening</p>
-                            </div>
+                    <!-- Container Share Menggunakan Simbol Saja -->
+                    <div class="flex items-center gap-1 bg-gray-50 p-1 rounded-xl border border-gray-100">
+                        <!-- Simbol Pengganti Teks "Bagikan" -->
+                        <div class="w-7 h-7 flex items-center justify-center text-gray-400" title="Bagikan">
+                            <i class="fas fa-share-alt text-sm"></i>
                         </div>
-
-                        <div onclick="showQRISDetail()"
-                            class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
-                            <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
-                                    class="fas fa-qrcode text-xl"></i></div>
-                            <div class="ml-4 text-left">
-                                <p class="font-bold text-gray-800 leading-none">Scan QRIS (E-Wallet)</p>
-                                <p class="text-xs text-gray-500 mt-1">Dukungan Semua Dompet Digital</p>
-                            </div>
-                        </div>
-
-                        <a href="https://wa.me/6288802333543?text=Assalamualaikum%20Admin%20Assalam%20Peduli"
-                            target="_blank"
-                            class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
-                            <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i
-                                    class="fab fa-whatsapp text-xl"></i></div>
-                            <div class="ml-4 text-left">
-                                <p class="font-bold text-gray-800 leading-none">Konfirmasi Via WA</p>
-                                <p class="text-xs text-gray-500 mt-1">Hubungi admin untuk bantuan</p>
-                            </div>
+                        <!-- WhatsApp -->
+                        <a id="share-whatsapp" href="#" target="_blank" class="w-7 h-7 flex items-center justify-center bg-[#25D366] text-white rounded-lg shadow-sm hover:scale-110 transition-all" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </a>
+                        <!-- Facebook -->
+                        <a id="share-facebook" href="#" target="_blank" class="w-7 h-7 flex items-center justify-center bg-[#1877F2] text-white rounded-lg shadow-sm hover:scale-110 transition-all" title="Facebook">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </a>
+                        <!-- X -->
+                        <a id="share-x" href="#" target="_blank" class="w-7 h-7 flex items-center justify-center bg-black text-white rounded-lg shadow-sm hover:scale-110 transition-all" title="X">
+                            <i class="fa-brands fa-x-twitter text-xs"></i>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/assalam.peduli" target="_blank" class="w-7 h-7 flex items-center justify-center bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 text-white rounded-lg shadow-sm hover:scale-110 transition-all" title="Instagram">
+                            <i class="fa-brands fa-instagram text-sm"></i>
                         </a>
                     </div>
+                </div>
+            </div>
 
-                    <div id="detailDonasi" class="hidden p-6 animate-fade-in">
-                        <button onclick="backToMethods()"
-                            class="text-emerald-600 font-bold text-sm mb-4 flex items-center">
-                            <i class="fas fa-arrow-left mr-2"></i> Kembali pilih metode
-                        </button>
-                        <div id="detailContent"></div>
+            <div id="detail-isi" class="text-gray-700 leading-relaxed text-lg text-justify mb-8"></div>
+        </div>
+    </div>
+
+    <!-- Modal Donasi -->
+    <div id="donationModal" class="fixed inset-0 z-[100] hidden overflow-y-auto">
+        <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onclick="closeDonationModal()"></div>
+
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="relative bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform transition-all">
+                <div class="bg-emerald-600 p-6 text-white text-center">
+                    <h3 class="text-xl font-bold">Salurkan Kebaikan Anda</h3>
+                    <p class="text-emerald-100 text-sm">Pilih metode donasi yang paling nyaman bagi Anda</p>
+                </div>
+
+                <div id="methodList" class="p-6 space-y-4">
+                    <div onclick="showBankDetail()" class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i class="fas fa-university text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Transfer Bank BRI</p>
+                            <p class="text-xs text-gray-500 mt-1">Salin Nomor Rekening</p>
+                        </div>
                     </div>
 
-                    <div class="p-4 bg-gray-50 text-center">
-                        <button onclick="closeDonationModal()"
-                            class="text-gray-500 font-medium text-sm hover:text-emerald-600 transition">Tutup</button>
+                    <div onclick="showQRISDetail()" class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i class="fas fa-qrcode text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 line-none">Scan QRIS (E-Wallet)</p>
+                            <p class="text-xs text-gray-500 mt-1">Dukungan Semua Dompet Digital</p>
+                        </div>
                     </div>
+
+                    <a href="https://wa.me/6288802333543?text=Assalamualaikum%20Admin%20Assalam%20Peduli" target="_blank" class="flex items-center p-4 border rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition group">
+                        <div class="bg-gray-100 p-3 rounded-xl group-hover:bg-white text-emerald-600"><i class="fa-brands fa-whatsapp text-xl"></i></div>
+                        <div class="ml-4 text-left">
+                            <p class="font-bold text-gray-800 leading-none">Konfirmasi Via WA</p>
+                            <p class="text-xs text-gray-500 mt-1">Hubungi admin untuk bantuan</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div id="detailDonasi" class="hidden p-6 animate-fade-in">
+                    <button onclick="backToMethods()" class="text-emerald-600 font-bold text-sm mb-4 flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Kembali pilih metode
+                    </button>
+                    <div id="detailContent"></div>
+                </div>
+
+                <div class="p-4 bg-gray-50 text-center">
+                    <button onclick="closeDonationModal()" class="text-gray-500 font-medium text-sm hover:text-emerald-600 transition">Tutup</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
-            <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
-            <div class="relative max-w-full max-h-full">
-                <button onclick="closeImagePreview()" class="absolute -top-12 right-0 text-white text-3xl">
-                    <i class="fas fa-times"></i>
-                </button>
-                <img id="fullImage" src="" class="max-w-full max-h-[85vh] rounded-xl border-4 border-white/20">
-            </div>
+    <!-- Image Preview Modal -->
+    <div id="imagePreviewModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeImagePreview()"></div>
+        <div class="relative max-w-full max-h-full">
+            <button onclick="closeImagePreview()" class="absolute -top-12 right-0 text-white text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="fullImage" src="" class="max-w-full max-h-[85vh] rounded-xl border-4 border-white/20">
         </div>
+    </div>
 
-        <script>
-            // --- LOGIKA MODAL DONASI ---
-            function openDonationModal() {
-                document.getElementById('donationModal').classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
+    <script>
+        // --- LOGIKA MODAL DONASI ---
+        function openDonationModal() {
+            document.getElementById('donationModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
 
-            function closeDonationModal() {
-                document.getElementById('donationModal').classList.add('hidden');
-                document.body.style.overflow = 'auto';
-                backToMethods();
-            }
+        function closeDonationModal() {
+            document.getElementById('donationModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            backToMethods();
+        }
 
-            function showBankDetail() {
-                document.getElementById('methodList').classList.add('hidden');
-                document.getElementById('detailDonasi').classList.remove('hidden');
-                document.getElementById('detailContent').innerHTML = `
-            <div class="space-y-4">
-                <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" alt="BRI" class="h-10 mx-auto mb-4">
-                    <p class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
-                    <p class="text-sm text-gray-600 font-medium uppercase mt-1">a.n Alen Purnama</p>
-                </div>
-                <button onclick="copyOnly()" class="w-full bg-[#00529C] text-white rounded-xl p-3 font-bold">Salin Rekening</button>
-                <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden italic">Berhasil Disalin!</p>
-            </div>`;
-            }
+        function showBankDetail() {
+            document.getElementById('methodList').classList.add('hidden');
+            document.getElementById('detailDonasi').classList.remove('hidden');
+            document.getElementById('detailContent').innerHTML = `
+        <div class="space-y-4">
+            <div class="p-6 bg-gray-50 rounded-2xl border-2 border-emerald-500 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bank_BRI_2000.svg" alt="BRI" class="h-10 mx-auto mb-4">
+                <p class="font-bold text-2xl text-emerald-700 tracking-wider">501128905504</p>
+                <p class="text-sm text-gray-600 font-medium uppercase mt-1">a.n Alen Purnama</p>
+            </div>
+            <button onclick="copyOnly()" class="w-full bg-[#00529C] text-white rounded-xl p-3 font-bold">Salin Rekening</button>
+            <p id="copyStatus" class="text-xs text-emerald-600 text-center font-bold hidden italic">Berhasil Disalin!</p>
+        </div>`;
+        }
 
-            function copyOnly() {
-                navigator.clipboard.writeText("501128905504").then(() => {
-                    const status = document.getElementById('copyStatus');
-                    status.classList.remove('hidden');
-                    setTimeout(() => status.classList.add('hidden'), 2000);
-                });
-            }
-
-            function showQRISDetail() {
-                document.getElementById('methodList').classList.add('hidden');
-                document.getElementById('detailDonasi').classList.remove('hidden');
-                document.getElementById('detailContent').innerHTML = `
-            <div class="text-center">
-                <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block cursor-zoom-in" onclick="openImagePreview('qris-assalam.jpeg')">
-                    <img src="qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
-                </div>
-                <p class="text-xs text-gray-500 mt-2 italic">Klik gambar untuk memperbesar</p>
-            </div>`;
-            }
-
-            function backToMethods() {
-                document.getElementById('detailDonasi').classList.add('hidden');
-                document.getElementById('methodList').classList.remove('hidden');
-            }
-
-            function openImagePreview(src) {
-                const modal = document.getElementById('imagePreviewModal');
-                document.getElementById('fullImage').src = src;
-                modal.classList.remove('hidden');
-            }
-
-            function closeImagePreview() {
-                document.getElementById('imagePreviewModal').classList.add('hidden');
-            }
-
-            function loadDetail() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const judulTarget = urlParams.get('id');
-                const sheetID = "16eSEAcfdk2i3o1-_jnFpXcFPdJYN_pdwr8Xi6e1z1gQ";
-                const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
-
-                if (!judulTarget) {
-                    document.getElementById('detail-container').innerHTML = "Berita Tidak Ditemukan!";
-                    return;
-                }
-
-                fetch(url)
-                    .then(res => res.text())
-                    .then(txt => {
-                        const jsonText = txt.match(/\{.*\}/)[0];
-                        const data = JSON.parse(jsonText);
-                        const rows = data.table.rows;
-
-                        // Milari baris anu judulna sarua jeung nu diklik
-                        const row = rows.find(r => r.c[1] && r.c[1].v === judulTarget);
-
-                        if (row) {
-                            const c = row.c;
-                            document.getElementById('detail-judul').innerText = c[1].v;
-                            document.getElementById('detail-kategori').innerText = c[2] ? c[2].v : 'Umum';
-                            document.getElementById('detail-tanggal').innerText = c[0] ? (c[0].f || c[0].v) : '';
-
-                            // IEU NU PENTING: NYOKOT KOLOM E (ISI LENGKEP)
-                            const isiLengkep = c[4] ? c[4].v : 'Eusi berita kosong.';
-                            document.getElementById('detail-isi').innerHTML = isiLengkep.replace(/\n/g, '<br>');
-
-                            if (c[5]) document.getElementById('detail-gambar').src = c[5].v;
-
-                            document.getElementById('loading').classList.add('hidden');
-                            document.getElementById('berita-content').classList.remove('hidden');
-                        } else {
-                            document.getElementById('detail-container').innerHTML = "Berita Kosong!";
-                        }
-                    })
-                    .catch(err => {
-                        document.getElementById('detail-container').innerHTML = "Gagal Memuat Data!";
-                    });
-            }
-
-            document.addEventListener('DOMContentLoaded', loadDetail);
-
-            // --- LOGIKA MENU MOBILE (BURGER) ---
-            document.addEventListener('DOMContentLoaded', function () {
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenu = document.getElementById('mobile-menu');
-                const menuIcon = document.getElementById('menu-icon');
-
-                // Fungsi untuk menutup menu
-                function closeMenu() {
-                    mobileMenu.classList.add('hidden');
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                }
-
-                // Fungsi untuk membuka menu
-                function openMenu() {
-                    mobileMenu.classList.remove('hidden');
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-times');
-                }
-
-                // Toggle menu saat tombol burger diklik
-                mobileMenuButton.addEventListener('click', function (e) {
-                    e.stopPropagation(); // Mencegah event 'click' merambat ke window
-                    const isHidden = mobileMenu.classList.contains('hidden');
-                    if (isHidden) {
-                        openMenu();
-                    } else {
-                        closeMenu();
-                    }
-                });
-
-                // TUTUP MENU JIKA KLIK DI LUAR MENU
-                window.addEventListener('click', function (e) {
-                    // Jika menu sedang terbuka DAN yang diklik bukan bagian dari mobileMenu atau tombol burger
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                            closeMenu();
-                        }
-                    }
-                });
-
-                // Mencegah menu tertutup jika area di dalam menu itu sendiri diklik
-                mobileMenu.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                });
-
-                // Menutup menu jika layar di-resize ke ukuran laptop (lg: 1024px)
-                window.addEventListener('resize', function () {
-                    if (window.innerWidth >= 1024) {
-                        closeMenu();
-                    }
-                });
+        function copyOnly() {
+            navigator.clipboard.writeText("501128905504").then(() => {
+                const status = document.getElementById('copyStatus');
+                status.classList.remove('hidden');
+                setTimeout(() => status.classList.add('hidden'), 2000);
             });
-        </script>
-    </body>
+        }
 
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
-            <div class="mb-10">
-                <div class="flex items-center justify-center gap-3 mb-4">
-                    <img src="logo-kita.png" alt="Logo" class="h-10 w-auto">
-                    <span class="text-xl font-bold tracking-tight uppercase">
-                        KOMUNITAS <span class="text-emerald-500">ASSALAM PEDULI</span>
-                    </span>
-                </div>
-                <p class="text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
-                    Sekretariat Komunitas Assalam Peduli <br>
-                    Kp. Cibogo RT. 001 RW. 001 Ds. Janggala Kec. Sukaraja <br>
-                    Kab. Tasikmalaya - Jawa Barat, 46183.
-                </p>
+        function showQRISDetail() {
+            document.getElementById('methodList').classList.add('hidden');
+            document.getElementById('detailDonasi').classList.remove('hidden');
+            document.getElementById('detailContent').innerHTML = `
+        <div class="text-center">
+            <div class="bg-white p-2 border-2 border-emerald-500 rounded-2xl inline-block cursor-zoom-in" onclick="openImagePreview('qris-assalam.jpeg')">
+                <img src="qris-assalam.jpeg" alt="QRIS" class="w-48 h-48">
             </div>
+            <p class="text-xs text-gray-500 mt-2 italic">Klik gambar untuk memperbesar</p>
+        </div>`;
+        }
 
-            <div class="flex flex-col items-center space-y-4">
-                <h4 class="text-lg font-bold tracking-widest uppercase">Follow Us On</h4>
-                <div class="flex justify-center gap-4">
-                    <a href="https://www.instagram.com/assalam.peduli" target="_blank"
-                        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 hover:scale-110 transition"><i
-                            class="fab fa-instagram text-xl"></i></a>
-                    <a href="https://www.youtube.com/@assalam_ofc" target="_blank"
-                        class="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 hover:scale-110 transition"><i
-                            class="fab fa-youtube text-xl"></i></a>
-                    <a href="https://www.tiktok.com/@assalam.peduli" target="_blank"
-                        class="w-12 h-12 flex items-center justify-center rounded-full bg-black border border-gray-700 hover:scale-110 transition"><i
-                            class="fab fa-tiktok text-xl"></i></a>
-                    <a href="https://www.facebook.com/share/18oiquCJny/" target="_blank"
-                        class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-700 hover:scale-110 transition"><i
-                            class="fab fa-facebook-f text-xl"></i></a>
-                </div>
+        function backToMethods() {
+            document.getElementById('detailDonasi').classList.add('hidden');
+            document.getElementById('methodList').classList.remove('hidden');
+        }
+
+        function openImagePreview(src) {
+            const modal = document.getElementById('imagePreviewModal');
+            document.getElementById('fullImage').src = src;
+            modal.classList.remove('hidden');
+        }
+
+        function closeImagePreview() {
+            document.getElementById('imagePreviewModal').classList.add('hidden');
+        }
+
+        // --- LOGIKA TOMBOL LIKE ---
+        let currentBeritaId = "";
+
+        function initLikeSystem(idBerita) {
+            currentBeritaId = idBerita;
+            
+            let defaultLikes = Math.floor((idBerita.length * 7) % 45) + 12;
+            
+            if (!localStorage.getItem(`likes_${currentBeritaId}`)) {
+                localStorage.setItem(`likes_${currentBeritaId}`, defaultLikes);
+            }
+
+            const totalLikes = parseInt(localStorage.getItem(`likes_${currentBeritaId}`));
+            document.getElementById('like-count').innerText = totalLikes;
+
+            if (localStorage.getItem(`isLiked_${currentBeritaId}`) === 'true') {
+                setLikeActive(true);
+            }
+        }
+
+        function toggleLike() {
+            let totalLikes = parseInt(localStorage.getItem(`likes_${currentBeritaId}`));
+            const isLiked = localStorage.getItem(`isLiked_${currentBeritaId}`) === 'true';
+
+            if (isLiked) {
+                totalLikes -= 1;
+                localStorage.setItem(`likes_${currentBeritaId}`, totalLikes);
+                localStorage.setItem(`isLiked_${currentBeritaId}`, 'false');
+                setLikeActive(false);
+            } else {
+                totalLikes += 1;
+                localStorage.setItem(`likes_${currentBeritaId}`, totalLikes);
+                localStorage.setItem(`isLiked_${currentBeritaId}`, 'true');
+                setLikeActive(true);
+            }
+
+            document.getElementById('like-count').innerText = totalLikes;
+        }
+
+        function setLikeActive(active) {
+            const icon = document.getElementById('like-icon');
+            const button = document.getElementById('like-button');
+            const textCount = document.getElementById('like-count');
+
+            if (active) {
+                icon.className = "fas fa-heart text-base text-red-500";
+                button.classList.add('bg-red-50', 'border-red-200');
+                textCount.classList.add('text-red-600');
+            } else {
+                icon.className = "far fa-heart text-base text-gray-500";
+                button.classList.remove('bg-red-50', 'border-red-200');
+                textCount.classList.remove('text-red-600');
+            }
+        }
+
+        // --- LOGIKA LOAD DATA DARI SPREADSHEET ---
+        function loadDetail() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const judulTarget = urlParams.get('id');
+            const sheetID = "16eSEAcfdk2i3o1-_jnFpXcFPdJYN_pdwr8Xi6e1z1gQ";
+            const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
+
+            if (!judulTarget) {
+                document.getElementById('detail-container').innerHTML = "Berita Tidak Ditemukan!";
+                return;
+            }
+
+            fetch(url)
+                .then(res => res.text())
+                .then(txt => {
+                    const jsonText = txt.match(/\{.*\}/)[0];
+                    const data = JSON.parse(jsonText);
+                    const rows = data.table.rows;
+
+                    const row = rows.find(r => r.c[1] && r.c[1].v === judulTarget);
+
+                    if (row) {
+                        const c = row.c;
+                        const judulBerita = c[1].v;
+                        
+                        document.getElementById('detail-judul').innerText = judulBerita;
+                        document.getElementById('detail-kategori').innerText = c[2] ? c[2].v : 'Umum';
+                        document.getElementById('detail-tanggal').innerText = c[0] ? (c[0].f || c[0].v) : '';
+
+                        const isiLengkep = c[4] ? c[4].v : 'Eusi berita kosong.';
+                        document.getElementById('detail-isi').innerHTML = isiLengkep.replace(/\n/g, '<br>');
+
+                        if (c[5]) document.getElementById('detail-gambar').src = c[5].v;
+
+                        initLikeSystem(judulTarget);
+
+                        const currentUrl = encodeURIComponent(window.location.href);
+                        const shareText = encodeURIComponent(judulBerita + " - Komunitas Assalam Peduli\n\n");
+                        
+                        document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${shareText}${currentUrl}`;
+                        document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+                        document.getElementById('share-x').href = `https://x.com/intent/tweet?text=${shareText}&url=${currentUrl}`;
+
+                        document.getElementById('loading').classList.add('hidden');
+                        document.getElementById('berita-content').classList.remove('hidden');
+                    } else {
+                        document.getElementById('detail-container').innerHTML = "Berita Kosong!";
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('detail-container').innerHTML = "Gagal Memuat Data!";
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadDetail);
+
+        // --- LOGIKA MENU MOBILE ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            function closeMenu() {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+
+            function openMenu() {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+
+            mobileMenuButton.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    openMenu();
+                } else {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener('click', function (e) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                        closeMenu();
+                    }
+                }
+            });
+
+            mobileMenu.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+</body>
+
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
+        <div class="mb-10">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <img src="logo-kita.png" alt="Logo" class="h-10 w-auto">
+                <span class="text-xl font-bold tracking-tight uppercase">
+                    KOMUNITAS <span class="text-emerald-500">ASSALAM PEDULI</span>
+                </span>
             </div>
+            <p class="text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
+                Sekretariat Komunitas Assalam Peduli <br>
+                Kp. Cibogo RT. 001 RW. 001 Ds. Janggala Kec. Sukaraja <br>
+                Kab. Tasikmalaya - Jawa Barat, 46183.
+            </p>
+        </div>
 
-            <div class="border-t border-gray-800 w-full mt-12 pt-8 text-gray-500 text-[10px] uppercase tracking-widest">
-                <p>&copy; 2026 Komunitas Assalam Peduli. All rights reserved.</p>
+        <div class="flex flex-col items-center space-y-4">
+            <h4 class="text-lg font-bold tracking-widest uppercase">Follow Us On</h4>
+            <div class="flex justify-center gap-4">
+                <a href="https://www.instagram.com/assalam.peduli" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 hover:scale-110 transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="https://www.youtube.com/@assalam_ofc" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 hover:scale-110 transition"><i class="fa-brands fa-youtube text-xl"></i></a>
+                <a href="https://www.tiktok.com/@assalam.peduli" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-black border border-gray-700 hover:scale-110 transition"><i class="fa-brands fa-tiktok text-xl"></i></a>
+                <a href="https://www.facebook.com/share/18oiquCJny/" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-700 hover:scale-110 transition"><i class="fa-brands fa-facebook-f text-xl"></i></a>
             </div>
         </div>
-    </footer>
+
+        <div class="border-t border-gray-800 w-full mt-12 pt-8 text-gray-500 text-[10px] uppercase tracking-widest">
+            <p>&copy; 2026 Komunitas Assalam Peduli. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
 </html>
