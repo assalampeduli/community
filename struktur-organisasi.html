@@ -25,14 +25,17 @@
                     </a>
                 </div>
 
+                <!-- NAVIGASI DESKTOP (Ganti bagian ini di dalam file struktur-organisasi.html) -->
                 <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-4">
+                        <!-- Beranda dikembalikan menjadi menu biasa tanpa garis bawah -->
                         <a href="index.html"
-                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Beranda</a>
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium transition">Beranda</a>
 
+                        <!-- PROFIL menjadi menu AKTIF (Teks tebal hijau emerald + garis bawah) -->
                         <div class="relative group">
                             <button
-                                class="flex items-center text-gray-600 group-hover:text-emerald-600 px-3 py-2 font-medium focus:outline-none transition">
+                                class="flex items-center text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500 focus:outline-none transition">
                                 Profil <i
                                     class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
                             </button>
@@ -61,6 +64,7 @@
                             </div>
                         </div>
 
+                        <!-- Menu lainnya tetap sebagai menu standar -->
                         <a href="program.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
                         <a href="laporan.html"
@@ -86,19 +90,23 @@
             </div>
         </div>
 
+        <!-- NAVIGASI MOBILE (Ganti bagian ini agar indikator aktifnya serasi saat dibuka di HP) -->
         <div id="mobile-menu"
             class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
             <div class="px-4 pt-2 pb-6 space-y-1">
+                <!-- Beranda diturunkan menjadi menu biasa -->
                 <a href="index.html"
-                    class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Beranda</a>
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Beranda</a>
 
-                <div class="py-2 border-b border-gray-50">
-                    <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Profil Komunitas</p>
+                <!-- Profil Komunitas ditandai aktif (Sub-menu Struktur Organisasi disorot hijau pekat & latar emerald muda) -->
+                <div class="py-2 border-b border-gray-50 bg-emerald-50/50 rounded-xl px-1">
+                    <p class="px-4 text-xs font-bold text-emerald-600 uppercase tracking-widest mb-2">Profil Komunitas
+                        (Aktif)</p>
                     <a href="profil.html#tentang-kami"
                         class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
                             class="fas fa-info-circle mr-3 text-emerald-500"></i>Tentang Kami</a>
                     <a href="struktur-organisasi.html"
-                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                        class="block px-4 py-3 text-emerald-600 font-bold bg-emerald-50 rounded-xl"><i
                             class="fas fa-sitemap mr-3 text-emerald-500"></i>Struktur Organisasi</a>
                     <a href="berita.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
                             class="fas fa-newspaper mr-3 text-emerald-500"></i>Berita & Kegiatan</a>
@@ -111,6 +119,7 @@
                 <a href="ruang-baca.html"
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i
                         class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
+
                 <div class="pt-4 grid grid-cols-1 gap-3 px-4">
                     <a href="daftar-anggota.html" target="_blank"
                         class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar

@@ -36,10 +36,12 @@
                     </a>
                 </div>
 
+                <!-- NAVIGASI DESKTOP (Ubah bagian ini di dalam file program.html) -->
                 <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-4">
+                        <!-- Beranda dikembalikan menjadi menu biasa -->
                         <a href="index.html"
-                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Beranda</a>
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium transition">Beranda</a>
 
                         <div class="relative group">
                             <button
@@ -72,10 +74,13 @@
                             </div>
                         </div>
 
+                        <!-- Program sekarang menjadi menu AKTIF (Ditambahkan tebal & garis bawah) -->
                         <a href="program.html"
-                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
+                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Program</a>
+
                         <a href="laporan.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
+
                         <a href="ruangbaca.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium flex items-center gap-1">
                             <i class="fas fa-book-reader text-sm"></i> Ruang Baca
@@ -88,50 +93,48 @@
                     </div>
                 </div>
 
-                <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-button"
-                        class="text-gray-600 hover:text-emerald-600 focus:outline-none p-2 rounded-lg bg-gray-50">
-                        <i class="fas fa-bars text-2xl" id="menu-icon"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+                <!-- NAVIGASI MOBILE (Ubah juga bagian ini agar serasi saat dibuka di HP) -->
+                <div id="mobile-menu"
+                    class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
+                    <div class="px-4 pt-2 pb-6 space-y-1">
+                        <!-- Beranda dikembalikan menjadi menu biasa -->
+                        <a href="index.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Beranda</a>
 
-        <div id="mobile-menu"
-            class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="index.html"
-                    class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Beranda</a>
+                        <div class="py-2 border-b border-gray-50">
+                            <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Profil
+                                Komunitas</p>
+                            <a href="profil.html#tentang-kami"
+                                class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                                    class="fas fa-info-circle mr-3 text-emerald-500"></i>Tentang Kami</a>
+                            <a href="struktur-organisasi.html"
+                                class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                                    class="fas fa-sitemap mr-3 text-emerald-500"></i>Struktur Organisasi</a>
+                            <a href="berita.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
+                                    class="fas fa-newspaper mr-3 text-emerald-500"></i>Berita & Kegiatan</a>
+                        </div>
 
-                <div class="py-2 border-b border-gray-50">
-                    <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Profil Komunitas</p>
-                    <a href="profil.html#tentang-kami"
-                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
-                            class="fas fa-info-circle mr-3 text-emerald-500"></i>Tentang Kami</a>
-                    <a href="struktur-organisasi.html"
-                        class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
-                            class="fas fa-sitemap mr-3 text-emerald-500"></i>Struktur Organisasi</a>
-                    <a href="berita.html" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"><i
-                            class="fas fa-newspaper mr-3 text-emerald-500"></i>Berita & Kegiatan</a>
-                </div>
+                        <!-- Program menjadi menu AKTIF di mobile (Teks hijau + background emerald muda) -->
+                        <a href="program.html"
+                            class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Program</a>
 
-                <a href="program.html"
-                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
-                <a href="laporan.html"
-                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
-                <a href="ruang-baca.html"
-                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i
-                        class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
-                <div class="pt-4 grid grid-cols-1 gap-3 px-4">
-                    <a href="daftar-anggota.html" target="_blank"
-                        class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar
-                        Anggota</a>
-                    <button onclick="openDonationModal()"
-                        class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md">Donasi
-                        Sekarang</button>
+                        <a href="laporan.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
+
+                        <a href="ruang-baca.html"
+                            class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i
+                                class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>
+
+                        <div class="pt-4 grid grid-cols-1 gap-3 px-4">
+                            <a href="daftar-anggota.html" target="_blank"
+                                class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-center shadow-md">Daftar
+                                Anggota</a>
+                            <button onclick="openDonationModal()"
+                                class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-md">Donasi
+                                Sekarang</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </nav>
 
     <style>

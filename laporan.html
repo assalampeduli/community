@@ -25,10 +25,12 @@
                     </a>
                 </div>
 
+                <!-- NAVIGASI DESKTOP (Ubah bagian ini di dalam file laporan.html) -->
                 <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-4">
+                        <!-- Beranda diubah menjadi menu biasa -->
                         <a href="index.html"
-                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Beranda</a>
+                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium transition">Beranda</a>
 
                         <div class="relative group">
                             <button
@@ -63,8 +65,11 @@
 
                         <a href="program.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
+
+                        <!-- Laporan sekarang menjadi menu AKTIF (Ditambahkan garis bawah) -->
                         <a href="laporan.html"
-                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Laporan</a>
+                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Laporan</a>
+
                         <a href="ruangbaca.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium flex items-center gap-1">
                             <i class="fas fa-book-reader text-sm"></i> Ruang Baca
@@ -86,11 +91,13 @@
             </div>
         </div>
 
+        <!-- NAVIGASI MOBILE (Ubah juga bagian ini agar serasi saat dibuka di HP) -->
         <div id="mobile-menu"
             class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
             <div class="px-4 pt-2 pb-6 space-y-1">
+                <!-- Beranda diubah menjadi menu biasa -->
                 <a href="index.html"
-                    class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Beranda</a>
+                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Beranda</a>
 
                 <div class="py-2 border-b border-gray-50">
                     <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Profil Komunitas</p>
@@ -106,8 +113,11 @@
 
                 <a href="program.html"
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
+
+                <!-- Laporan menjadi menu AKTIF di mobile (Latar hijau) -->
                 <a href="laporan.html"
-                    class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Laporan</a>
+                    class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Laporan</a>
+
                 <a href="ruang-baca.html"
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium"><i
                         class="fas fa-book-reader mr-3 text-emerald-500"></i>Ruang Baca</a>

@@ -35,7 +35,7 @@
                 <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-4">
                         <a href="index.html"
-                            class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium transition">Beranda</a>
+                            class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Beranda</a>
 
                         <div class="relative group">
                             <button
@@ -246,6 +246,47 @@
         </div>
     </section>
 
+    <!-- ========================================== -->
+    <!--  SPACE IKLAN / SPONSORSHIP PREMIUM (BARU)  -->
+    <!-- ========================================== -->
+    <div class="max-w-7xl mx-auto px-4 pt-16">
+        <div
+            class="bg-gray-100/80 rounded-2xl border border-gray-200/60 p-3 flex flex-col items-center justify-center text-center relative overflow-hidden group min-h-[90px] sm:min-h-[120px]">
+            <!-- Label Info Iklan Kecil -->
+            <span
+                class="absolute top-1 right-2 text-[9px] text-gray-400 font-bold uppercase tracking-wider select-none">Advertisement</span>
+
+            <!-- LINK & BANNER IKLAN -->
+            <!-- Jika Menggunakan Google AdSense: Ganti seluruh tag <a> di bawah dengan script kode iklan AdSense Anda -->
+            <a href="https://wa.me/6288802333543?text=Halo%20Admin,%20saya%20tertarik%20pasang%20iklan%20di%20website%20Assalam%20Peduli"
+                target="_blank"
+                class="w-full h-full flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-gray-500 hover:text-emerald-600 transition-colors py-4 px-6">
+
+                <div
+                    class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shadow-sm border border-emerald-100 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-bullhorn animate-pulse"></i>
+                </div>
+
+                <div class="text-left">
+                    <p
+                        class="font-bold text-sm sm:text-base text-gray-700 leading-snug group-hover:text-emerald-600 transition-colors">
+                        Ingin Produk atau Usaha Anda Tampil di Sini?
+                    </p>
+                    <p class="text-xs text-gray-400 mt-0.5">
+                        Hubungi kami untuk kerja sama sponsorship. Pendapatan digunakan 100% untuk operasional
+                        komunitas.
+                    </p>
+                </div>
+
+                <span
+                    class="mt-2 sm:mt-0 px-4 py-1.5 bg-white text-xs font-bold text-emerald-600 border border-emerald-200 rounded-full shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all whitespace-nowrap">
+                    Pasang Iklan <i class="fas fa-arrow-right ml-1 text-[10px]"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <!-- ========================================== -->
+
     <section id="campaign-section" class="max-w-7xl mx-auto px-4 py-16">
         <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
             <span class="bg-emerald-100 text-emerald-600 p-2 rounded-lg mr-4 italic">#</span>
@@ -442,6 +483,7 @@
             document.getElementById('methodList').classList.remove('hidden');
         }
 
+        // --- FIXED: Memperbaiki fungsi preview agar tidak error ---
         function openImagePreview(src) {
             const modal = document.getElementById('imagePreviewModal');
             document.getElementById('fullImage').src = src;
@@ -452,7 +494,7 @@
             document.getElementById('imagePreviewModal').classList.add('hidden');
         }
 
-        // --- LOGIKA AMBIL BERITA ---
+        // --- LOGIKA AMBUL BERITA ---
         const SHEET_ID = "16eSEAcfdk2i3o1-_jnFpXcFPdJYN_pdwr8Xi6e1z1gQ";
         const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
 
@@ -484,8 +526,17 @@
             const container = document.getElementById('news-container');
             container.innerHTML = '';
 
-            const latestData = [...rows].reverse().slice(0, 3);
+            // 1. FILTER DULU: Ambil semua baris yang valid (bukan baris judul / baris kosong)
+            const dataValid = rows.filter(row => {
+                if (!row || !row.c) return false;
+                const judul = row.c[1] ? String(row.c[1].v).trim() : '';
+                return judul && judul !== "Judul" && judul !== "Judul Berita";
+            });
 
+            // 2. BALIK & POTONG: Balik urutan (terbaru di atas) lalu ambil PASTI 3 BERITA TERATAS
+            const latestData = [...dataValid].reverse().slice(0, 3);
+
+            // 3. RENDER KE HTML
             latestData.forEach(row => {
                 const c = row.c;
                 const tgl = c[0] ? (c[0].f || c[0].v) : '';
@@ -494,23 +545,21 @@
                 const ringkasan = c[3] ? c[3].v : '';
                 const gambar = c[5] ? c[5].v : 'https://via.placeholder.com/400x250?text=No+Image';
 
-                if (judul && judul !== "Judul") {
-                    container.innerHTML += `
-                    <div class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col border border-gray-100 animate-fade-in hover:shadow-2xl transition">
-                        <div class="relative h-52">
-                            <img src="${gambar}" class="w-full h-full object-cover" loading="lazy">
-                            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">${kat}</span>
-                        </div>
-                        <div class="p-6 flex-grow text-left">
-                            <span class="text-emerald-500 text-[10px] font-bold mb-2 block font-mono">${tgl}</span>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${judul}</h3>
-                            <p class="text-gray-600 text-sm mb-4 line-clamp-2 text-justify">${ringkasan}</p>
-                            <a href="detail-berita.html?id=${encodeURIComponent(judul)}" class="text-emerald-600 font-bold text-sm flex items-center hover:underline">
-                                Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>`;
-                }
+                container.innerHTML += `
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col border border-gray-100 animate-fade-in hover:shadow-2xl transition">
+            <div class="relative h-52">
+                <img src="${gambar}" class="w-full h-full object-cover" loading="lazy">
+                <span class="absolute top-4 left-4 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">${kat}</span>
+            </div>
+            <div class="p-6 flex-grow text-left">
+                <span class="text-emerald-500 text-[10px] font-bold mb-2 block font-mono">${tgl}</span>
+                <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${judul}</h3>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-2 text-justify">${ringkasan}</p>
+                <a href="detail-berita.html?id=${encodeURIComponent(judul)}" class="text-emerald-600 font-bold text-sm flex items-center hover:underline">
+                    Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>`;
             });
         }
 
@@ -581,7 +630,6 @@
                     const cols = data.table.cols;
                     const rows = data.table.rows;
 
-                    // Pencarian Indeks Kolom Otomatis berdasarkan Header Sheet
                     let idxJudul = 1, idxKategori = 2, idxPenulis = 3, idxCover = 5, idxStatus = 4;
                     cols.forEach((col, index) => {
                         if (col.label) {
@@ -594,7 +642,6 @@
                         }
                     });
 
-                    // Filter dan mapping data
                     let daftarBuku = rows.filter(row => {
                         if (!row.c || !row.c[idxJudul]) return false;
                         const judul = row.c[idxJudul].v ? String(row.c[idxJudul].v).trim() : '';
@@ -602,7 +649,7 @@
                     }).map(row => {
                         const cells = row.c;
                         let rawCoverUrl = cells[idxCover] && cells[idxCover].v ? String(cells[idxCover].v).trim() : '';
-                        let finalCoverUrl = 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=400'; // Default
+                        let finalCoverUrl = 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=400';
 
                         if (rawCoverUrl) {
                             if (rawCoverUrl.includes('drive.google.com')) {
@@ -620,11 +667,9 @@
                             }
                         }
 
-                        // Proteksi pembacaan kolom Status jika kosong
                         let rawStatus = cells[idxStatus] && cells[idxStatus].v ? String(cells[idxStatus].v).trim() : '';
                         if (!rawStatus) rawStatus = 'Tersedia';
 
-                        // Mengubah teks kapital menjadi format tulisan normal ("TERSEDIA" -> "Tersedia")
                         let formattedStatus = rawStatus.charAt(0).toUpperCase() + rawStatus.slice(1).toLowerCase();
 
                         return {
@@ -636,7 +681,6 @@
                         };
                     });
 
-                    // Balik urutan (data paling bawah di sheet jadi paling atas), lalu ambil 4 data teratas
                     daftarBuku.reverse();
                     const empatBukuTerbaru = daftarBuku.slice(0, 4);
 
@@ -646,7 +690,6 @@
                         return;
                     }
 
-                    // Render kartu buku ke grid beranda dengan status dinamis
                     empatBukuTerbaru.forEach(buku => {
                         let katBadgeColor = 'bg-emerald-600';
                         const katLow = buku.kategori.toLowerCase();
@@ -655,10 +698,9 @@
                         else if (katLow === 'motivasi') katBadgeColor = 'bg-purple-600';
                         else if (katLow === 'edukasi') katBadgeColor = 'bg-emerald-600';
 
-                        // Menentukan warna badge berdasarkan kondisi teks status
-                        let statusBadgeColor = 'text-emerald-600 bg-emerald-50'; // Default: Tersedia
+                        let statusBadgeColor = 'text-emerald-600 bg-emerald-50';
                         const statusLow = buku.status.toLowerCase();
-                        
+
                         if (statusLow.includes('pinjam')) {
                             statusBadgeColor = 'text-orange-600 bg-orange-50';
                         } else if (statusLow.includes('rusak') || statusLow.includes('hilang')) {
@@ -693,7 +735,6 @@
                 });
         }
 
-        // Jalankan fungsi otomatis saat halaman dimuat
         document.addEventListener('DOMContentLoaded', function () {
             fetchHomeBooks();
         });
