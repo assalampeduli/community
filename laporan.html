@@ -25,10 +25,8 @@
                     </a>
                 </div>
 
-                <!-- NAVIGASI DESKTOP (Ubah bagian ini di dalam file laporan.html) -->
                 <div class="hidden lg:block">
                     <div class="ml-10 flex items-center space-x-4">
-                        <!-- Beranda diubah menjadi menu biasa -->
                         <a href="index.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium transition">Beranda</a>
 
@@ -66,7 +64,6 @@
                         <a href="program.html"
                             class="text-gray-600 hover:text-emerald-600 px-3 py-2 font-medium">Program</a>
 
-                        <!-- Laporan sekarang menjadi menu AKTIF (Ditambahkan garis bawah) -->
                         <a href="laporan.html"
                             class="text-emerald-600 px-3 py-2 font-bold border-b-2 border-emerald-500">Laporan</a>
 
@@ -91,11 +88,9 @@
             </div>
         </div>
 
-        <!-- NAVIGASI MOBILE (Ubah juga bagian ini agar serasi saat dibuka di HP) -->
         <div id="mobile-menu"
             class="hidden lg:hidden bg-white border-t border-gray-100 animate-fade-in-down overflow-y-auto max-h-[80vh]">
             <div class="px-4 pt-2 pb-6 space-y-1">
-                <!-- Beranda diubah menjadi menu biasa -->
                 <a href="index.html"
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Beranda</a>
 
@@ -114,7 +109,6 @@
                 <a href="program.html"
                     class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl font-medium">Program</a>
 
-                <!-- Laporan menjadi menu AKTIF di mobile (Latar hijau) -->
                 <a href="laporan.html"
                     class="block px-4 py-3 text-base font-bold text-emerald-600 bg-emerald-50 rounded-xl">Laporan</a>
 
@@ -226,27 +220,29 @@
                             <i class="fas fa-spinner fa-spin mr-2"></i>Menghubungkan...
                         </span>
                     </div>
-                    <div class="overflow-x-auto">
+                    
+                    <div class="w-full overflow-x-auto">
                         <table class="w-full text-left border-collapse font-mono">
                             <thead>
                                 <tr class="bg-gray-100 text-gray-600 text-xs uppercase">
-                                    <th class="p-4 border-b text-center" style="min-width: 140px;">Tanggal</th>
-                                    <th class="p-4 border-b text-center">Keterangan</th>
-                                    <th class="p-4 border-b text-center">Jenis Kas</th>
-                                    <th class="p-4 border-b text-center text-emerald-600">Masuk</th>
-                                    <th class="p-4 border-b text-center text-red-600">Keluar</th>
-                                    <th class="p-4 border-b text-center">Saldo</th>
+                                    <th class="p-4 border-b text-center whitespace-nowrap" style="min-width: 140px;">Tanggal</th>
+                                    <th class="p-4 border-b text-center whitespace-nowrap">Keterangan</th>
+                                    <th class="p-4 border-b text-center whitespace-nowrap">Jenis Kas</th>
+                                    <th class="p-4 border-b text-center text-emerald-600 whitespace-nowrap">Masuk</th>
+                                    <th class="p-4 border-b text-center text-red-600 whitespace-nowrap">Keluar</th>
+                                    <th class="p-4 border-b text-center whitespace-nowrap">Saldo</th>
                                 </tr>
                             </thead>
                             <tbody id="laporan-body" class="divide-y">
                                 <tr>
-                                    <td colspan="6" class="px-6 py-10 text-center text-gray-400 italic">
+                                    <td colspan="6" class="px-6 py-10 text-center text-gray-400 italic whitespace-nowrap">
                                         Memulai koneksi ke database...
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    
                     <div class="bg-white px-6 py-4 border-t flex items-center justify-between flex-wrap gap-4"
                         id="paginasi-tunai-container">
                         <div class="text-sm text-gray-600" id="info-halaman-tunai">
@@ -294,31 +290,29 @@
                 <div class="bg-orange-50 px-6 py-4 border-b border-orange-100">
                     <h3 class="font-bold text-orange-800">Catatan Donasi Barang & Logistik</h3>
                 </div>
-                <div class="overflow-x-auto">
+                
+                <div class="w-full overflow-x-auto">
                     <table class="w-full text-left border-collapse font-mono">
                         <thead class="bg-gray-50 border-b">
                             <tr>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center"
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center whitespace-nowrap"
                                     style="min-width: 140px;">Tanggal</th>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Nama Donatur
-                                </th>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Jenis
-                                    Bantuan</th>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">
-                                    Jumlah/Satuan</th>
-                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center">Status
-                                    Penyaluran</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center whitespace-nowrap">Nama Donatur</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center whitespace-nowrap">Jenis Bantuan</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center whitespace-nowrap">Jumlah/Satuan</th>
+                                <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase text-center whitespace-nowrap">Status Penyaluran</th>
                             </tr>
                         </thead>
                         <tbody id="tabel-non-tunai" class="divide-y">
                             <tr>
-                                <td colspan="5" class="px-6 py-10 text-center text-gray-400 italic">
+                                <td colspan="5" class="px-6 py-10 text-center text-gray-400 italic whitespace-nowrap">
                                     Memuat data logistik...
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                
                 <div class="bg-white px-6 py-4 border-t flex items-center justify-between flex-wrap gap-4"
                     id="paginasi-nontunai-container">
                     <div class="text-sm text-gray-600" id="info-halaman-nontunai">
@@ -341,8 +335,7 @@
                     <i class="fas fa-times"></i>
                 </button>
                 <h3 class="text-xl font-bold">Donasi Sekarang</h3>
-                <p class="text-emerald-100 text-xs mt-1 uppercase tracking-widest font-medium">Bantu Sesama, Raih
-                    Keberkahan</p>
+                <p class="text-emerald-100 text-xs mt-1 uppercase tracking-widest font-medium">Bantu Sesama, Raih Keberkahan</p>
             </div>
 
             <div id="methodList" class="p-6 space-y-3">
@@ -460,52 +453,37 @@
             return "Rp " + angka.toLocaleString('id-ID');
         };
 
-        // Fungsi mengekstrak Bulan dan Tahun dari segala jenis bentuk format string tanggal secara aman
         function parsingTanggal(strTanggal) {
             if (!strTanggal) return { bulan: "", tahun: "" };
-
             const teksMurni = strTanggal.trim();
 
-            // 1. Cek format standar ISO/Database (YYYY-MM-DD atau YYYY/MM/DD)
             const matchISO = teksMurni.match(/^(\d{4})[\/\-\s](\d{1,2})[\/\-\s](\d{1,2})/);
             if (matchISO) {
-                return {
-                    bulan: matchISO[2].padStart(2, '0'),
-                    tahun: matchISO[1]
-                };
+                return { bulan: matchISO[2].padStart(2, '0'), tahun: matchISO[1] };
             }
 
-            // 2. Cek format lokal (DD-MM-YYYY atau DD/MM/YYYY)
             const matchLokal = teksMurni.match(/^(\d{1,2})[\/\-\s](\d{1,2})[\/\-\s](\d{4})/);
             if (matchLokal) {
-                return {
-                    bulan: matchLokal[2].padStart(2, '0'),
-                    tahun: matchLokal[3]
-                };
+                return { bulan: matchLokal[2].padStart(2, '0'), tahun: matchLokal[3] };
             }
 
-            // 3. Fallback jika format menggunakan teks nama bulan (misal: "22 Mei 2026")
             const daftarBulanTeks = ["jan", "feb", "mar", "apr", "mei", "jun", "jul", "agu", "sep", "okt", "nov", "des"];
             let stringLower = teksMurni.toLowerCase();
             let blnDitemukan = "";
             let thnDitemukan = "";
 
-            // Cari 4 digit angka berturut-turut sebagai tahun
             const matchTahunSaja = stringLower.match(/\b(\d{4})\b/);
             if (matchTahunSaja) thnDitemukan = matchTahunSaja[1];
 
-            // Cari nama bulan berdasarkan teks kemiripan kata kunci
             for (let idx = 0; idx < daftarBulanTeks.length; idx++) {
                 if (stringLower.includes(daftarBulanTeks[idx])) {
                     blnDitemukan = String(idx + 1).padStart(2, '0');
                     break;
                 }
             }
-
             return { bulan: blnDitemukan, tahun: thnDitemukan };
         }
 
-        // Memperbarui dropdown tahun secara otomatis & diurutkan dari terkecil ke terbesar
         function updateOpsiTahun(data, elementId, keyTanggal) {
             const selectTahun = document.getElementById(elementId);
             if (!selectTahun) return;
@@ -519,7 +497,6 @@
             });
 
             const tahunUrut = Array.from(tahunSet).sort((a, b) => parseInt(a) - parseInt(b));
-
             const nilaiLama = selectTahun.value;
             selectTahun.innerHTML = '<option value="">Semua Tahun</option>';
             tahunUrut.forEach(th => {
@@ -593,7 +570,6 @@
                 }
 
                 dataNonTunaiMentah.reverse();
-
                 updateOpsiTahun(dataNonTunaiMentah, 'filter-tahun-nontunai', 'tglNT');
 
                 tampilkanHalamanTunai(1);
@@ -628,7 +604,7 @@
             });
 
             if (dataTerfilter.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-gray-400 italic">Tidak ada data tunai yang cocok dengan filter.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-gray-400 italic whitespace-nowrap">Tidak ada data tunai yang cocok dengan filter.</td></tr>`;
                 if (document.getElementById('info-halaman-tunai')) document.getElementById('info-halaman-tunai').innerHTML = `Tidak ada data`;
                 if (document.getElementById('tombol-paginasi-tunai')) document.getElementById('tombol-paginasi-tunai').innerHTML = "";
                 return;
@@ -645,14 +621,14 @@
 
                 html += `
                 <tr class="border-b hover:bg-gray-50/50 transition">
-                    <td class="p-4 text-sm text-gray-500 text-center">${item.tgl}</td>
-                    <td class="p-4 text-sm font-bold text-gray-800 text-center">${item.ket}</td>
-                    <td class="p-4 text-center">
+                    <td class="p-4 text-sm text-gray-500 text-center whitespace-nowrap">${item.tgl}</td>
+                    <td class="p-4 text-sm font-bold text-gray-800 text-center whitespace-nowrap">${item.ket}</td>
+                    <td class="p-4 text-center whitespace-nowrap">
                         <span class="text-[10px] ${warnaBadge} px-2 py-1 rounded-md font-bold uppercase border">${item.jns || 'UMUM'}</span>
                     </td>
-                    <td class="p-4 text-sm text-emerald-600 font-bold text-center">${formatRupiah(item.msk)}</td>
-                    <td class="p-4 text-sm text-red-500 font-bold text-center">${formatRupiah(item.klr)}</td>
-                    <td class="p-4 text-sm font-black text-gray-900 text-center">${formatRupiah(item.sld)}</td>
+                    <td class="p-4 text-sm text-emerald-600 font-bold text-center whitespace-nowrap">${formatRupiah(item.msk)}</td>
+                    <td class="p-4 text-sm text-red-500 font-bold text-center whitespace-nowrap">${formatRupiah(item.klr)}</td>
+                    <td class="p-4 text-sm font-black text-gray-900 text-center whitespace-nowrap">${formatRupiah(item.sld)}</td>
                 </tr>`;
             });
 
@@ -676,7 +652,7 @@
             });
 
             if (dataTerfilter.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-10 text-center text-gray-400 italic">Tidak ada data non-tunai yang cocok dengan filter.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-10 text-center text-gray-400 italic whitespace-nowrap">Tidak ada data non-tunai yang cocok dengan filter.</td></tr>`;
                 if (document.getElementById('info-halaman-nontunai')) document.getElementById('info-halaman-nontunai').innerHTML = `Tidak ada data`;
                 if (document.getElementById('tombol-paginasi-nontunai')) document.getElementById('tombol-paginasi-nontunai').innerHTML = "";
                 return;
@@ -692,11 +668,11 @@
 
                 html += `
                 <tr class="hover:bg-gray-50 transition border-b">
-                    <td class="px-6 py-4 text-sm text-gray-600 text-center">${item.tglNT}</td>
-                    <td class="px-6 py-4 text-sm font-medium text-center text-gray-800">${item.donatur}</td>
-                    <td class="px-6 py-4 text-sm text-center text-gray-600">${item.bantuan}</td>
-                    <td class="px-6 py-4 text-sm text-center font-bold text-gray-900">${item.jumlahNT}</td>
-                    <td class="px-6 py-4 text-sm text-center">
+                    <td class="px-6 py-4 text-sm text-gray-600 text-center whitespace-nowrap">${item.tglNT}</td>
+                    <td class="px-6 py-4 text-sm font-medium text-center text-gray-800 whitespace-nowrap">${item.donatur}</td>
+                    <td class="px-6 py-4 text-sm text-center text-gray-600 whitespace-nowrap">${item.bantuan}</td>
+                    <td class="px-6 py-4 text-sm text-center font-bold text-gray-900 whitespace-nowrap">${item.jumlahNT}</td>
+                    <td class="px-6 py-4 text-sm text-center whitespace-nowrap">
                         <span class="inline-block px-3 py-1 ${statusColor} rounded-full text-[10px] font-bold uppercase">
                             ${item.statusNT}
                         </span>
@@ -756,7 +732,7 @@
 
             if (endPage < totalHalaman) {
                 if (endPage < totalHalaman - 1) komponenNavigasi += `<span class="px-2 text-gray-400 text-sm align-bottom">...</span>`;
-                komponenNavigasi += `<button onclick="${fungsiPanggilBalik.name}(${totalHalaman})" class="px-3 py-1.5 rounded-lg border text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">${totalHalaman}</button>`;
+                komponenNavigasi += `<button onclick="${fungsiPanggilBalik.name}(totalHalaman)" class="px-3 py-1.5 rounded-lg border text-sm font-medium bg-white text-gray-700 hover:bg-gray-50">${totalHalaman}</button>`;
             }
 
             komponenNavigasi += `
