@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita & Kegiatan | Komunitas Assalam Peduli</title>
+
+    <!-- Meta Tag Open Graph untuk Social Media Share Preview -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Komunitas Assalam Peduli">
+    <meta property="og:title" id="og-title" content="Berita & Kegiatan | Komunitas Assalam Peduli">
+    <meta property="og:description" id="og-description" content="Informasi berita dan kegiatan terbaru Komunitas Assalam Peduli.">
+    <meta property="og:image" id="og-image" content="logo-kita.png">
+    <meta property="og:url" id="og-url" content="">
+    
+    <!-- Meta Tag Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="tw-title" content="Berita & Kegiatan | Komunitas Assalam Peduli">
+    <meta name="twitter:description" id="tw-description" content="Informasi berita dan kegiatan terbaru Komunitas Assalam Peduli.">
+    <meta name="twitter:image" id="tw-image" content="logo-kita.png">
+
     <link class="flex-shrink-0" rel="icon" type="image/png" href="logo-kita.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome v6.5.2 untuk memastikan semua simbol brand muncul sempurna -->
@@ -427,12 +442,27 @@
                         const isiLengkep = c[4] ? c[4].v : 'Eusi berita kosong.';
                         document.getElementById('detail-isi').innerHTML = isiLengkep.replace(/\n/g, '<br>');
 
-                        if (c[5]) document.getElementById('detail-gambar').src = c[5].v;
+                        const gambarUrl = (c[5] && c[5].v) ? c[5].v : '';
+                        if (gambarUrl) {
+                            document.getElementById('detail-gambar').src = gambarUrl;
+                            document.getElementById('og-image').setAttribute('content', gambarUrl);
+                            document.getElementById('tw-image').setAttribute('content', gambarUrl);
+                        }
+
+                        document.getElementById('og-title').setAttribute('content', judulBerita);
+                        document.getElementById('tw-title').setAttribute('content', judulBerita);
+                        
+                        const deskripsiBersih = isiLengkep.replace(/<[^>]*>?/gm, '').substring(0, 160);
+                        document.getElementById('og-description').setAttribute('content', deskripsiBersih);
+                        document.getElementById('tw-description').setAttribute('content', deskripsiBersih);
+                        document.getElementById('og-url').setAttribute('content', window.location.href);
+                        document.title = `${judulBerita} | Komunitas Assalam Peduli`;
 
                         initLikeSystem(judulTarget);
 
+                        // PERBAIKAN: Format teks share yang rapi untuk WhatsApp, FB, dan X
                         const currentUrl = encodeURIComponent(window.location.href);
-                        const shareText = encodeURIComponent(judulBerita + " - Komunitas Assalam Peduli\n\n");
+                        const shareText = encodeURIComponent(`${judulBerita} - Komunitas Assalam Peduli\n\n`);
                         
                         document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${shareText}${currentUrl}`;
                         document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
